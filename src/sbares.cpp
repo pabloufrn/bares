@@ -10,11 +10,13 @@
  */
 
 #include <iostream>  // cout, endl
-#include <stack>     // stack
+//#include <stack>     // stack
 #include <string>    // string
 #include <cassert>   // assert
 #include <cmath>     // pow
 #include <stdexcept> // std::runtime_error
+
+#include "../include/stack.h"		// stack
 
 //=== Aliases
 using value_type = long int; //!< Type we operate on.
@@ -138,7 +140,7 @@ int main()
 
 std::string infix_to_postfix( std::string infix )
 {
-	std::stack< symbol > s; // auxiliary data structure.
+	pl::stack< symbol > s; // auxiliary data structure.
 	std::string postfix; // stores the postfix expression
 	bool start_operand = true; // if true next character is the beginning of a number
 	// Process each incoming symbol
@@ -200,7 +202,7 @@ std::string infix_to_postfix( std::string infix )
 
 value_type evaluate_postfix( std::string postfix )
 {
-	std::stack< value_type > s;
+	pl::stack< value_type > s;
 	// process operands
 	std::string::size_type index_begin = 0, index_end = postfix.find( ' ' , index_begin );
 	// precondition: the postfix is valid
