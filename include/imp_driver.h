@@ -32,6 +32,8 @@ void readFile( std::string nomeArq , sc::vector<std::string> & conjunto ){
 	for( auto i(0u) ; i < conjunto.size() ; ++i)
 		std::cout << conjunto[i] << std::endl;
 
+	iFile.close();
+
 }
 
 
