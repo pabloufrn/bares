@@ -7,6 +7,7 @@ using arq_saida = std::ofstream;
 
 #include "../include/vector.h"
 #include "../include/stack.h"
+#include "../include/pilha.h"
 #include "../include/imp_driver.h"
 
 int main( int argc, char* argv[]){
@@ -23,7 +24,7 @@ int main( int argc, char* argv[]){
 	readFile(  entrada , conjunto );
 
 	if( argc == 3 ){
-		outputFile( argv[2] );
+		//outputFile( argv[2] );
 	}
 
 	return 0;

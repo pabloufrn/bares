@@ -122,7 +122,7 @@ value_type execute_operator( value_type v1, value_type v2, symbol op )
 	}
 }
 
-int main()
+int teste()
 {
 	// A expression is a queue of sysmbols (chars).
 	std::string expression = "4/(5^2)+(6^2^3)";
