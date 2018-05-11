@@ -29,23 +29,32 @@ void print_error_msg( const Parser::ResultType & result, std::string str )
     error_indicator[result.at_col] = '^';
     switch ( result.type )
     {
-        case Parser::ResultType::UNEXPECTED_END_OF_EXPRESSION:
-            std::cout << ">>> Unexpected end of input at column (" << result.at_col << ")!\n";
-            break;
-        case Parser::ResultType::ILL_FORMED_INTEGER:
-            std::cout << ">>> Ill formed integer at column (" << result.at_col << ")!\n";
+        case Parser::ResultType::INTEGER_OUT_OF_RANGE:
+            std::cout << "Integer constant out of range beginning at column ("<< result.at_col << ")!\n";
             break;
         case Parser::ResultType::MISSING_TERM:
-            std::cout << ">>> Missing <term> at column (" << result.at_col << ")!\n";
+            std::cout << "Missing <term> at column (" << result.at_col << ")!\n";
             break;
         case Parser::ResultType::EXTRANEOUS_SYMBOL:
-            std::cout << ">>> Extraneous symbol after valid expression found at column (" << result.at_col << ")!\n";
+            std::cout << "Extraneous symbol after valid expression found at column (" << result.at_col << ")!\n";
             break;
-        case Parser::ResultType::INTEGER_OUT_OF_RANGE:
-            std::cout << ">>> Integer constant out of range beginning at column (" << result.at_col << ")!\n";
+        case Parser::ResultType::ILL_FORMED_INTEGER:
+            std::cout << "Ill formed integer at column (" << result.at_col << ")!\n";
+            break;
+        case Parser::ResultType::MISSING_CLOSE:
+            std::cout << "Missing closing ”)”at column (" << result.at_col << ")!\n";
+            break;
+        case Parser::ResultType::UNEXPECTED_END_OF_EXPRESSION:
+            std::cout << "Unexpected end of input at column (" << result.at_col << ")!\n";
+            break;
+        case Parser::ResultType::DIVISION_ZERO:
+            std::cout << "Division by zero!\n";
+            break;
+        case Parser::ResultType::NUMERIC_OVERFLOW:
+            std::cout << "Numeric overflow error!\n";
             break;
         default:
-            std::cout << ">>> Unhandled error found!\n";
+            std::cout << "Unhandled error found!\n";
             break;
     }
 

@@ -16,10 +16,10 @@
  *
  * This class also tokenizes the input expression into its components, creating a list of tokens.
  *
- * The grammar is:
+ * The EBNF grammar is:
  * ```
- *   <expr>            := <term>,{ ("+"|"-"),<term> };
- *   <term>            := <integer>;
+ *   <expr>            := <term>,{ ("+"|"-"|"*"|"/"|"%"|"^"),<term> };
+ *   <term>            := "(", <expr>, ")" | <integer>;
  *   <integer>         := 0 | ["-"],<natural_number>;
  *   <natural_number>  := <digit_excl_zero>,{<digit>};
  *   <digit_excl_zero> := "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
@@ -38,11 +38,14 @@ class Parser
             /// List of possible syntax errors.
             enum code_t {
                     OK = 0, //!< Expression successfuly parsed.
-                    UNEXPECTED_END_OF_EXPRESSION,
-                    ILL_FORMED_INTEGER,
+                    INTEGER_OUT_OF_RANGE,
                     MISSING_TERM,
                     EXTRANEOUS_SYMBOL,
-                    INTEGER_OUT_OF_RANGE
+                    ILL_FORMED_INTEGER,
+                    MISSING_CLOSE,
+                    UNEXPECTED_END_OF_EXPRESSION,
+                    DIVISION_ZERO,
+                    NUMERIC_OVERFLOW
             };
 
             //=== Members (public).
@@ -81,6 +84,12 @@ class Parser
         enum class terminal_symbol_t{  // The symbols:-
             TS_PLUS,	        //!< code for "+"
             TS_MINUS,	        //!< code for "-"
+            TS_TIMES,           //!< code for "*"
+            TS_DIVIDED,         //!< code for "/"
+            TS_PERCENT,         //!< code for "%"
+            TS_POWER,           //!< code for "^"
+            TS_OPEN,            //!< code for "("
+            TS_CLOSE,           //!< code for ")"
             TS_ZERO,            //!< code for "0"
             TS_NON_ZERO_DIGIT,  //!< code for digits "1"->"9"
             TS_WS,              //!< code for a white-space
@@ -113,5 +122,7 @@ class Parser
         bool digit_excl_zero();
         bool digit();
 };
+
+#include "parser.inl"
 
 #endif

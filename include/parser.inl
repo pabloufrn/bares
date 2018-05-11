@@ -1,6 +1,6 @@
-#include "../include/parser.h"
 #include <iterator>
 #include <algorithm>
+#include "parser.h"
 
 /// Converts the input character c_ into its corresponding terminal symbol code.
 Parser::terminal_symbol_t  Parser::lexer( char c_ ) const
@@ -9,6 +9,12 @@ Parser::terminal_symbol_t  Parser::lexer( char c_ ) const
     {
         case '+':  return terminal_symbol_t::TS_PLUS;
         case '-':  return terminal_symbol_t::TS_MINUS;
+        case '*':  return terminal_symbol_t::TS_TIMES;
+        case '/':  return terminal_symbol_t::TS_DIVIDED;
+        case '%':  return terminal_symbol_t::TS_PERCENT;
+        case '^':  return terminal_symbol_t::TS_POWER;
+        case '(':  return terminal_symbol_t::TS_OPEN;
+        case ')':  return terminal_symbol_t::TS_CLOSE;
         case ' ':  return terminal_symbol_t::TS_WS;
         case   9:  return terminal_symbol_t::TS_TAB;
         case '0':  return terminal_symbol_t::TS_ZERO;
@@ -99,16 +105,46 @@ void Parser::skip_ws( void )
  *
  * Production rule is:
  * ```
- *  <expr> := <term>,{ ("+"|"-"),<term> };
+ *  <expr> := <term>,{ ("+"|"-"|"*"|"/"|"%"|"^"),<term> };
  * ```
- * An expression might be just a term or one or more terms with '+'/'-' between them.
+ * REVER ESTA CONDIÇÃO <---------------------------------------------------------------------------------------------------------------------------------
+ * An expression might be just a term or one or more terms with '+'/'-'/'' between them.
  */
 Parser::ResultType Parser::expression()
 {
+
     ResultType result( ResultType::OK );
+
+    auto begin_term( it_curr_symb );
+
     // tentamos processar um termo.
+    result = term();
 
     // enquanto der certo, tente processar outros termos.
+    while( accept( Parser::terminal_symbol_t::TS_PLUS) ){
+        result = term();
+    }
+
+
+    while( accept( Parser::terminal_symbol_t::TS_TIMES) )
+        term();
+
+
+    while( accept(Parser::terminal_symbol_t::TS_DIVIDED) )
+        term();
+
+    while( accept(Parser::terminal_symbol_t::TS_PERCENT) )
+        term();
+
+    while( accept(Parser::terminal_symbol_t::TS_POWER) )
+        term();
+
+    
+    std::cout << "TESTE!\n";
+
+
+    return result;
+
 
 }
 
@@ -117,7 +153,7 @@ Parser::ResultType Parser::expression()
  *
  * Production rule is:
  * ```
- *  <term> := <integer>;
+ *  <term> := "(",<expr>,")" | <integer>;               < ------------------------------------------- Adição dos parenteses.
  * ```
  * A term is made of a single integer.
  *
@@ -131,6 +167,9 @@ Parser::ResultType Parser::term()
     // Guarda o início do termo no input, para possíveis mensagens de erro.
     auto begin_term( it_curr_symb );
 
+    if( accept( Parser::terminal_symbol_t::TS_OPEN) && accept( Parser::terminal_symbol_t::TS_CLOSE)) return result; // <---- Fazer com que aceite o aberto apenas se aceitar o fechado.
+
+
     // Processe um inteiro.
     result = integer();
 
@@ -141,7 +180,7 @@ Parser::ResultType Parser::term()
         std::string token_str;
 
         // Copiar a substring correspondente para uma variável string.
-        std;:copy( begin_term, it_curr_symb, std::back_inserter(token_str) );
+        std::copy( begin_term, it_curr_symb, std::back_inserter(token_str) );
         
         // Tentar realizar a conversão de string para inteiro (usar stoll()).
         input_int_type token_int;
@@ -168,6 +207,8 @@ Parser::ResultType Parser::term()
         return result;        
     }
 
+    return result;
+
 }
 
 /// Validates (i.e. returns true or false) and consumes an integer from the input string.
@@ -183,15 +224,15 @@ Parser::ResultType Parser::term()
  */
 Parser::ResultType Parser::integer()
 {
-    ResultType result( ResultType::terminal_symbol_t::OK );
+    ResultType result( ResultType::OK );
     // Se aceitarmos um zero, então o inteiro acabou aqui.
-    if( accept( ResultType::terminal_symbol_t::TS_ZERO ) ) return result;
+    if( accept( Parser::terminal_symbol_t::TS_ZERO ) ) return result;
 
     // Vamos tentar aceitar o '-'.
-    accept( TS_MINUS );
+    accept( Parser::terminal_symbol_t::TS_MINUS );
 
     // Vamos processar um número natural.
-    return natural_number;
+    return natural_number();
     
 }
 
