@@ -81,6 +81,7 @@ class Parser
         enum class terminal_symbol_t{  // The symbols:-
             TS_PLUS,	        //!< code for "+"
             TS_MINUS,	        //!< code for "-"
+            TS_TIMES,           //!< code for "*"
             TS_ZERO,            //!< code for "0"
             TS_NON_ZERO_DIGIT,  //!< code for digits "1"->"9"
             TS_WS,              //!< code for a white-space
