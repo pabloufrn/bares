@@ -116,28 +116,26 @@ Parser::ResultType Parser::expression()
     ResultType result( ResultType::OK );
 
     auto begin_term( it_curr_symb );
-
+    skip_ws();
     // tentamos processar um termo.
-    result = term();
-
+    if( term() == result)
+            return ResultType( ResultType::ILL_FORMED_INTEGER , std::distance( expr.begin(), it_curr_symb ) );
+    skip_ws();
     // enquanto der certo, tente processar outros termos.
-    while( accept( Parser::terminal_symbol_t::TS_PLUS) ){
-        result = term();
-    }
+    
+        if( accept(Parser::terminal_symbol_t::TS_PLUS) )
+            return result;
+        if( accept(Parser::terminal_symbol_t::TS_MINUS) )
+            return result;
+        if( accept(Parser::terminal_symbol_t::TS_TIMES) )
+            return result;
+        skip_ws();
 
-
-    while( accept( Parser::terminal_symbol_t::TS_TIMES) )
-        term();
-
-
-    while( accept(Parser::terminal_symbol_t::TS_DIVIDED) )
-        term();
-
-    while( accept(Parser::terminal_symbol_t::TS_PERCENT) )
-        term();
-
-    while( accept(Parser::terminal_symbol_t::TS_POWER) )
-        term();
+        std::cout << "TESTE!\n";
+        if( term() == result )
+            return ResultType( ResultType::ILL_FORMED_INTEGER , std::distance( expr.begin(), it_curr_symb ) );
+        skip_ws();
+    
 
     
     std::cout << "TESTE!\n";
@@ -168,8 +166,7 @@ Parser::ResultType Parser::term()
     auto begin_term( it_curr_symb );
 
     if( accept( Parser::terminal_symbol_t::TS_OPEN) && accept( Parser::terminal_symbol_t::TS_CLOSE)) return result; // <---- Fazer com que aceite o aberto apenas se aceitar o fechado.
-
-
+    
     // Processe um inteiro.
     result = integer();
 

@@ -57,6 +57,13 @@ class Parser
                     : type{ type_ }
                     , at_col{ col_ }
             { /* empty */ }
+
+            bool operator==( ResultType tipo ){
+                return type == tipo.type;
+            }
+            bool operator!=( ResultType tipo ){
+                return type != tipo.type;
+            }
         };
 
         //==== Aliases
@@ -78,6 +85,8 @@ class Parser
         Parser( const Parser & ) = delete;  // Construtor cópia.
         /// Turn off assignment operator.
         Parser & operator=( const Parser & ) = delete; // Atribuição.
+
+        
 
     private:
         // Terminal symbols table
