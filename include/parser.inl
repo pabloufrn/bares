@@ -202,10 +202,13 @@ Parser::ResultType Parser::term()
         
         expression();
 
-        token_str = ")";
+    }
+
+    if( accept( Parser::terminal_symbol_t::TS_CLOSE) ){
+        std::string token_str = ")";
         token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS ) );
-        
-    } 
+        return result;
+    }
 
     // Processe um inteiro.
     result = integer();
@@ -259,18 +262,60 @@ Parser::ResultType Parser::term()
  *
  * @return true if an integer has been successfuly parsed from the input; false otherwise.
  */
+
 Parser::ResultType Parser::integer()
 {
-    ResultType result( ResultType::OK );
-    // Se aceitarmos um zero, então o inteiro acabou aqui.
-    if( accept( Parser::terminal_symbol_t::TS_ZERO ) ) return result;
-
-    // Vamos tentar aceitar o '-'.
-    accept( Parser::terminal_symbol_t::TS_MINUS );
-
-    // Vamos processar um número natural.
-    return natural_number();
     
+    // Se aceitarmos um zero, então o inteiro acabou aqui.
+    if ( accept( terminal_symbol_t::TS_ZERO ) )
+        return ResultType( ResultType::OK );
+    
+    // Vamos tentar aceitar o '-'.
+    // ele não eh negativo se nao acharmos um '-'
+    bool negative = false;
+    bool negative_fir = false;
+    // cada '-' vamos trocar o sinal
+    while(accept( terminal_symbol_t::TS_MINUS)){
+        negative = !negative;
+        negative_fir = true;
+    }
+    
+    // O token começa depois dos sinais de -
+    auto begin_token( it_curr_symb);
+     // A NÂO SER que o inteiro seja negativo
+    if(negative == true)--begin_token;
+    // no final processamos o numero que sobrou
+    auto result = natural_number();
+    // não existe numero? comunica isso para nosso term()
+    if(result.type != ResultType::OK)
+        return result;
+    
+    // Copiar a substring correspondente para uma variável string.
+    std::string token_str;
+    std::copy( begin_token, it_curr_symb, std::back_inserter( token_str ) );
+    // Tentar realizar a conversão de string para inteiro (usar stoll()).
+    input_int_type token_int;
+    try { token_int = stoll( token_str ); }
+    catch( const std::invalid_argument & e )
+    {
+        // Opa se não é inteiro válido, iremos comunicar para nosso termo
+        return ResultType( ResultType::ILL_FORMED_INTEGER, 
+        std::distance( expr.begin(), begin_token ) );
+    }
+    
+    // Recebemos um inteiro válido, resta saber se está dentro da faixa.
+    if ( token_int < std::numeric_limits< required_int_type >::min() or
+        token_int > std::numeric_limits< required_int_type >::max() )
+    {
+        // Fora da faixa, reportar erro.
+        return ResultType( ResultType::INTEGER_OUT_OF_RANGE, 
+                           std::distance( expr.begin(), begin_token ) );
+    }
+    if( negative_fir == true )
+        token_list.emplace_back( Token( token_str, Token::token_t::OPERAND ) );
+        // Coloca o novo token na nossa lista de tokens.
+    // tá ok
+    return result;
 }
 
 /// Validates (i.e. returns true or false) and consumes a natural number from the input string.

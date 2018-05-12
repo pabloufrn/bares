@@ -76,8 +76,8 @@ void parser_driver( sc::vector<std::string> & conjunto ){
             std::string error_name = print_error_msg( result, express );
         }
         else{
-            std::cout << resolucao( express );
             std::cout << ">>> Expression SUCCESSFULLY parsed!\n";
+            std::cout << resolucao( express );
         }
 
          // Recuperar a lista de tokens.
