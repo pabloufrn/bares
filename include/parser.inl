@@ -132,7 +132,7 @@ Parser::ResultType Parser::expression()
     // enquanto der certo, tente processar outros termos.
     while(!end_input())
     {
-        
+        skip_ws();
         if(accept(Parser::terminal_symbol_t::TS_PLUS)){
             std::string token_str = "+";
             token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
@@ -158,19 +158,20 @@ Parser::ResultType Parser::expression()
             token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
         }
         else
-            if(*it_curr_symb == ' ')
-                return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), last_term)); // Erro, simbolo não aceito 
+            if(peek(Parser::terminal_symbol_t::TS_CLOSE))
+                return ResultType(ResultType::OK);
+            else if(*it_curr_symb == ' ')
+                return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), last_term)); // Erro, termo faltante 
             else
                 return ResultType(ResultType::EXTRANEOUS_SYMBOL, std::distance(expr.begin(), last_term)); // Erro, simbolo não aceito 
             
-        
-        
-
+        skip_ws();
+        if(end_input())
+            return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), it_curr_symb) + 1);
         result = term();
         if( result.type != ResultType::OK)
             return result;
         last_term = it_curr_symb;
-        skip_ws();
     }
    
     return result;
@@ -190,63 +191,33 @@ Parser::ResultType Parser::expression()
  */
 Parser::ResultType Parser::term()
 {
+
     ResultType result( ResultType::OK );
     skip_ws();
-    
+    auto begin_term(it_curr_symb);
     // Guarda o início do termo no input, para possíveis mensagens de erro.
-    auto begin_term( it_curr_symb );
-
+  
     if( accept( Parser::terminal_symbol_t::TS_OPEN) ){
         std::string token_str = "(";
         token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS_OPEN ) );
         
-        expression();
-
-    }
-
-    if( accept( Parser::terminal_symbol_t::TS_CLOSE) ){
-        std::string token_str = ")";
-        token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS_CLOSE ) );
+        skip_ws();
+        result = expression();
+        
+        if(result.type != ResultType::OK)
+            return result;
+        skip_ws();
+        if( accept( Parser::terminal_symbol_t::TS_CLOSE) ){
+            std::string token_str = ")";
+            token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS_CLOSE ) );
+        }
+    
         return result;
-    }
 
+    }
+    
     // Processe um inteiro.
     result = integer();
-
-        // Vamos tokenizar o inteiro, se ele for bem formado.
-    if( result.type == ResultType::OK )
-    {
-
-        std::string token_str;
-
-        // Copiar a substring correspondente para uma variável string.
-        std::copy( begin_term, it_curr_symb, std::back_inserter(token_str) );
-        
-        // Tentar realizar a conversão de string para inteiro (usar stoll()).
-        input_int_type token_int;
-
-        try{
-            token_int = stoll( token_str );
-        } catch( std::invalid_argument e )
-        {
-            return ResultType( ResultType::ILL_FORMED_INTEGER,
-                std::distance(expr.begin(), begin_term ) );
-        }
-        
-        // Recebemos um inteiro válido, resta saber se está dentro da faixa.
-        if( token_int < std::numeric_limits < required_int_type >::min() or
-            token_int > std::numeric_limits < required_int_type >::max() ){
-            // Fora da faixa, reportar erro.
-            return ResultType( ResultType::INTEGER_OUT_OF_RANGE,
-                        std::distance( expr.begin() , begin_term ) ); 
-        }
-
-        // Coloca o novo token na nossa lista de tokens.
-        token_list.push_back( Token( token_str, Token::token_t::OPERAND ) );
-
-        return result;        
-    }
-
     return result;
 
 }
@@ -273,12 +244,8 @@ Parser::ResultType Parser::integer()
     // Vamos tentar aceitar o '-'.
     // ele não eh negativo se nao acharmos um '-'
     bool negative = false;
-    bool negative_fir = false;
     // cada '-' vamos trocar o sinal
-    while(accept( terminal_symbol_t::TS_MINUS)){
-        negative = !negative;
-        negative_fir = true;
-    }
+    while(accept( terminal_symbol_t::TS_MINUS)){negative = !negative;}
     
     // O token começa depois dos sinais de -
     auto begin_token( it_curr_symb);
@@ -311,9 +278,8 @@ Parser::ResultType Parser::integer()
         return ResultType( ResultType::INTEGER_OUT_OF_RANGE, 
                            std::distance( expr.begin(), begin_token ) );
     }
-    if( negative_fir == true )
-        token_list.emplace_back( Token( token_str, Token::token_t::OPERAND ) );
-        // Coloca o novo token na nossa lista de tokens.
+    // Coloca o novo token na nossa lista de tokens.
+    token_list.emplace_back( Token( token_str, Token::token_t::OPERAND ) );
     // tá ok
     return result;
 }
