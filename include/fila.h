@@ -26,7 +26,7 @@ namespace st{
 		}
 
 		/// insere um elemento na retaguarda da fila.
-		void enqueue( const reference v ){
+		void enqueue( const reference & v ){
 
 			if( m_end == m_capacity ){
 				pointer new_space = new T[m_capacity*2];
@@ -40,7 +40,7 @@ namespace st{
 				m_storage = new_space;
 			}
 
-			m_storage[m_end] = v;
+			m_storage[m_end] = *v;
 			++m_end;
 		}
 

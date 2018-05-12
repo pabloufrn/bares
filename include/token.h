@@ -12,7 +12,8 @@ struct Token
         {
             OPERAND = 0,        //!< A type representing numbers.
             OPERATOR,           //!< A type representing  "+", "-", "*", "/", "%", "^".
-            PARENTHESIS         //!< A type representing "(" and ")".
+            PARENTHESIS_OPEN,         //!< A type representing "(".
+            PARENTHESIS_CLOSE         //!< A type representing ")".
         };
 
         std::string value; //!< The token value as a string.
@@ -27,7 +28,7 @@ struct Token
         /// Just to help us debug the code.
         friend std::ostream & operator<<( std::ostream& os_, const Token & t_ )
         {
-            std::string types[] = { "OPERAND", "OPERATOR", "PARENTHESIS" };
+            std::string types[] = { "OPERAND", "OPERATOR", "PARENTHESIS_OPEN", "PARENTHESIS_CLOSE" };
 
             os_ << "<" << t_.value << "," << types[(int)(t_.type)] << ">";
 

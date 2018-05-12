@@ -198,7 +198,7 @@ Parser::ResultType Parser::term()
 
     if( accept( Parser::terminal_symbol_t::TS_OPEN) ){
         std::string token_str = "(";
-        token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS ) );
+        token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS_OPEN ) );
         
         expression();
 
@@ -206,7 +206,7 @@ Parser::ResultType Parser::term()
 
     if( accept( Parser::terminal_symbol_t::TS_CLOSE) ){
         std::string token_str = ")";
-        token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS ) );
+        token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS_CLOSE ) );
         return result;
     }
 

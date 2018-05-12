@@ -9,7 +9,6 @@
 
 //=== Aliases
 using value_type = long int; //!< Type we operate on.
-using symbol = char; //!< A symbol in this implementation is just a char.
 using arq_entrada = std::ifstream;
 using arq_saida = std::ofstream;
 
@@ -18,6 +17,7 @@ using arq_saida = std::ofstream;
 #include "../include/fila.h"
 #include "../include/imp_driver.h"
 #include "../include/parser.h"
+#include "../include/sbares.h"
 #include "../include/extend_parser.h"
 
 int main( int argc, char* argv[]){

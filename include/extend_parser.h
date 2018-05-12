@@ -1,4 +1,4 @@
-#include "sbares.h"
+
 
 std::string print_error_msg( const Parser::ResultType & result, std::string str )
 {
@@ -77,15 +77,16 @@ void parser_driver( sc::vector<std::string> & conjunto ){
         }
         else{
             std::cout << ">>> Expression SUCCESSFULLY parsed!\n";
-            std::cout << resolucao( express );
-        }
+        
 
-         // Recuperar a lista de tokens.
-        auto lista = type_parser.get_tokens();
-        std::cout << ">>> Tokens: { ";
-        std::copy( lista.begin(), lista.end(),
-                std::ostream_iterator< Token >(std::cout, " ") );
-        std::cout << "}\n";
+            // Recuperar a lista de tokens.
+            auto lista = type_parser.get_tokens();
+            //std::cout << ">>> Tokens: { ";
+            //std::copy( lista.begin(), lista.end(),
+            //        std::ostream_iterator< Token >(std::cout, " ") );
+            //std::cout << "}\n";
+            std::cout << resolucao( lista );
+        }
     }
 
     std::cout << "\n>>> Normal exiting...\n";
@@ -117,19 +118,29 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
             
             std::string error_name = print_error_msg( result, express );
             oFile << error_name << std::endl;
-            
+
         }
         else{
-            oFile << resolucao(express) << std::endl;
             std::cout << ">>> Expression SUCCESSFULLY parsed!\n";
-        }
+        
 
-         // Recuperar a lista de tokens.
-        auto lista = type_parser.get_tokens();
-        std::cout << ">>> Tokens: { ";
-        std::copy( lista.begin(), lista.end(),
-                std::ostream_iterator< Token >(std::cout, " ") );
-        std::cout << "}\n";
+            // Recuperar a lista de tokens.
+            std::vector<Token> lista = type_parser.get_tokens();
+            //std::cout << ">>> Tokens: { ";
+        
+            std::string teste;
+            auto f (lista.begin());
+            auto i(0);
+            while( f+i != lista.end() ){
+                teste += lista[i].value;
+                ++i;
+            }
+            //std::copy( lista.begin(), lista.end(),
+            //        std::ostream_iterator< Token >(teste, "+") );
+            int valor = resolucao(lista);
+            oFile << valor << std::endl;
+            std::cout << "}\n";
+        }
 
 
     }
