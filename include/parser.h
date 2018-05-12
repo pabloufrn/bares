@@ -58,9 +58,10 @@ class Parser
                     , at_col{ col_ }
             { /* empty */ }
 
-            bool operator==( ResultType tipo ){
+            bool operator==( ResultType & tipo ){
                 return type == tipo.type;
             }
+            
             bool operator!=( ResultType tipo ){
                 return type != tipo.type;
             }

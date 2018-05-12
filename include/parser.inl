@@ -115,34 +115,65 @@ Parser::ResultType Parser::expression()
 
     ResultType result( ResultType::OK );
 
-    auto begin_term( it_curr_symb );
+    auto last_term( it_curr_symb );
+
     skip_ws();
+    
+    result = term();
     // tentamos processar um termo.
-    if( term() == result)
-            return ResultType( ResultType::ILL_FORMED_INTEGER , std::distance( expr.begin(), it_curr_symb ) );
+    if(result.type != ResultType::OK)
+            return result;
+    
     skip_ws();
+    if(end_input())
+         return ResultType(ResultType::UNEXPECTED_END_OF_EXPRESSION, std::distance(expr.begin(), it_curr_symb));
+        
+    
     // enquanto der certo, tente processar outros termos.
-    
-        if( accept(Parser::terminal_symbol_t::TS_PLUS) )
+    while(!end_input())
+    {
+        
+        if(accept(Parser::terminal_symbol_t::TS_PLUS)){
+            std::string token_str = "+";
+            token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
+        }
+        else if(accept(Parser::terminal_symbol_t::TS_MINUS)){
+            std::string token_str = "-";
+            token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
+        }
+        else if(accept(Parser::terminal_symbol_t::TS_TIMES)){
+            std::string token_str = "*";
+            token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
+        }
+        else if(accept(Parser::terminal_symbol_t::TS_DIVIDED)){
+            std::string token_str = "/";
+            token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
+        }
+        else if(accept(Parser::terminal_symbol_t::TS_PERCENT)){
+            std::string token_str = "%";
+            token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
+        }
+        else if(accept(Parser::terminal_symbol_t::TS_POWER)){
+            std::string token_str = "^";
+            token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
+        }
+        else
+            if(*it_curr_symb == ' ')
+                return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), last_term)); // Erro, simbolo não aceito 
+            else
+                return ResultType(ResultType::EXTRANEOUS_SYMBOL, std::distance(expr.begin(), last_term)); // Erro, simbolo não aceito 
+            
+        
+        
+
+        result = term();
+        if( result.type != ResultType::OK)
             return result;
-        if( accept(Parser::terminal_symbol_t::TS_MINUS) )
-            return result;
-        if( accept(Parser::terminal_symbol_t::TS_TIMES) )
-            return result;
+        last_term = it_curr_symb;
         skip_ws();
-
-        std::cout << "TESTE!\n";
-        if( term() == result )
-            return ResultType( ResultType::ILL_FORMED_INTEGER , std::distance( expr.begin(), it_curr_symb ) );
-        skip_ws();
-    
-
-    
-    std::cout << "TESTE!\n";
-
-
+    }
+   
     return result;
-
 
 }
 
@@ -165,8 +196,17 @@ Parser::ResultType Parser::term()
     // Guarda o início do termo no input, para possíveis mensagens de erro.
     auto begin_term( it_curr_symb );
 
-    if( accept( Parser::terminal_symbol_t::TS_OPEN) && accept( Parser::terminal_symbol_t::TS_CLOSE)) return result; // <---- Fazer com que aceite o aberto apenas se aceitar o fechado.
-    
+    if( accept( Parser::terminal_symbol_t::TS_OPEN) ){
+        std::string token_str = "(";
+        token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS ) );
+        
+        expression();
+
+        token_str = ")";
+        token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS ) );
+        
+    } 
+
     // Processe um inteiro.
     result = integer();
 

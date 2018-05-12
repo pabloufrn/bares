@@ -1,14 +1,24 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
+#include <iomanip>
+#include <cassert>   // assert
+#include <cmath>     // pow
+#include <stdexcept> // std::runtime_error
 
+//=== Aliases
+using value_type = long int; //!< Type we operate on.
+using symbol = char; //!< A symbol in this implementation is just a char.
 using arq_entrada = std::ifstream;
 using arq_saida = std::ofstream;
 
 #include "../include/vector.h"
 #include "../include/stack.h"
-#include "../include/pilha.h"
+#include "../include/fila.h"
 #include "../include/imp_driver.h"
+#include "../include/parser.h"
+#include "../include/extend_parser.h"
 
 int main( int argc, char* argv[]){
 
@@ -24,7 +34,10 @@ int main( int argc, char* argv[]){
 	readFile(  entrada , conjunto );
 
 	if( argc == 3 ){
+		parser_driver_out(conjunto, argv[2]);
 		//outputFile( argv[2] );
+	} else{
+		parser_driver( conjunto );
 	}
 
 	return 0;
