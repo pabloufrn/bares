@@ -29,7 +29,7 @@ Extraneous symbol after valid expression found at column (0)!
 
 Ill formed integer at column (10)!
 
-0
-0
-400000
+Division by zero!
+Division by zero!
+Numeric overflow error!
 37

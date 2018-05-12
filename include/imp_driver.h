@@ -33,10 +33,3 @@ void readFile( std::string nomeArq , sc::vector<std::string> & conjunto ){
 
 }
 
-
-/*
- ---------- ARQUIVO DE SAÍDA --------
-
-void outputFile( std::string nomeArq ){
-
-}*/

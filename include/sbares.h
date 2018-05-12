@@ -102,7 +102,7 @@ value_type execute_operator( value_type v1, value_type v2, std::string op )
 	else if( op == "/"){
 		if ( v2 == 0 ){
 			std::cout << "Division by zero!\n";
-			return 0;
+			return Parser::ResultType::DIVISION_ZERO;
 		}
 		return v1/v2;
 		/*try{
@@ -115,7 +115,7 @@ value_type execute_operator( value_type v1, value_type v2, std::string op )
 	else if( op == "%"){
 		if ( v2 == 0 ) {
 			std::cout << "Division by zero!\n";
-			return 0;
+			return Parser::ResultType::DIVISION_ZERO;
 		}
 		return v1%v2;
 	}
@@ -147,6 +147,10 @@ int resolucao( std::vector<Token> & expression_ )
 	auto result = evaluate_postfix( postfix );
 	std::cout << ">>> Result is: " << result << std::endl;
 	std::cout << "\n>>> Normal exiting...\n";
+
+	if(result > 32767 || result < -32768 )
+		result = Parser::ResultType::NUMERIC_OVERFLOW;
+
 	return result;
 }
 

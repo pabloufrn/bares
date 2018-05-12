@@ -128,18 +128,23 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
             std::vector<Token> lista = type_parser.get_tokens();
             //std::cout << ">>> Tokens: { ";
         
-            std::string teste;
+            /*std::string teste;
             auto f (lista.begin());
             auto i(0);
             while( f+i != lista.end() ){
                 teste += lista[i].value;
                 ++i;
-            }
+            }*/
             //std::copy( lista.begin(), lista.end(),
             //        std::ostream_iterator< Token >(teste, "+") );
             int valor = resolucao(lista);
-            oFile << valor << std::endl;
-            std::cout << "}\n";
+            if( valor == Parser::ResultType::NUMERIC_OVERFLOW )
+                oFile << "Numeric overflow error!\n";
+            else if( valor == Parser::ResultType::DIVISION_ZERO)
+                oFile << "Division by zero!\n";
+            else
+                oFile << valor << std::endl;
+            //std::cout << "}\n";
         }
 
 
