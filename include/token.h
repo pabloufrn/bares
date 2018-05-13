@@ -15,23 +15,23 @@ struct Token
             PARENTHESIS_OPEN,         //!< A type representing "(".
             PARENTHESIS_CLOSE         //!< A type representing ")".
         };
-
+        
         std::string value; //!< The token value as a string.
         token_t type;      //!< The token type, which is either token_t::OPERAND or token_t::OPERATOR.
-
+        
         /// Construtor default.
         explicit Token( std::string value_="", token_t type_ = token_t::OPERAND )
-            : value( value_ )
-            , type( type_ )
+        : value( value_ )
+        , type( type_ )
         {/* empty */}
-
+        
         /// Just to help us debug the code.
         friend std::ostream & operator<<( std::ostream& os_, const Token & t_ )
         {
             std::string types[] = { "OPERAND", "OPERATOR", "PARENTHESIS_OPEN", "PARENTHESIS_CLOSE" };
-
+            
             os_ << "<" << t_.value << "," << types[(int)(t_.type)] << ">";
-
+            
             return os_;
         }
 };

@@ -43,18 +43,10 @@ void parser_driver( sc::vector<std::string> & conjunto ){
             print_error_msg( result );
         }
         else{
-//             std::cout << ">>> Expression SUCCESSFULLY parsed!\n";
-        
-
             // Recuperar a lista de tokens.
             auto lista = type_parser.get_tokens();
-            //std::cout << ">>> Tokens: { ";
-            //std::copy( lista.begin(), lista.end(),
-            //        std::ostream_iterator< Token >(std::cout, " ") );
-            //std::cout << "}\n";
-            
             try {
-                int result = resolucao( lista );
+                value_type result = resolucao( lista );
                 std::cout << result << std::endl;
             } catch(std::runtime_error e) {
                 std::cout << e.what() << std::endl;
@@ -68,7 +60,6 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
     arq_saida oFile;
     oFile.open(ofFile_name);
     
-
     if( oFile.fail()){
         std::cout << "Error! It wasn't possible to create the output file.\n";
         exit(1);
@@ -81,51 +72,28 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
     {
         // Fazer o parsing desta expressão.
         auto result = type_parser.parse( express );
-        // Preparar cabeçalho da saida.
-//         std::cout << std::setfill('=') << std::setw(80) << "\n";
-//         std::cout << std::setfill(' ') << ">>> Parsing \"" << express << "\"\n";
-        // Se deu pau, imprimir a mensagem adequada.
-
-//         std::cout << "Expressão : " << express << std::endl;
-
+        
         if ( result.type != Parser::ResultType::OK ){
-            
+
             std::string error_name = print_error_msg( result );
             oFile << error_name;
 
         }
         else{
-            std::cout << ">>> Expression SUCCESSFULLY parsed!\n";
-        
-
             // Recuperar a lista de tokens.
-            std::vector<Token> lista = type_parser.get_tokens();
-            //std::cout << ">>> Tokens: { ";
-        
-            /*std::string teste;
-            auto f (lista.begin());
-            auto i(0);
-            while( f+i != lista.end() ){
-                teste += lista[i].value;
-                ++i;
-            }*/
-            //std::copy( lista.begin(), lista.end(),
-            //        std::ostream_iterator< Token >(teste, "+") );
+            sc::vector<Token> lista = type_parser.get_tokens();
             
-             try {
+            try {
                 value_type result = resolucao( lista );
                 oFile << result << std::endl;
+                std::cout << result << std::endl;
             } catch(std::runtime_error e) {
                 std::cout << e.what() << std::endl;
+                oFile << e.what() << std::endl;
             }
-            
         }
-
-
     }
 
     oFile.close();
 
-
-//     std::cout << "\n>>> Normal exiting...\n";
 }

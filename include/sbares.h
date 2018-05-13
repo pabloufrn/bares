@@ -35,7 +35,7 @@ bool is_closing_scope( symbol_type s )
 { return s == Token::token_t::PARENTHESIS_CLOSE; }
 
 /// Converts a expression in infix notation to a corresponding profix representation.
-void infix_to_postfix( std::vector<Token> &, std::vector<Token> & );
+void infix_to_postfix( sc::vector<Token> &, sc::vector<Token> & );
 
 /// Converts a char (1-digit operand) into an integer.
 value_type char2integer( char c )
@@ -44,16 +44,18 @@ value_type char2integer( char c )
 /// Converts a string to an integer
 value_type string2int( std::string s )
 {	
-	value_type number = 0;
-	bool negative = false;
-	for( char & c : s )
-		if( c == '-' )
-			negative = true;
-		else
-			number = number * 10 + char2integer(c);
-	if(negative)
-		return -number;		
-	return number;
+    value_type number = 0;
+    bool negative = false;
+
+    for( char & c : s ){
+        if( c == '-' )
+            negative = true;
+        else
+            number = number * 10 + char2integer(c);
+    }
+    if(negative)
+        return -number;		
+    return number;
 }
 
 
@@ -63,75 +65,75 @@ bool is_right_association( std::string op )
 
 
 /// Change an infix expression into its corresponding postfix representation.
-value_type evaluate_postfix( std::vector<Token> & );
+value_type evaluate_postfix( sc::vector<Token> & );
 
 /// Returns the precedence value (number) associated with an operator.
 short get_precedence( std::string op )
 {
-	if(op == "^")
-		return 4;
-	else if( op == "*" || op == "/" ) 
-		return 3;
-	else if( op == "%" )
-		return 2;
-	else if( op == "+" || op == "-")
-		return 1;
-	else if( op == "(" )
-		return 0;
-	else
-		return -1;
+    if(op == "^")
+        return 4;
+    else if( op == "*" || op == "/" ) 
+        return 3;
+    else if( op == "%" )
+        return 2;
+    else if( op == "+" || op == "-")
+        return 1;
+    else if( op == "(" )
+        return 0;
+    else
+        return -1;
 }
 
 /// Determines whether the first operator is >= than the second operator.
 bool has_higher_or_eq_precedence( std::string op1 , std::string op2 )
 {
-	return ( get_precedence(op1) >= get_precedence(op2) ) ?
-		is_right_association( op1 ) ? false : true  :
-		false;
+    return ( get_precedence(op1) >= get_precedence(op2) ) ?
+    is_right_association( op1 ) ? false : true  :
+    false;
 }
 /// Execute the binary operator on two operands and return the result.
 value_type execute_operator( value_type v1, value_type v2, std::string op )
 {
     input_int_type result;
-	if( op == "^")
-		result = pow( v1, v2 );
-	else if( op == "*")
-		result = v1 * v2;
-	else if( op == "/"){
-		if ( v2 == 0 ){
-			throw std::runtime_error("Division by zero!");
-		}
-		result = v1/v2;
-	}
-	else if( op == "%"){
-		if ( v2 == 0 ) {
+    if( op == "^")
+        result = pow( v1, v2 );
+    else if( op == "*")
+        result = v1 * v2;
+    else if( op == "/"){
+        if ( v2 == 0 ){
             throw std::runtime_error("Division by zero!");
-		}
-		result = v1%v2;
-	}
-	else if( op == "+")
-		result = v1+v2;
-	else if( op == "-")
-		result = v1-v2;
+        }
+        result = v1/v2;
+    }
+    else if( op == "%"){
+        if ( v2 == 0 ) {
+            throw std::runtime_error("Division by zero!");
+        }
+        result = v1%v2;
+    }
+    else if( op == "+")
+        result = v1+v2;
+    else if( op == "-")
+        result = v1-v2;
     if( result < std::numeric_limits< value_type >::min() or \
         result > std::numeric_limits< value_type >::max()    )
         throw std::runtime_error("Numeric overflow error!");
     return result;
-        
+    
 }
 
-int resolucao( std::vector<Token> & expression_ )
+int resolucao( sc::vector<Token> & expression_ )
 {
-	std::vector< Token > postfix;
-
-	infix_to_postfix( expression_ , postfix);
+    sc::vector< Token > postfix;
     
-	auto result = evaluate_postfix( postfix );
+    infix_to_postfix( expression_ , postfix);
     
-	return result;
+    auto result = evaluate_postfix( postfix );
+    
+    return result;
 }
 
-void infix_to_postfix( std::vector< Token > & infix, std::vector<Token> & postfix )
+void infix_to_postfix( sc::vector< Token > & infix, sc::vector<Token> & postfix )
 {
     pl::stack< Token > s; // auxiliary data structure.
     
@@ -182,24 +184,24 @@ void infix_to_postfix( std::vector< Token > & infix, std::vector<Token> & postfi
     
 }
 
-value_type evaluate_postfix( std::vector<Token> & postfix )
+value_type evaluate_postfix( sc::vector<Token> & postfix )
 {
-	pl::stack< value_type > s;
-	// process operands
-	// precondition: the postfix is valid
-	for ( const auto & symbol : postfix)
-	{
-		if( is_operand( symbol.type ) ){
-			s.push ( string2int( symbol.value ) );
-		} else if(is_operator( symbol.type )){
-			auto op2 = s.top(); s.pop();
-			auto op1 = s.top(); s.pop();
-			// The result of the operation is pushed back into the stack.
-			s.push(execute_operator(op1, op2, symbol.value)) ;
-		} else{
-			assert(false);
-		}
-	}
-
-	return s.top();
+    pl::stack< value_type > s;
+    // process operands
+    // precondition: the postfix is valid
+    for ( const auto & symbol : postfix)
+    {
+        if( is_operand( symbol.type ) ){
+            s.push ( string2int( symbol.value ) );
+        } else if(is_operator( symbol.type )){
+            auto op2 = s.top(); s.pop();
+            auto op1 = s.top(); s.pop();
+            // The result of the operation is pushed back into the stack.
+            s.push(execute_operator(op1, op2, symbol.value)) ;
+        } else{
+            assert(false);
+        }
+    }
+    
+    return s.top();
 }
