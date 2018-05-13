@@ -20,15 +20,15 @@ The supported operations and scope delimiters are:
 
 # Compilation
 
-	If you are in a GNU/LINUX environment with make file available, you can use the commands
-	- make: to compile the file.
+If you are in a GNU/LINUX environment with make file available, you can use the commands
+- make: to compile the file.
 
-	- in case the make command isn't available, you can use g++ commands:  
+- in case the make command isn't available, you can use g++ commands:  
 	`g++ -Wall -std=c++11 src/driver_bares.cpp`
 
 # Execute
 
-	To this step you need to compile the code, if you didn't compile visit the 'Compilation' section.
+To this step you need to compile the code, if you didn't compile visit the 'Compilation' section.
 
 	- You can use ./exec in LINUX (using make to compile). 
 
