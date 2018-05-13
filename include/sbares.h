@@ -40,6 +40,10 @@ bool is_closing_scope( symbol_type s )
 /// Converte uma expressão na notação infix para uma profix.
 void infix_to_postfix( sc::vector<Token> &, sc::vector<Token> & );
 
+/// Converte um char (1-digito) em inteiro.
+value_type char2integer( char c )
+{ return c-'0'; }
+
 /// Converte uma string para inteiro.
 value_type string2int( std::string s )
 {	
