@@ -42,8 +42,8 @@ void parser_driver( sc::vector<std::string> & conjunto ){
         auto result = type_parser.parse( express );
         
         // Preparar cabeçalho da saida.
-        std::cout << std::setfill('=') << std::setw(80) << "\n";
-        std::cout << std::setfill(' ') << ">>> Parsing \"" << express << "\"\n";
+        //std::cout << std::setfill('=') << std::setw(80) << "\n";
+        //std::cout << std::setfill(' ') << ">>> Parsing \"" << express << "\"\n";
         
         // Se deu errado, imprimir a mensagem adequada.
         if ( result.type != Parser::ResultType::OK ){
