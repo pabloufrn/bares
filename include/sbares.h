@@ -21,27 +21,26 @@ using value_type = short int;            //!< Type we operate on.
 using symbol_type = Token::token_t;
 using input_int_type = long long int;   //!< The integer type that we read from the input (larger thatn the required int).
 
-// Simple helper functions that identify the incoming symbol.
+// Verifica se é um operado.
 bool is_operator( symbol_type s )
 { return s == Token::token_t::OPERATOR; }
 
+/// Vericica se é um operando.
 bool is_operand( symbol_type s )
 { return s == Token::token_t::OPERAND; }
 
+/// Verifica se é um parentese aberto.
 bool is_opening_scope( symbol_type s )
 { return s == Token::token_t::PARENTHESIS_OPEN; }
 
+/// Verifica se é um parentese fechando.
 bool is_closing_scope( symbol_type s )
 { return s == Token::token_t::PARENTHESIS_CLOSE; }
 
-/// Converts a expression in infix notation to a corresponding profix representation.
+/// Converte uma expressão na notação infix para uma profix.
 void infix_to_postfix( sc::vector<Token> &, sc::vector<Token> & );
 
-/// Converts a char (1-digit operand) into an integer.
-value_type char2integer( char c )
-{ return c-'0'; }
-
-/// Converts a string to an integer
+/// Converte uma string para inteiro.
 value_type string2int( std::string s )
 {	
     value_type number = 0;
@@ -59,15 +58,15 @@ value_type string2int( std::string s )
 }
 
 
-/// Check the operand's type of association.
+/// Verifica se tem mais de  um ^ seguido.
 bool is_right_association( std::string op )
 { return op == "^"; }
 
 
-/// Change an infix expression into its corresponding postfix representation.
+/// Modifica uma expressão infix para uma posfix.
 value_type evaluate_postfix( sc::vector<Token> & );
 
-/// Returns the precedence value (number) associated with an operator.
+/// Retorna um valor de precedência de cada operador.
 short get_precedence( std::string op )
 {
     if(op == "^")
@@ -84,14 +83,14 @@ short get_precedence( std::string op )
         return -1;
 }
 
-/// Determines whether the first operator is >= than the second operator.
+/// Determina qual é o primeiro e o segundo operador por comparação de maior ou igual.
 bool has_higher_or_eq_precedence( std::string op1 , std::string op2 )
 {
     return ( get_precedence(op1) >= get_precedence(op2) ) ?
     is_right_association( op1 ) ? false : true  :
     false;
 }
-/// Execute the binary operator on two operands and return the result.
+/// Executa a operação binária entre dois operandos retornando o resultado da operação.
 value_type execute_operator( value_type v1, value_type v2, std::string op )
 {
     input_int_type result;
@@ -136,49 +135,49 @@ int resolucao( sc::vector<Token> & expression_ )
     return result;
 }
 
+/// Converte a notação infix de uma expressão para a postfix.
 void infix_to_postfix( sc::vector< Token > & infix, sc::vector<Token> & postfix )
 {
-    pl::stack< Token > s; // auxiliary data structure.
+    pl::stack< Token > s; // Estrutura de dado auxiliar.
     
-    // Process each incoming symbol
+    // Processa cada symbolo.
     for( const auto & symbol : infix )
     {
         // operando entra de qualquer jeito
         if ( is_operand( symbol.type ) )
         {
-            postfix.push_back( symbol ); // send it straight to the output symbol queue.
+            postfix.push_back( symbol ); // envia o simbolo para a fila de simbolos de saída.
         }
         else if ( is_opening_scope( symbol.type ) )
         {
-            s.push( symbol ); // always goes into the "waiting room"
+            s.push( symbol ); // sempre coloca na "lista de espera".
         }
         else if ( is_closing_scope( symbol.type ) )
         {
-            // Pop out all pending operations.
+            // Remove todas as operações pendentes.
             while( not is_opening_scope( s.top().type ) )
             {
-                // remove operator and send it to the postfix expression.
+                // Remove o operador e envia para a expresão postfix.
                 postfix.push_back( s.top() );
                 s.pop();
             }
-            // Don't forget to get rid of the opening scope.
+            // Remove o parentese aberto de dentro da pilha.
             s.pop();
         }
         else if ( is_operator( symbol.type ) )
         {
-            // Send out the "waiting" operator with higher or equal precedence...
-            // unless they have equal precedence AND are right associated.
+            // Sai os operadores que estão esperando com precedencia maior ou igual.
             while ( not s.empty() and has_higher_or_eq_precedence( s.top().value, symbol.value ) )
             {
-                postfix.push_back(s.top()); // send it to the output
-                s.pop(); // get rid of the operator.
+                postfix.push_back(s.top()); // envia para a saída.
+                s.pop(); // remove o operaodr.
             }
-            // The incoming symbol always goes into the "waiting room".
+            // O simbolo sempre vai para a sala de espera caso seja menor.
             s.push( symbol ) ;
         }
     }
     
-    // Clear out any pending operators stored in the stack.
+    // Remove qualquer operador que esteja na fila.
     while ( not s.empty() )
     {
         postfix.push_back(s.top());
@@ -187,24 +186,31 @@ void infix_to_postfix( sc::vector< Token > & infix, sc::vector<Token> & postfix 
     
 }
 
+/// Realiza as operações.
+/// \param vetor com a expressão.
+/// \return retorna o resultado da expressão.
 value_type evaluate_postfix( sc::vector<Token> & postfix )
 {
     pl::stack< value_type > s;
-    // process operands
-    // precondition: the postfix is valid
+    // processamento dos operandos.
+    // precondição: a expressão postfix é válida.
     for ( const auto & symbol : postfix)
     {
+        /// Realiza verificação se é operando ou operador.
         if( is_operand( symbol.type ) ){
+            /// Insere na pilha o operando
             s.push ( string2int( symbol.value ) );
         } else if(is_operator( symbol.type )){
+            /// Armazena os valores do topo e remove eles da pilha.
             auto op2 = s.top(); s.pop();
             auto op1 = s.top(); s.pop();
-            // The result of the operation is pushed back into the stack.
+            // O resultado da operação é inserida de volta na pilha.
             s.push(execute_operator(op1, op2, symbol.value)) ;
         } else{
             assert(false);
         }
     }
     
+    /// Retorna o topo da pilha que é o resultado da expressão.
     return s.top();
 }

@@ -4,28 +4,28 @@
 #include <string>   // std::string
 #include <iostream> // std::ostream
 
-/// Represents a token.
+/// Representação de um token.
 struct Token
 {
     public:
         enum class token_t : int
         {
-            OPERAND = 0,        //!< A type representing numbers.
-            OPERATOR,           //!< A type representing  "+", "-", "*", "/", "%", "^".
-            PARENTHESIS_OPEN,         //!< A type representing "(".
-            PARENTHESIS_CLOSE         //!< A type representing ")".
+            OPERAND = 0,        //!< Tipo de representação numerica.
+            OPERATOR,           //!< Tipo de representação de "+", "-", "*", "/", "%", "^".
+            PARENTHESIS_OPEN,         //!< Representação do "(".
+            PARENTHESIS_CLOSE         //!< Representação do ")".
         };
         
-        std::string value; //!< The token value as a string.
-        token_t type;      //!< The token type, which is either token_t::OPERAND or token_t::OPERATOR.
+        std::string value; //!< O valor de um token como string.
+        token_t type;      //!< O tipode token que pode ser token_t::OPERAND, token_t::OPERATOR, token_t::PARENTHESIS_OPEN ou token_t::PARENTHESIS_CLOSE.
         
-        /// Construtor default.
+        /// Contrutor default.
         explicit Token( std::string value_="", token_t type_ = token_t::OPERAND )
         : value( value_ )
         , type( type_ )
-        {/* empty */}
+        {/* vazio */}
         
-        /// Just to help us debug the code.
+        /// Ajudar no debug.
         friend std::ostream & operator<<( std::ostream& os_, const Token & t_ )
         {
             std::string types[] = { "OPERAND", "OPERATOR", "PARENTHESIS_OPEN", "PARENTHESIS_CLOSE" };
