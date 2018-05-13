@@ -148,69 +148,57 @@ int resolucao( std::vector<Token> & expression_ )
 	std::cout << ">>> Result is: " << result << std::endl;
 	std::cout << "\n>>> Normal exiting...\n";
 
-	if(result > 32767 || result < -32768 )
-		result = Parser::ResultType::NUMERIC_OVERFLOW;
 
 	return result;
 }
 
 void infix_to_postfix( std::vector< Token > & infix, std::vector<Token> & postfix )
 {
-	pl::stack< Token > s; // auxiliary data structure.
-	//std::string postfix; // stores the postfix expression
-	bool start_operand = true; // if true next character is the beginning of a number
-	// Process each incoming symbol
-	for( const auto & c : infix )
-	{
-		if(start_operand)
-		{
-			postfix.push_back( c ); // stores whatever character it is.
-			start_operand = false; // the beginning of the number was stored already,
-		}
-		else if ( is_operand( c.type ) )
-			postfix.push_back( c ); // send it straight to the output symbol queue.
-		else if ( is_opening_scope( c.type ) )
-		{
-			s.push( c ); // always goes into the "waiting room"
-			start_operand = true;
-		}
-		else if ( is_closing_scope( c.type ) )
-		{
-			// Pop out all pending operations.
-			while( not is_opening_scope( s.top().type ) )
-			{
-				// remove operator and send it to the postfix expression.
-				postfix.push_back( s.top() );
-				s.pop();
-			}
-			// Don't forget to get rid of the opening scope.
-			s.pop();
-		}
-		else if ( is_operator( c.type ) )
-		{
-			// Send out the "waiting" operator with higher or equal precedence...
-			// unless they have equal precedence AND are right associated.
-			while ( not s.empty() and has_higher_or_eq_precedence( s.top().value, c.value ) )
-			{
-				postfix.push_back(s.top()); // send it to the output
-				s.pop(); // get rid of the operator.
-			}
-			// The incoming symbol always goes into the "waiting room".
-			s.push( c ) ;
-		}
-		else // white space or whatever
-		{
-			// Do nothing. Just ignore this...
-		}
-	}
-
-	// Clear out any pending operators stored in the stack.
-	while ( not s.empty() )
-	{
-		postfix.push_back(s.top());
-		s.pop();
-	}
-
+    pl::stack< Token > s; // auxiliary data structure.
+    
+    // Process each incoming symbol
+    for( const auto & symbol : infix )
+    {
+        // operando entra de qualquer jeito
+        if ( is_operand( symbol.type ) )
+            postfix.push_back( symbol ); // send it straight to the output symbol queue.
+            else if ( is_opening_scope( symbol.type ) )
+            {
+                s.push( symbol ); // always goes into the "waiting room"
+            }
+            else if ( is_closing_scope( symbol.type ) )
+            {
+                // Pop out all pending operations.
+                while( not is_opening_scope( s.top().type ) )
+                {
+                    // remove operator and send it to the postfix expression.
+                    postfix.push_back( s.top() );
+                    s.pop();
+                }
+                // Don't forget to get rid of the opening scope.
+                s.pop();
+            }
+            else if ( is_operator( symbol.type ) )
+            {
+                // Send out the "waiting" operator with higher or equal precedence...
+                // unless they have equal precedence AND are right associated.
+                while ( not s.empty() and has_higher_or_eq_precedence( s.top().value, symbol.value ) )
+                {
+                    postfix.push_back(s.top()); // send it to the output
+                    s.pop(); // get rid of the operator.
+                }
+                // The incoming symbol always goes into the "waiting room".
+                s.push( symbol ) ;
+            }
+    }
+    
+    // Clear out any pending operators stored in the stack.
+    while ( not s.empty() )
+    {
+        postfix.push_back(s.top());
+        s.pop();
+    }
+    
 }
 
 value_type evaluate_postfix( std::vector<Token> & postfix )

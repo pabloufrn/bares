@@ -85,7 +85,15 @@ void parser_driver( sc::vector<std::string> & conjunto ){
             //std::copy( lista.begin(), lista.end(),
             //        std::ostream_iterator< Token >(std::cout, " ") );
             //std::cout << "}\n";
-            std::cout << resolucao( lista );
+
+            int valor = resolucao( lista );
+
+            if(valor > 32767 || valor < -32768 ){
+                result.type = Parser::ResultType::NUMERIC_OVERFLOW;
+                std::string error_name = print_error_msg( result, express );
+            }
+            else
+                std::cout << valor;
         }
     }
 
@@ -138,10 +146,12 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
             //std::copy( lista.begin(), lista.end(),
             //        std::ostream_iterator< Token >(teste, "+") );
             int valor = resolucao(lista);
-            if( valor == Parser::ResultType::NUMERIC_OVERFLOW )
-                oFile << "Numeric overflow error!\n";
-            else if( valor == Parser::ResultType::DIVISION_ZERO)
-                oFile << "Division by zero!\n";
+            
+            if(valor > 32767 || valor < -32768 ){
+                result.type = Parser::ResultType::NUMERIC_OVERFLOW;
+                std::string error_name = print_error_msg( result, express );
+                oFile << error_name << std::endl;
+            }
             else
                 oFile << valor << std::endl;
             //std::cout << "}\n";
