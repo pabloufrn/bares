@@ -44,8 +44,6 @@ class Parser
                     ILL_FORMED_INTEGER,
                     MISSING_CLOSE,
                     UNEXPECTED_END_OF_EXPRESSION,
-                    DIVISION_ZERO,
-                    NUMERIC_OVERFLOW
             };
 
             //=== Members (public).

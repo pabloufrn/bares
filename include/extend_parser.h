@@ -42,12 +42,6 @@ std::string print_error_msg( const Parser::ResultType & result, std::string str 
             ss >> mensagem_error;
             std::cout << "Unexpected end of input at column (" << result.at_col << ")!\n";
             return  "Unexpected end of input at column (" + mensagem_error + ")!\n";
-        case Parser::ResultType::DIVISION_ZERO:
-            std::cout << "Division by zero!\n";
-            return  "Division by zero!\n";
-        case Parser::ResultType::NUMERIC_OVERFLOW:
-            std::cout << "Numeric overflow error!\n";
-            return  "Numeric overflow error!\n";
         default:
             std::cout << "Unhandled error found!\n";
             return "Unhandled error found!\n";
@@ -76,7 +70,7 @@ void parser_driver( sc::vector<std::string> & conjunto ){
             std::string error_name = print_error_msg( result, express );
         }
         else{
-            std::cout << ">>> Expression SUCCESSFULLY parsed!\n";
+//             std::cout << ">>> Expression SUCCESSFULLY parsed!\n";
         
 
             // Recuperar a lista de tokens.
@@ -85,19 +79,15 @@ void parser_driver( sc::vector<std::string> & conjunto ){
             //std::copy( lista.begin(), lista.end(),
             //        std::ostream_iterator< Token >(std::cout, " ") );
             //std::cout << "}\n";
-
-            int valor = resolucao( lista );
-
-            if(valor > 32767 || valor < -32768 ){
-                result.type = Parser::ResultType::NUMERIC_OVERFLOW;
-                std::string error_name = print_error_msg( result, express );
+            
+            try {
+                int result = resolucao( lista );
+                std::cout << result << std::endl;
+            } catch(std::runtime_error e) {
+                std::cout << e.what() << std::endl;
             }
-            else
-                std::cout << valor;
         }
     }
-
-    std::cout << "\n>>> Normal exiting...\n";
 }
 
 void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_name ){
@@ -119,11 +109,11 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
         // Fazer o parsing desta expressão.
         auto result = type_parser.parse( express );
         // Preparar cabeçalho da saida.
-        std::cout << std::setfill('=') << std::setw(80) << "\n";
-        std::cout << std::setfill(' ') << ">>> Parsing \"" << express << "\"\n";
+//         std::cout << std::setfill('=') << std::setw(80) << "\n";
+//         std::cout << std::setfill(' ') << ">>> Parsing \"" << express << "\"\n";
         // Se deu pau, imprimir a mensagem adequada.
 
-        std::cout << "Expressão : " << express << std::endl;
+//         std::cout << "Expressão : " << express << std::endl;
 
         if ( result.type != Parser::ResultType::OK ){
             
@@ -148,21 +138,14 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
             }*/
             //std::copy( lista.begin(), lista.end(),
             //        std::ostream_iterator< Token >(teste, "+") );
-            int valor = resolucao(lista);
             
-            if(valor == 32768){
-                result.type = Parser::ResultType::DIVISION_ZERO;
-                std::string error_name = print_error_msg( result, express );
-                oFile << error_name;
+             try {
+                value_type result = resolucao( lista );
+                oFile << result << std::endl;
+            } catch(std::runtime_error e) {
+                std::cout << e.what() << std::endl;
             }
-            else if(valor > 32767 || valor < -32768 ){
-                result.type = Parser::ResultType::NUMERIC_OVERFLOW;
-                std::string error_name = print_error_msg( result, express );
-                oFile << error_name;
-            }
-            else
-                oFile << valor << std::endl;
-            //std::cout << "}\n";
+            
         }
 
 
@@ -171,5 +154,5 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
     oFile.close();
 
 
-    std::cout << "\n>>> Normal exiting...\n";
+//     std::cout << "\n>>> Normal exiting...\n";
 }

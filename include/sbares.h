@@ -18,8 +18,9 @@
 #include <queue>
 
 //=== Aliases
-using value_type = long int; //!< Type we operate on.
+using value_type = short int;            //!< Type we operate on.
 using symbol = Token::token_t;
+using input_int_type = long long int;   //!< The integer type that we read from the input (larger thatn the required int).
 
 // Simple helper functions that identify the incoming symbol.
 bool is_operator( symbol s )
@@ -95,37 +96,32 @@ bool has_higher_or_eq_precedence( std::string op1 , std::string op2 )
 /// Execute the binary operator on two operands and return the result.
 value_type execute_operator( value_type v1, value_type v2, std::string op )
 {
+    input_int_type result;
 	if( op == "^")
-		return pow( v1, v2 );
+		result = pow( v1, v2 );
 	else if( op == "*")
-		return v1 * v2;
+		result = v1 * v2;
 	else if( op == "/"){
 		if ( v2 == 0 ){
-			std::cout << "Division by zero!\n";
-			break;
-			return 32768;
+			throw std::runtime_error("Division by zero!");
 		}
-		return v1/v2;
-		/*try{
-			int result = v1/v2;
-			return result;
-		} catch( std::runtime_error() ){
-			std::cout << "Division by zero!"
-		}*/
+		result = v1/v2;
 	}
 	else if( op == "%"){
 		if ( v2 == 0 ) {
-			std::cout << "Division by zero!\n";
-			return 32768;
+            throw std::runtime_error("Division by zero!");
 		}
-		return v1%v2;
+		result = v1%v2;
 	}
 	else if( op == "+")
-		return v1+v2;
+		result = v1+v2;
 	else if( op == "-")
-		return v1-v2;
-	else
-		throw std::runtime_error("Invalid operator!");
+		result = v1-v2;
+    if( result < std::numeric_limits< value_type >::min() or \
+        result > std::numeric_limits< value_type >::max()    )
+        throw std::runtime_error("Numeric overflow error!");
+    return result;
+        
 }
 
 int resolucao( std::vector<Token> & expression_ )
@@ -133,21 +129,22 @@ int resolucao( std::vector<Token> & expression_ )
 	std::vector< Token > postfix;
 
 	infix_to_postfix( expression_ , postfix);
-	std::cout << "<<< Input (infix)      = ";
-	for( auto i(0u); i < expression_.size() ; ++i ){
-		std::cout << expression_[i].value;
-	}
-	std::cout << std::endl;
+// 	std::cout << "<<< Input (infix)      = ";
+// 	for( auto i(0u); i < expression_.size() ; ++i ){
+// 		std::cout << expression_[i].value;
+// 	}
+// 	std::cout << std::endl;
 
-	std::cout << "<<< Output (postfix)      = ";
-	for( auto i(0u); i < postfix.size() ; ++i ){
-		std::cout << postfix[i].value;
-	}
-	std::cout << std::endl;
-
+// 	std::cout << "<<< Output (postfix)      = ";
+// 	for( auto i(0u); i < postfix.size() ; ++i ){
+// 		std::cout << postfix[i].value;
+// 	}
+// 	std::cout << std::endl;
+    
 	auto result = evaluate_postfix( postfix );
-	std::cout << ">>> Result is: " << result << std::endl;
-	std::cout << "\n>>> Normal exiting...\n";
+    
+// 	std::cout << ">>> Result is: " << result << std::endl;
+// 	std::cout << "\n>>> Normal exiting...\n";
 
 
 	return result;

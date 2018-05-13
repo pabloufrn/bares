@@ -8,7 +8,6 @@
 #include <stdexcept> // std::runtime_error
 
 //=== Aliases
-using value_type = long int; //!< Type we operate on.
 using arq_entrada = std::ifstream;
 using arq_saida = std::ofstream;
 
