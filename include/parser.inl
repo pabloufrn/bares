@@ -123,11 +123,9 @@ Parser::ResultType Parser::expression()
     // tentamos processar um termo.
     if(result.type != ResultType::OK)
             return result;
-    
     skip_ws();
     if(end_input())
-         return ResultType(ResultType::UNEXPECTED_END_OF_EXPRESSION, std::distance(expr.begin(), it_curr_symb) + 1);
-        
+        return result;
     
     // enquanto der certo, tente processar outros termos.
     while(!end_input())
