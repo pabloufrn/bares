@@ -150,10 +150,15 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
             //        std::ostream_iterator< Token >(teste, "+") );
             int valor = resolucao(lista);
             
-            if(valor > 32767 || valor < -32768 ){
+            if(valor == 32768){
+                result.type = Parser::ResultType::DIVISION_ZERO;
+                std::string error_name = print_error_msg( result, express );
+                oFile << error_name;
+            }
+            else if(valor > 32767 || valor < -32768 ){
                 result.type = Parser::ResultType::NUMERIC_OVERFLOW;
                 std::string error_name = print_error_msg( result, express );
-                oFile << error_name << std::endl;
+                oFile << error_name;
             }
             else
                 oFile << valor << std::endl;
