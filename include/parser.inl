@@ -114,9 +114,7 @@ Parser::ResultType Parser::expression()
 {
 
     ResultType result( ResultType::OK );
-
-    auto last_term( it_curr_symb );
-
+    
     skip_ws();
     
     result = term();
@@ -126,12 +124,13 @@ Parser::ResultType Parser::expression()
     skip_ws();
     if(end_input())
         return result;
-    
+    // iterador usado dentro do while para guardar coluna do erro
+    std::string::iterator begin_term;
     // enquanto der certo, tente processar outros termos.
     while(!end_input())
     {
         skip_ws();
-        last_term = it_curr_symb;
+        begin_term = it_curr_symb;
         if(accept(Parser::terminal_symbol_t::TS_PLUS)){
             std::string token_str = "+";
             token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
@@ -159,19 +158,17 @@ Parser::ResultType Parser::expression()
         else
             if(peek(Parser::terminal_symbol_t::TS_CLOSE))
                 return ResultType(ResultType::OK);
-            else if(*it_curr_symb == ' ')
-                return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), last_term) + 1); // Erro, termo faltante 
+            else if(peek(Parser::terminal_symbol_t::TS_WS) or peek(Parser::terminal_symbol_t::TS_TAB))
+                return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), begin_term) + 1); // Erro, termo faltante 
             else
-                return ResultType(ResultType::EXTRANEOUS_SYMBOL, std::distance(expr.begin(), last_term) + 1); // Erro, simbolo não aceito 
-            
+                return ResultType(ResultType::EXTRANEOUS_SYMBOL, std::distance(expr.begin(), begin_term) + 1); // Erro, simbolo não aceito 
         skip_ws();
-        last_term = it_curr_symb;
+        begin_term = it_curr_symb;
         if(end_input())
-            return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), last_term) + 1);
+            return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), begin_term) + 1);
         result = term();
         if( result.type != ResultType::OK)
             return result;
-        last_term = it_curr_symb;
     }
    
     return result;
@@ -191,11 +188,11 @@ Parser::ResultType Parser::expression()
  */
 Parser::ResultType Parser::term()
 {
-
     ResultType result( ResultType::OK );
     skip_ws();
-    auto begin_term(it_curr_symb);
+    
     // Guarda o início do termo no input, para possíveis mensagens de erro.
+    auto begin_term(it_curr_symb);
   
     if( accept( Parser::terminal_symbol_t::TS_OPEN) ){
         std::string token_str = "(";
@@ -203,15 +200,16 @@ Parser::ResultType Parser::term()
         
         skip_ws();
         result = expression();
-        
         if(result.type != ResultType::OK)
             return result;
+        
         skip_ws();
         if( accept( Parser::terminal_symbol_t::TS_CLOSE) ){
             std::string token_str = ")";
             token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS_CLOSE ) );
-        } else
+        } else{
             result = ResultType(ResultType::MISSING_CLOSE, distance(expr.begin(), it_curr_symb) + 1);
+        }
     
         return result;
 
@@ -266,9 +264,8 @@ Parser::ResultType Parser::integer()
     try { token_int = stoll( token_str ); }
     catch( const std::invalid_argument & e )
     {
-        // Opa se não é inteiro válido, iremos comunicar para nosso termo
-        return ResultType( ResultType::ILL_FORMED_INTEGER, 
-        std::distance( expr.begin(), begin_token ) + 1);
+        // Opa, se não é inteiro válido, iremos comunicar para nosso termo
+        return ResultType( ResultType::ILL_FORMED_INTEGER, std::distance( expr.begin(), begin_token ) + 1);
     }
     
     // Recebemos um inteiro válido, resta saber se está dentro da faixa.

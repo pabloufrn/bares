@@ -10,7 +10,6 @@
  */
 
 #include <iostream>  // cout, endl
-//#include <stack>     // stack
 #include <string>    // string
 #include <cassert>   // assert
 #include <cmath>     // pow
@@ -19,24 +18,22 @@
 
 //=== Aliases
 using value_type = short int;            //!< Type we operate on.
-using symbol = Token::token_t;
+using symbol_type = Token::token_t;
 using input_int_type = long long int;   //!< The integer type that we read from the input (larger thatn the required int).
 
 // Simple helper functions that identify the incoming symbol.
-bool is_operator( symbol s )
+bool is_operator( symbol_type s )
 { return s == Token::token_t::OPERATOR; }
 
-bool is_operand( symbol s )
+bool is_operand( symbol_type s )
 { return s == Token::token_t::OPERAND; }
 
-bool is_opening_scope( symbol s )
+bool is_opening_scope( symbol_type s )
 { return s == Token::token_t::PARENTHESIS_OPEN; }
 
-bool is_closing_scope( symbol s )
+bool is_closing_scope( symbol_type s )
 { return s == Token::token_t::PARENTHESIS_CLOSE; }
 
-bool is_splitter( std::string s )
-{ return s == " " ; }
 /// Converts a expression in infix notation to a corresponding profix representation.
 void infix_to_postfix( std::vector<Token> &, std::vector<Token> & );
 
@@ -91,7 +88,6 @@ bool has_higher_or_eq_precedence( std::string op1 , std::string op2 )
 	return ( get_precedence(op1) >= get_precedence(op2) ) ?
 		is_right_association( op1 ) ? false : true  :
 		false;
-
 }
 /// Execute the binary operator on two operands and return the result.
 value_type execute_operator( value_type v1, value_type v2, std::string op )
@@ -129,24 +125,9 @@ int resolucao( std::vector<Token> & expression_ )
 	std::vector< Token > postfix;
 
 	infix_to_postfix( expression_ , postfix);
-// 	std::cout << "<<< Input (infix)      = ";
-// 	for( auto i(0u); i < expression_.size() ; ++i ){
-// 		std::cout << expression_[i].value;
-// 	}
-// 	std::cout << std::endl;
-
-// 	std::cout << "<<< Output (postfix)      = ";
-// 	for( auto i(0u); i < postfix.size() ; ++i ){
-// 		std::cout << postfix[i].value;
-// 	}
-// 	std::cout << std::endl;
     
 	auto result = evaluate_postfix( postfix );
     
-// 	std::cout << ">>> Result is: " << result << std::endl;
-// 	std::cout << "\n>>> Normal exiting...\n";
-
-
 	return result;
 }
 
@@ -159,35 +140,37 @@ void infix_to_postfix( std::vector< Token > & infix, std::vector<Token> & postfi
     {
         // operando entra de qualquer jeito
         if ( is_operand( symbol.type ) )
+        {
             postfix.push_back( symbol ); // send it straight to the output symbol queue.
-            else if ( is_opening_scope( symbol.type ) )
+        }
+        else if ( is_opening_scope( symbol.type ) )
+        {
+            s.push( symbol ); // always goes into the "waiting room"
+        }
+        else if ( is_closing_scope( symbol.type ) )
+        {
+            // Pop out all pending operations.
+            while( not is_opening_scope( s.top().type ) )
             {
-                s.push( symbol ); // always goes into the "waiting room"
-            }
-            else if ( is_closing_scope( symbol.type ) )
-            {
-                // Pop out all pending operations.
-                while( not is_opening_scope( s.top().type ) )
-                {
-                    // remove operator and send it to the postfix expression.
-                    postfix.push_back( s.top() );
-                    s.pop();
-                }
-                // Don't forget to get rid of the opening scope.
+                // remove operator and send it to the postfix expression.
+                postfix.push_back( s.top() );
                 s.pop();
             }
-            else if ( is_operator( symbol.type ) )
+            // Don't forget to get rid of the opening scope.
+            s.pop();
+        }
+        else if ( is_operator( symbol.type ) )
+        {
+            // Send out the "waiting" operator with higher or equal precedence...
+            // unless they have equal precedence AND are right associated.
+            while ( not s.empty() and has_higher_or_eq_precedence( s.top().value, symbol.value ) )
             {
-                // Send out the "waiting" operator with higher or equal precedence...
-                // unless they have equal precedence AND are right associated.
-                while ( not s.empty() and has_higher_or_eq_precedence( s.top().value, symbol.value ) )
-                {
-                    postfix.push_back(s.top()); // send it to the output
-                    s.pop(); // get rid of the operator.
-                }
-                // The incoming symbol always goes into the "waiting room".
-                s.push( symbol ) ;
+                postfix.push_back(s.top()); // send it to the output
+                s.pop(); // get rid of the operator.
             }
+            // The incoming symbol always goes into the "waiting room".
+            s.push( symbol ) ;
+        }
     }
     
     // Clear out any pending operators stored in the stack.
@@ -201,19 +184,18 @@ void infix_to_postfix( std::vector< Token > & infix, std::vector<Token> & postfi
 
 value_type evaluate_postfix( std::vector<Token> & postfix )
 {
-
 	pl::stack< value_type > s;
 	// process operands
 	// precondition: the postfix is valid
-	for ( const auto & c : postfix)
+	for ( const auto & symbol : postfix)
 	{
-		if( is_operand( c.type ) ){
-			s.push ( string2int( c.value ) );
-		} else if(is_operator( c.type )){
+		if( is_operand( symbol.type ) ){
+			s.push ( string2int( symbol.value ) );
+		} else if(is_operator( symbol.type )){
 			auto op2 = s.top(); s.pop();
 			auto op1 = s.top(); s.pop();
 			// The result of the operation is pushed back into the stack.
-			s.push(execute_operator(op1, op2, c.value)) ;
+			s.push(execute_operator(op1, op2, symbol.value)) ;
 		} else{
 			assert(false);
 		}
