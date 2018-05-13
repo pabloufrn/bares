@@ -122,10 +122,13 @@ void parser_driver_out( sc::vector<std::string> & conjunto , std::string ofFile_
         std::cout << std::setfill('=') << std::setw(80) << "\n";
         std::cout << std::setfill(' ') << ">>> Parsing \"" << express << "\"\n";
         // Se deu pau, imprimir a mensagem adequada.
+
+        std::cout << "Expressão : " << express << std::endl;
+
         if ( result.type != Parser::ResultType::OK ){
             
             std::string error_name = print_error_msg( result, express );
-            oFile << error_name << std::endl;
+            oFile << error_name;
 
         }
         else{
