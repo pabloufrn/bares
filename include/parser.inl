@@ -126,13 +126,14 @@ Parser::ResultType Parser::expression()
     
     skip_ws();
     if(end_input())
-         return ResultType(ResultType::UNEXPECTED_END_OF_EXPRESSION, std::distance(expr.begin(), it_curr_symb));
+         return ResultType(ResultType::UNEXPECTED_END_OF_EXPRESSION, std::distance(expr.begin(), it_curr_symb) + 1);
         
     
     // enquanto der certo, tente processar outros termos.
     while(!end_input())
     {
         skip_ws();
+        last_term = it_curr_symb;
         if(accept(Parser::terminal_symbol_t::TS_PLUS)){
             std::string token_str = "+";
             token_list.push_back( Token( token_str, Token::token_t::OPERATOR ) );
@@ -161,13 +162,14 @@ Parser::ResultType Parser::expression()
             if(peek(Parser::terminal_symbol_t::TS_CLOSE))
                 return ResultType(ResultType::OK);
             else if(*it_curr_symb == ' ')
-                return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), last_term)); // Erro, termo faltante 
+                return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), last_term) + 1); // Erro, termo faltante 
             else
-                return ResultType(ResultType::EXTRANEOUS_SYMBOL, std::distance(expr.begin(), last_term)); // Erro, simbolo não aceito 
+                return ResultType(ResultType::EXTRANEOUS_SYMBOL, std::distance(expr.begin(), last_term) + 1); // Erro, simbolo não aceito 
             
         skip_ws();
+        last_term = it_curr_symb;
         if(end_input())
-            return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), it_curr_symb) + 1);
+            return ResultType(ResultType::MISSING_TERM, std::distance(expr.begin(), last_term) + 1);
         result = term();
         if( result.type != ResultType::OK)
             return result;
@@ -210,7 +212,8 @@ Parser::ResultType Parser::term()
         if( accept( Parser::terminal_symbol_t::TS_CLOSE) ){
             std::string token_str = ")";
             token_list.push_back( Token( token_str, Token::token_t::PARENTHESIS_CLOSE ) );
-        }
+        } else
+            result = ResultType(ResultType::MISSING_CLOSE, distance(expr.begin(), it_curr_symb) + 1);
     
         return result;
 
@@ -267,7 +270,7 @@ Parser::ResultType Parser::integer()
     {
         // Opa se não é inteiro válido, iremos comunicar para nosso termo
         return ResultType( ResultType::ILL_FORMED_INTEGER, 
-        std::distance( expr.begin(), begin_token ) );
+        std::distance( expr.begin(), begin_token ) + 1);
     }
     
     // Recebemos um inteiro válido, resta saber se está dentro da faixa.
@@ -276,7 +279,7 @@ Parser::ResultType Parser::integer()
     {
         // Fora da faixa, reportar erro.
         return ResultType( ResultType::INTEGER_OUT_OF_RANGE, 
-                           std::distance( expr.begin(), begin_token ) );
+                           std::distance( expr.begin(), begin_token ) + 1 );
     }
     // Coloca o novo token na nossa lista de tokens.
     token_list.emplace_back( Token( token_str, Token::token_t::OPERAND ) );
@@ -298,7 +301,8 @@ Parser::ResultType Parser::natural_number()
 {
     // Tem que vir um número que não seja zero! (de acordo com a definição), senão é erro.
     if( not digit_excl_zero() )
-        return ResultType( ResultType::ILL_FORMED_INTEGER , std::distance( expr.begin(), it_curr_symb ) );
+        return ResultType( ResultType::ILL_FORMED_INTEGER , std::distance( expr.begin(), it_curr_symb ) + 1 );
+        // a distancia do comeco eh a posicao do it_curr_symb começando de zero
     
     // Cosumir os demais dígitos, se existirem...
     while( digit() ) /* empty */;
@@ -362,7 +366,7 @@ Parser::ResultType  Parser::parse( std::string e_ )
     if ( end_input() ) // Premature end?
     {
         result =  ResultType( ResultType::UNEXPECTED_END_OF_EXPRESSION,
-                std::distance( expr.begin(), it_curr_symb ) );
+                std::distance( expr.begin(), it_curr_symb )  + 1);
     }
     else
     {
@@ -377,7 +381,7 @@ Parser::ResultType  Parser::parse( std::string e_ )
             skip_ws(); // Vamos "consumir" os espaços em branco, se existirem....
             if ( not end_input() ) // Se estiver tudo ok, deveríamos estar no final da string.
             {
-                return ResultType( ResultType::EXTRANEOUS_SYMBOL, std::distance( expr.begin(), it_curr_symb ) );
+                return ResultType( ResultType::EXTRANEOUS_SYMBOL, std::distance( expr.begin(), it_curr_symb ) + 1);
             }
         }
     }
