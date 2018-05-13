@@ -122,6 +122,9 @@ value_type execute_operator( value_type v1, value_type v2, std::string op )
     
 }
 
+/// Realiza as operações.
+/// \param expressão.
+/// \return Retorna o resultado da expressão.
 int resolucao( sc::vector<Token> & expression_ )
 {
     sc::vector< Token > postfix;

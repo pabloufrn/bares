@@ -8,6 +8,8 @@ namespace st{
 
 	template < typename T >
 	class queue{
+
+		/// Álias
 		using size_type 	= unsigned long;
 		using value_type 	= T;
 		using reference 	= T&;
@@ -19,13 +21,14 @@ namespace st{
 		size_t m_capacity;			//!< quantidade física ( total ).
 
 	public:
+		/// Construtor da fila.
 		queue( void ){
 			m_storage = new T[1];
 			m_end = 0;
 			m_capacity = 0;
 		}
 
-		/// insere um elemento na retaguarda da fila.
+		/// Insere um elemento na retaguarda da fila.
 		void enqueue( const reference & v ){
 
 			if( m_end == m_capacity ){
@@ -44,7 +47,7 @@ namespace st{
 			++m_end;
 		}
 
-		/// remove o elemento da frente da fila.
+		/// Remove o elemento da frente da fila.
 		void dequeue( void ){
 
 			if( m_end == 0 )
@@ -57,19 +60,20 @@ namespace st{
 
 		}
 		
-		/// retorna, sem remover, o elemento da frente da fila.
+		/// Retorna, sem remover, o elemento da frente da fila.
 		value_type front( void ){
 
 			return *m_storage;
 
 		}
 		
-		/// retorna, sem remover, o elemento da retaguarda da fila.
+		/// Retorna, sem remover, o elemento da retaguarda da fila.
 		value_type back( void )
 		{
 			return *(m_storage+m_end-1);
 		}
 
+		/// Retornar o tamanho da fila.
 		value_type size(){
 			return m_end;
 		}

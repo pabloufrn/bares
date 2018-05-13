@@ -29,15 +29,15 @@
 class Parser
 {
     public:
-        /// This struct represents the result of the parsing operation.
+        /// Este struct representa o resultado da operação de parsing (transformação).
         struct ResultType
         {
             //=== Alias
-            typedef std::ptrdiff_t size_type; //!< Used for column location determination.
+            typedef std::ptrdiff_t size_type; //!< Usado para a localização da coluna determinada.
             
-            /// List of possible syntax errors.
+            /// Lista de possíveis erros sintáticos.
             enum code_t {
-                OK = 0, //!< Expression successfuly parsed.
+                OK = 0, //!< Expressão está correta.
                 INTEGER_OUT_OF_RANGE,
                 MISSING_TERM,
                 EXTRANEOUS_SYMBOL,
@@ -46,83 +46,85 @@ class Parser
                 UNEXPECTED_END_OF_EXPRESSION,
             };
             
-            //=== Members (public).
-            code_t type;      //!< Error code.
-            size_type at_col; //!< Stores the column number where the error happened.
+            //=== Membros (publicos).
+            code_t type;      //!< Código de erro.
+            size_type at_col; //!< Armazena em qual coluna ocorreu o erro.
             
-            /// Default contructor.
+            /// Contrutor default.
             explicit ResultType( code_t type_=OK , size_type col_=0u )
             : type{ type_ }
             , at_col{ col_ }
-            { /* empty */ }
+            { /* vazio */ }
             
+            /// Sobrecarga do operador de igualdade.
             bool operator==( ResultType & tipo ){
                 return type == tipo.type;
             }
             
+            /// Sobrecarga do operador de diferença.
             bool operator!=( ResultType tipo ){
                 return type != tipo.type;
             }
         };
         
         //==== Aliases
-        typedef short int required_int_type; //!< The interger type we accept as valid for an expression.
-        typedef long long int input_int_type; //!< The integer type that we read from the input (larger thatn the required int).
+        typedef short int required_int_type; //!< O tipo interiro que nós aceitamos como válida para uma expressão.
+        typedef long long int input_int_type; //!< O tipo interiro que lê para a entrada (maior do que o int).
         
-        //==== Public interface
-        /// Parses and tokenizes an input source expression.  Return the result as a struct.
+        //==== Interface pública.
+        /// Parses e tokenizes  de entrada do código da expressão. Retorna o resultado como um struct.
         ResultType parse( std::string e_ );
-        /// Retrieves the list of tokens created during the partins process.
+        /// Recupera a lista de tokens criada durante o processo de parsing.
         sc::vector< Token > get_tokens( void ) const;
         
-        //==== Special methods
-        /// Default constructor
+        //==== Métodos especiais.
+        /// Contrutor default.
         Parser() = default;
-        /// Default destructor
+        /// Descontrutor default.
         ~Parser() = default;
-        /// Turn off copy constructor. We do not need it.
+        /// Desliga o construtor de cópia, já que não precisaremos dele.
         Parser( const Parser & ) = delete;  // Construtor cópia.
-        /// Turn off assignment operator.
+        /// Desliga o operador de atribuição.
         Parser & operator=( const Parser & ) = delete; // Atribuição.
         
         
         
     private:
-        // Terminal symbols table
-        enum class terminal_symbol_t{  // The symbols:-
-            TS_PLUS,	        //!< code for "+"
-            TS_MINUS,	        //!< code for "-"
-            TS_TIMES,           //!< code for "*"
-            TS_DIVIDED,         //!< code for "/"
-            TS_PERCENT,         //!< code for "%"
-            TS_POWER,           //!< code for "^"
-            TS_OPEN,            //!< code for "("
-            TS_CLOSE,           //!< code for ")"
-            TS_ZERO,            //!< code for "0"
-            TS_NON_ZERO_DIGIT,  //!< code for digits "1"->"9"
-            TS_WS,              //!< code for a white-space
-            TS_TAB,             //!< code for tab
-            TS_EOS,             //!< code for "End Of String"
-            TS_INVALID	        //!< invalid token
+        // Terminal de simbolos.
+        enum class terminal_symbol_t{  // Os simbolos:-
+            TS_PLUS,	        //!< código para "+"
+            TS_MINUS,	        //!< código para "-"
+            TS_TIMES,           //!< código para "*"
+            TS_DIVIDED,         //!< código para "/"
+            TS_PERCENT,         //!< código para "%"
+            TS_POWER,           //!< código para "^"
+            TS_OPEN,            //!< código para "("
+            TS_CLOSE,           //!< código para ")"
+            TS_ZERO,            //!< código para "0"
+            TS_NON_ZERO_DIGIT,  //!< código para os digitos "1"->"9"
+            TS_WS,              //!< código para o espaço em branco
+            TS_TAB,             //!< código para tab
+            TS_EOS,             //!< código para o fim da string
+            TS_INVALID	        //!< token invalido
         };
         
-        //==== Private members.
-        std::string expr;                //!< The source expression to be parsed
-        std::string::iterator it_curr_symb; //!< Pointer to the current char inside the expression.
-        sc::vector< Token > token_list; //!< Resulting list of tokens extracted from the expression.
+        //==== Membros privados.
+        std::string expr;                //!< Expressão para ser "parsed"
+        std::string::iterator it_curr_symb; //!< Ponteiro para o char padrão dentro da expressão.
+        sc::vector< Token > token_list; //!< Lista de resultado da lista de token extraidas da expressão.
         
         terminal_symbol_t lexer( char c_ ) const;
         //std::string token_str( terminal_symbol_t s_ ) const;
         
-        //=== Support methods.
-        void next_symbol( void );                // Advances iterator to the next char in the expression.
-        bool peek( terminal_symbol_t c_ ) const; // Peeks the current character.
-        bool accept( terminal_symbol_t c_ );     // Tries to accept the requested symbol.
-        bool expect( terminal_symbol_t c_ );        // Skips any WS/Tab and tries to accept the requested symbol.
-        void skip_ws( void );                    // Skips any WS/Tab ans stops at the next character.
-        bool end_input( void ) const;            // Checks whether we reached the end of the expression string.
+        //=== Métodos suportados.
+        void next_symbol( void );                // Avançar o iterador para o proximo caractere da expressão.
+        bool peek( terminal_symbol_t c_ ) const; // Verificar o atual caractere.
+        bool accept( terminal_symbol_t c_ );     // Tentar aceitar o simbolo informado.
+        bool expect( terminal_symbol_t c_ );        // Pular qualquer espaço em branco ou tabs e tentar aceitar o próximo caractere.
+        void skip_ws( void );                    // Pular qualquer espaço em branco ou tab e parar no próximo caractere.
+        bool end_input( void ) const;            // Verificar quando encontrarmos o fim da expressão.
         
-        //=== NTS methods.
+        //=== Métodos NTS.
         ResultType expression();
         ResultType term();
         ResultType integer();
