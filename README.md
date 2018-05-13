@@ -18,22 +18,20 @@ The supported operations and scope delimiters are:
 - `(`: opening scope, weight=0.
 - `)`: closing scope, weight=n/a.
 
-Here are a few examples of valid expressions:
+# Compilation
 
-- `1 + 3 * ( 9/2 - 3 * 2 ^3 )`
-- `1+2-3*4%2  ^2`
+	If you are in a GNU/LINUX environment with make file available, you can use the commands
+	- make: to compile the file.
 
-# Algorithms
+	- in case the make command isn't available, you can use g++ commands:  
+	`g++ -Wall -std=c++11 src/driver_bares.cpp`
 
-We need to implement functions for:
+# Execute
 
-1. Converting an infix expression into its corresponding postfix representation, using a stack of symbols (character).
-2. Evaluating an postfix expression using a stack.
+	To this step you need to compile the code, if you didn't compile visit the 'Compilation' section.
 
-# TODO
+	- You can use ./exec in LINUX (using make to compile). 
 
-- [ ] Code the function `infix2postfix`
-- [ ] Code the function `evaluate_postfix`
-- [ ] Improve the code so it may accept operands with more than one digit.
-- [ ] Incorporate the syntactic analysis to parse any input expression.
-- [ ] Integrate all the modifications into a single program.
+
+# Authorship
+Program developed by Henrique David de Medeiros (*henriquemed101@gmail.com*) and Pablo Emanuell L. Targino (*pabloemanuell@academico.ufrn.br*)

@@ -102,6 +102,7 @@ value_type execute_operator( value_type v1, value_type v2, std::string op )
 	else if( op == "/"){
 		if ( v2 == 0 ){
 			std::cout << "Division by zero!\n";
+			break;
 			return 32768;
 		}
 		return v1/v2;
