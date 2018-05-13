@@ -1,0 +1,914 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto BARES: Referência à classe Parser</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto BARES
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Localizar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#pub-types">Tipos Públicos</a> &#124;
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pri-types">Tipos Privados</a> &#124;
+<a href="#pri-methods">Membros privados</a> &#124;
+<a href="#pri-attribs">Atributos Privados</a> &#124;
+<a href="../../d5/d77/classParser-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à classe Parser</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d5/d36/parser_8h_source.html">parser.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para Parser:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/db0/classParser__coll__graph.png" border="0" usemap="#Parser_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a href="../../graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Este struct representa o resultado da operação de parsing (transformação).  <a href="../../de/d02/structParser_1_1ResultType.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Tipos Públicos</h2></td></tr>
+<tr class="memitem:a6fda6745fb8e655fb2ee8e2d47dc2bed"><td class="memItemLeft" align="right" valign="top">typedef short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a6fda6745fb8e655fb2ee8e2d47dc2bed">required_int_type</a></td></tr>
+<tr class="memdesc:a6fda6745fb8e655fb2ee8e2d47dc2bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">O tipo interiro que nós aceitamos como válida para uma expressão.  <a href="#a6fda6745fb8e655fb2ee8e2d47dc2bed">Mais...</a><br /></td></tr>
+<tr class="separator:a6fda6745fb8e655fb2ee8e2d47dc2bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae104286b7f2aa52593e92d601bf60c6f"><td class="memItemLeft" align="right" valign="top">typedef long long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#ae104286b7f2aa52593e92d601bf60c6f">input_int_type</a></td></tr>
+<tr class="memdesc:ae104286b7f2aa52593e92d601bf60c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">O tipo interiro que lê para a entrada (maior do que o int).  <a href="#ae104286b7f2aa52593e92d601bf60c6f">Mais...</a><br /></td></tr>
+<tr class="separator:ae104286b7f2aa52593e92d601bf60c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a0ae862fb78eb349777532c6d120d0d25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a0ae862fb78eb349777532c6d120d0d25">parse</a> (std::string e_)</td></tr>
+<tr class="memdesc:a0ae862fb78eb349777532c6d120d0d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses e tokenizes de entrada do código da expressão. Retorna o resultado como um struct.  <a href="#a0ae862fb78eb349777532c6d120d0d25">Mais...</a><br /></td></tr>
+<tr class="separator:a0ae862fb78eb349777532c6d120d0d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd9c7937197721f850eabb3a2178ced"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/db6/classsc_1_1vector.html">sc::vector</a>&lt; <a class="el" href="../../df/dcd/structToken.html">Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a4cd9c7937197721f850eabb3a2178ced">get_tokens</a> (void) const</td></tr>
+<tr class="memdesc:a4cd9c7937197721f850eabb3a2178ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera a lista de tokens criada durante o processo de parsing.  <a href="#a4cd9c7937197721f850eabb3a2178ced">Mais...</a><br /></td></tr>
+<tr class="separator:a4cd9c7937197721f850eabb3a2178ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5208129b497bfdf7c8ecceeb70e4bba8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a5208129b497bfdf7c8ecceeb70e4bba8">Parser</a> ()=default</td></tr>
+<tr class="memdesc:a5208129b497bfdf7c8ecceeb70e4bba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contrutor default.  <a href="#a5208129b497bfdf7c8ecceeb70e4bba8">Mais...</a><br /></td></tr>
+<tr class="separator:a5208129b497bfdf7c8ecceeb70e4bba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95734193a58a199b4c6d820a6a730c42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a95734193a58a199b4c6d820a6a730c42">~Parser</a> ()=default</td></tr>
+<tr class="memdesc:a95734193a58a199b4c6d820a6a730c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descontrutor default.  <a href="#a95734193a58a199b4c6d820a6a730c42">Mais...</a><br /></td></tr>
+<tr class="separator:a95734193a58a199b4c6d820a6a730c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48044a8caa14a251cb4dad9fb363658e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a48044a8caa14a251cb4dad9fb363658e">Parser</a> (const <a class="el" href="../../d0/d40/classParser.html">Parser</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a48044a8caa14a251cb4dad9fb363658e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desliga o construtor de cópia, já que não precisaremos dele.  <a href="#a48044a8caa14a251cb4dad9fb363658e">Mais...</a><br /></td></tr>
+<tr class="separator:a48044a8caa14a251cb4dad9fb363658e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa47e7e93b8d1ff76c51ce3028ff24ce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d40/classParser.html">Parser</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#aa47e7e93b8d1ff76c51ce3028ff24ce6">operator=</a> (const <a class="el" href="../../d0/d40/classParser.html">Parser</a> &amp;)=delete</td></tr>
+<tr class="memdesc:aa47e7e93b8d1ff76c51ce3028ff24ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desliga o operador de atribuição.  <a href="#aa47e7e93b8d1ff76c51ce3028ff24ce6">Mais...</a><br /></td></tr>
+<tr class="separator:aa47e7e93b8d1ff76c51ce3028ff24ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Tipos Privados</h2></td></tr>
+<tr class="memitem:a7d49b050a3c0df9e37ff81c5099be049"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">terminal_symbol_t</a> { <br />
+&#160;&#160;<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049afbcb66e615689d008795b088e7d83e8f">terminal_symbol_t::TS_PLUS</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049ad4035b1ab1b3060b3065175de3ef34da">terminal_symbol_t::TS_MINUS</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049a605e1a8e06e5635549f3c111101a1b68">terminal_symbol_t::TS_TIMES</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049ad8d583f7b3bcc2d67080e5911951d392">terminal_symbol_t::TS_DIVIDED</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049adea3d590afe039901e4416c889989261">terminal_symbol_t::TS_PERCENT</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049a3a27ba1dacf6af0aa89eb658efde97e1">terminal_symbol_t::TS_POWER</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049ab991e11b5e1d72a4458db212ea96e4ed">terminal_symbol_t::TS_OPEN</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049af4d770ceee14d1abddd4309152f4d42b">terminal_symbol_t::TS_CLOSE</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049ae1bbcac6e0faafa1c5fbfb41d3b9994e">terminal_symbol_t::TS_ZERO</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049ae597d0d14ce03b6bd36b4a12ce2d0de4">terminal_symbol_t::TS_NON_ZERO_DIGIT</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049a0f14662570aa6ae95f583c15208af7d6">terminal_symbol_t::TS_WS</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049a8fc2a9aaf9a5e4d32b05fa9384d5a474">terminal_symbol_t::TS_TAB</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049ae4929a38d30c358ab2ce85e0096b9d21">terminal_symbol_t::TS_EOS</a>, 
+<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049a88e021e37fb08ff77007f5b0e723136e">terminal_symbol_t::TS_INVALID</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7d49b050a3c0df9e37ff81c5099be049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Membros privados</h2></td></tr>
+<tr class="memitem:aa2bbaa87534abef84269d79cf7165035"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">terminal_symbol_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#aa2bbaa87534abef84269d79cf7165035">lexer</a> (char c_) const</td></tr>
+<tr class="memdesc:aa2bbaa87534abef84269d79cf7165035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the input character c_ into its corresponding terminal symbol code.  <a href="#aa2bbaa87534abef84269d79cf7165035">Mais...</a><br /></td></tr>
+<tr class="separator:aa2bbaa87534abef84269d79cf7165035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0919453374e9abfb0f55f41f057d7a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#ac0919453374e9abfb0f55f41f057d7a1">next_symbol</a> (void)</td></tr>
+<tr class="memdesc:ac0919453374e9abfb0f55f41f057d7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consumes a valid character from the input source expression.  <a href="#ac0919453374e9abfb0f55f41f057d7a1">Mais...</a><br /></td></tr>
+<tr class="separator:ac0919453374e9abfb0f55f41f057d7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38df5f6fc75d85cc6907ae21e11c5b16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a38df5f6fc75d85cc6907ae21e11c5b16">peek</a> (<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">terminal_symbol_t</a> c_) const</td></tr>
+<tr class="memdesc:a38df5f6fc75d85cc6907ae21e11c5b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the result of trying to match the current character with c_, <b>without</b> consuming the current character from the input expression.  <a href="#a38df5f6fc75d85cc6907ae21e11c5b16">Mais...</a><br /></td></tr>
+<tr class="separator:a38df5f6fc75d85cc6907ae21e11c5b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a884775e075317b4b2cfb2016d3654f2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a884775e075317b4b2cfb2016d3654f2a">accept</a> (<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">terminal_symbol_t</a> c_)</td></tr>
+<tr class="memdesc:a884775e075317b4b2cfb2016d3654f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the result of trying to match (<a class="el" href="../../d0/d40/classParser.html#a38df5f6fc75d85cc6907ae21e11c5b16" title="Returns the result of trying to match the current character with c_, without consuming the current ch...">peek()</a>) and consume the current character with c_.  <a href="#a884775e075317b4b2cfb2016d3654f2a">Mais...</a><br /></td></tr>
+<tr class="separator:a884775e075317b4b2cfb2016d3654f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac107d6116db968131021f4e57838b27d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#ac107d6116db968131021f4e57838b27d">expect</a> (<a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">terminal_symbol_t</a> c_)</td></tr>
+<tr class="memdesc:ac107d6116db968131021f4e57838b27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips all white spaces and tries to <a class="el" href="../../d0/d40/classParser.html#a884775e075317b4b2cfb2016d3654f2a" title="Returns the result of trying to match (peek()) and consume the current character with c_...">accept()</a> the next valid character.  <a href="#ac107d6116db968131021f4e57838b27d">Mais...</a><br /></td></tr>
+<tr class="separator:ac107d6116db968131021f4e57838b27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35da81bd369bab816b71418736184d5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a35da81bd369bab816b71418736184d5d">skip_ws</a> (void)</td></tr>
+<tr class="memdesc:a35da81bd369bab816b71418736184d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores any white space or tabs in the expression until reach a valid character or end of input.  <a href="#a35da81bd369bab816b71418736184d5d">Mais...</a><br /></td></tr>
+<tr class="separator:a35da81bd369bab816b71418736184d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc1de21b7ed31471b72abb94ab7aba9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a0bc1de21b7ed31471b72abb94ab7aba9">end_input</a> (void) const</td></tr>
+<tr class="memdesc:a0bc1de21b7ed31471b72abb94ab7aba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether we reached the end of the input expression string.  <a href="#a0bc1de21b7ed31471b72abb94ab7aba9">Mais...</a><br /></td></tr>
+<tr class="separator:a0bc1de21b7ed31471b72abb94ab7aba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39d3a821509bfe5fdb2d9d481ae92e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#ab39d3a821509bfe5fdb2d9d481ae92e6">expression</a> ()</td></tr>
+<tr class="memdesc:ab39d3a821509bfe5fdb2d9d481ae92e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates (i.e. returns true or false) and consumes an expression from the input string.  <a href="#ab39d3a821509bfe5fdb2d9d481ae92e6">Mais...</a><br /></td></tr>
+<tr class="separator:ab39d3a821509bfe5fdb2d9d481ae92e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f4cbee572a5b8305368820525603bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a82f4cbee572a5b8305368820525603bd">term</a> ()</td></tr>
+<tr class="memdesc:a82f4cbee572a5b8305368820525603bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates (i.e. returns true or false) and consumes a term from the input string.  <a href="#a82f4cbee572a5b8305368820525603bd">Mais...</a><br /></td></tr>
+<tr class="separator:a82f4cbee572a5b8305368820525603bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6b91c4e4b8bacb7d0eefca5ae9ffce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#ab6b91c4e4b8bacb7d0eefca5ae9ffce6">integer</a> ()</td></tr>
+<tr class="memdesc:ab6b91c4e4b8bacb7d0eefca5ae9ffce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates (i.e. returns true or false) and consumes an integer from the input string.  <a href="#ab6b91c4e4b8bacb7d0eefca5ae9ffce6">Mais...</a><br /></td></tr>
+<tr class="separator:ab6b91c4e4b8bacb7d0eefca5ae9ffce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18974ec32c22bb2f19f3499986de6ada"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a18974ec32c22bb2f19f3499986de6ada">natural_number</a> ()</td></tr>
+<tr class="memdesc:a18974ec32c22bb2f19f3499986de6ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates (i.e. returns true or false) and consumes a natural number from the input string.  <a href="#a18974ec32c22bb2f19f3499986de6ada">Mais...</a><br /></td></tr>
+<tr class="separator:a18974ec32c22bb2f19f3499986de6ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1522aacdb7de926636be0ca1067b915"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#ac1522aacdb7de926636be0ca1067b915">digit_excl_zero</a> ()</td></tr>
+<tr class="memdesc:ac1522aacdb7de926636be0ca1067b915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates (i.e. returns true or false) and consumes a non-zero digit from the input string.  <a href="#ac1522aacdb7de926636be0ca1067b915">Mais...</a><br /></td></tr>
+<tr class="separator:ac1522aacdb7de926636be0ca1067b915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b268411777d28893f547653ece2206"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#ad9b268411777d28893f547653ece2206">digit</a> ()</td></tr>
+<tr class="memdesc:ad9b268411777d28893f547653ece2206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates (i.e. returns true or false) and consumes a zero digit from the input string.  <a href="#ad9b268411777d28893f547653ece2206">Mais...</a><br /></td></tr>
+<tr class="separator:ad9b268411777d28893f547653ece2206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos Privados</h2></td></tr>
+<tr class="memitem:a6429f38abf0207bc14d64bacc399b3f9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a6429f38abf0207bc14d64bacc399b3f9">expr</a></td></tr>
+<tr class="memdesc:a6429f38abf0207bc14d64bacc399b3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expressão para ser "parsed".  <a href="#a6429f38abf0207bc14d64bacc399b3f9">Mais...</a><br /></td></tr>
+<tr class="separator:a6429f38abf0207bc14d64bacc399b3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7036e94a1d0b3973d126a2023a91b7ec"><td class="memItemLeft" align="right" valign="top">std::string::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a7036e94a1d0b3973d126a2023a91b7ec">it_curr_symb</a></td></tr>
+<tr class="memdesc:a7036e94a1d0b3973d126a2023a91b7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponteiro para o char padrão dentro da expressão.  <a href="#a7036e94a1d0b3973d126a2023a91b7ec">Mais...</a><br /></td></tr>
+<tr class="separator:a7036e94a1d0b3973d126a2023a91b7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87c81225df0bfa24bcd321bcbdd7af26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/db6/classsc_1_1vector.html">sc::vector</a>&lt; <a class="el" href="../../df/dcd/structToken.html">Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d40/classParser.html#a87c81225df0bfa24bcd321bcbdd7af26">token_list</a></td></tr>
+<tr class="memdesc:a87c81225df0bfa24bcd321bcbdd7af26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de resultado da lista de token extraidas da expressão.  <a href="#a87c81225df0bfa24bcd321bcbdd7af26">Mais...</a><br /></td></tr>
+<tr class="separator:a87c81225df0bfa24bcd321bcbdd7af26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implements a recursive descendent parser for a EBNF grammar.</p>
+<p>This class also tokenizes the input expression into its components, creating a list of tokens.</p>
+<p>The EBNF grammar is: </p><div class="fragment"><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#a6429f38abf0207bc14d64bacc399b3f9">expr</a>&gt;            := &lt;<a class="code" href="../../d0/d40/classParser.html#a82f4cbee572a5b8305368820525603bd">term</a>&gt;,{ (<span class="stringliteral">&quot;+&quot;</span>|<span class="stringliteral">&quot;-&quot;</span>|<span class="stringliteral">&quot;*&quot;</span>|<span class="stringliteral">&quot;/&quot;</span>|<span class="stringliteral">&quot;%&quot;</span>|<span class="stringliteral">&quot;^&quot;</span>),&lt;<a class="code" href="../../d0/d40/classParser.html#a82f4cbee572a5b8305368820525603bd">term</a>&gt; };</div><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#a82f4cbee572a5b8305368820525603bd">term</a>&gt;            := <span class="stringliteral">&quot;(&quot;</span>, &lt;<a class="code" href="../../d0/d40/classParser.html#a6429f38abf0207bc14d64bacc399b3f9">expr</a>&gt;, <span class="stringliteral">&quot;)&quot;</span> | &lt;<a class="code" href="../../d0/d40/classParser.html#ab6b91c4e4b8bacb7d0eefca5ae9ffce6">integer</a>&gt;;</div><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#ab6b91c4e4b8bacb7d0eefca5ae9ffce6">integer</a>&gt;         := 0 | [<span class="stringliteral">&quot;-&quot;</span>],&lt;<a class="code" href="../../d0/d40/classParser.html#a18974ec32c22bb2f19f3499986de6ada">natural_number</a>&gt;;</div><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#a18974ec32c22bb2f19f3499986de6ada">natural_number</a>&gt;  := &lt;<a class="code" href="../../d0/d40/classParser.html#ac1522aacdb7de926636be0ca1067b915">digit_excl_zero</a>&gt;,{&lt;<a class="code" href="../../d0/d40/classParser.html#ad9b268411777d28893f547653ece2206">digit</a>&gt;};</div><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#ac1522aacdb7de926636be0ca1067b915">digit_excl_zero</a>&gt; := <span class="stringliteral">&quot;1&quot;</span> | <span class="stringliteral">&quot;2&quot;</span> | <span class="stringliteral">&quot;3&quot;</span> | <span class="stringliteral">&quot;4&quot;</span> | <span class="stringliteral">&quot;5&quot;</span> | <span class="stringliteral">&quot;6&quot;</span> | <span class="stringliteral">&quot;7&quot;</span> | <span class="stringliteral">&quot;8&quot;</span> | <span class="stringliteral">&quot;9&quot;</span>;</div><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#ad9b268411777d28893f547653ece2206">digit</a>&gt;           := <span class="stringliteral">&quot;0&quot;</span>| &lt;<a class="code" href="../../d0/d40/classParser.html#ac1522aacdb7de926636be0ca1067b915">digit_excl_zero</a>&gt;;</div></div><!-- fragment --> </div><h2 class="groupheader">Documentação das definições de tipo</h2>
+<a id="ae104286b7f2aa52593e92d601bf60c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae104286b7f2aa52593e92d601bf60c6f">&#9670;&nbsp;</a></span>input_int_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef long long int <a class="el" href="../../d0/d40/classParser.html#ae104286b7f2aa52593e92d601bf60c6f">Parser::input_int_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>O tipo interiro que lê para a entrada (maior do que o int). </p>
+
+</div>
+</div>
+<a id="a6fda6745fb8e655fb2ee8e2d47dc2bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fda6745fb8e655fb2ee8e2d47dc2bed">&#9670;&nbsp;</a></span>required_int_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef short int <a class="el" href="../../d0/d40/classParser.html#a6fda6745fb8e655fb2ee8e2d47dc2bed">Parser::required_int_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>O tipo interiro que nós aceitamos como válida para uma expressão. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das enumerações</h2>
+<a id="a7d49b050a3c0df9e37ff81c5099be049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d49b050a3c0df9e37ff81c5099be049">&#9670;&nbsp;</a></span>terminal_symbol_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">Parser::terminal_symbol_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049afbcb66e615689d008795b088e7d83e8f"></a>TS_PLUS&#160;</td><td class="fielddoc"><p>código para "+" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049ad4035b1ab1b3060b3065175de3ef34da"></a>TS_MINUS&#160;</td><td class="fielddoc"><p>código para "-" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049a605e1a8e06e5635549f3c111101a1b68"></a>TS_TIMES&#160;</td><td class="fielddoc"><p>código para "*" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049ad8d583f7b3bcc2d67080e5911951d392"></a>TS_DIVIDED&#160;</td><td class="fielddoc"><p>código para "/" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049adea3d590afe039901e4416c889989261"></a>TS_PERCENT&#160;</td><td class="fielddoc"><p>código para "%" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049a3a27ba1dacf6af0aa89eb658efde97e1"></a>TS_POWER&#160;</td><td class="fielddoc"><p>código para "^" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049ab991e11b5e1d72a4458db212ea96e4ed"></a>TS_OPEN&#160;</td><td class="fielddoc"><p>código para "(" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049af4d770ceee14d1abddd4309152f4d42b"></a>TS_CLOSE&#160;</td><td class="fielddoc"><p>código para ")" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049ae1bbcac6e0faafa1c5fbfb41d3b9994e"></a>TS_ZERO&#160;</td><td class="fielddoc"><p>código para "0" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049ae597d0d14ce03b6bd36b4a12ce2d0de4"></a>TS_NON_ZERO_DIGIT&#160;</td><td class="fielddoc"><p>código para os digitos "1"-&gt;"9" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049a0f14662570aa6ae95f583c15208af7d6"></a>TS_WS&#160;</td><td class="fielddoc"><p>código para o espaço em branco </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049a8fc2a9aaf9a5e4d32b05fa9384d5a474"></a>TS_TAB&#160;</td><td class="fielddoc"><p>código para tab </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049ae4929a38d30c358ab2ce85e0096b9d21"></a>TS_EOS&#160;</td><td class="fielddoc"><p>código para o fim da string </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7d49b050a3c0df9e37ff81c5099be049a88e021e37fb08ff77007f5b0e723136e"></a>TS_INVALID&#160;</td><td class="fielddoc"><p>token invalido </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a5208129b497bfdf7c8ecceeb70e4bba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5208129b497bfdf7c8ecceeb70e4bba8">&#9670;&nbsp;</a></span>Parser() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::Parser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contrutor default. </p>
+
+</div>
+</div>
+<a id="a95734193a58a199b4c6d820a6a730c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95734193a58a199b4c6d820a6a730c42">&#9670;&nbsp;</a></span>~Parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::~Parser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Descontrutor default. </p>
+
+</div>
+</div>
+<a id="a48044a8caa14a251cb4dad9fb363658e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48044a8caa14a251cb4dad9fb363658e">&#9670;&nbsp;</a></span>Parser() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::Parser </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d40/classParser.html">Parser</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desliga o construtor de cópia, já que não precisaremos dele. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="a884775e075317b4b2cfb2016d3654f2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a884775e075317b4b2cfb2016d3654f2a">&#9670;&nbsp;</a></span>accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::accept </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">terminal_symbol_t</a>&#160;</td>
+          <td class="paramname"><em>c_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the result of trying to match (<a class="el" href="../../d0/d40/classParser.html#a38df5f6fc75d85cc6907ae21e11c5b16" title="Returns the result of trying to match the current character with c_, without consuming the current ch...">peek()</a>) and consume the current character with c_. </p>
+<p>If the match is not successful, the current character (from the input) <b>is not consumed</b>. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c_</td><td>the current character from the input source expression we wish to parse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="../../d0/d40/classParser.html#a38df5f6fc75d85cc6907ae21e11c5b16" title="Returns the result of trying to match the current character with c_, without consuming the current ch...">peek()</a>. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>true if we got a successful match; false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ad9b268411777d28893f547653ece2206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b268411777d28893f547653ece2206">&#9670;&nbsp;</a></span>digit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::digit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates (i.e. returns true or false) and consumes a zero digit from the input string. </p>
+<p>This method parses a single valid digit from the input.</p>
+<p>Production rule is: </p><div class="fragment"><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#ad9b268411777d28893f547653ece2206">digit</a>&gt; := <span class="stringliteral">&quot;0&quot;</span>| &lt;<a class="code" href="../../d0/d40/classParser.html#ac1522aacdb7de926636be0ca1067b915">digit_excl_zero</a>&gt;;</div></div><!-- fragment --><dl class="section return"><dt>Retorna</dt><dd>true if a digit has been successfuly parsed from the input; false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ac1522aacdb7de926636be0ca1067b915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1522aacdb7de926636be0ca1067b915">&#9670;&nbsp;</a></span>digit_excl_zero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::digit_excl_zero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates (i.e. returns true or false) and consumes a non-zero digit from the input string. </p>
+<p>This method parses a single valid non-zero digit from the input.</p>
+<p>Production rule is: </p><div class="fragment"><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#ac1522aacdb7de926636be0ca1067b915">digit_excl_zero</a>&gt; := <span class="stringliteral">&quot;1&quot;</span> | <span class="stringliteral">&quot;2&quot;</span> | <span class="stringliteral">&quot;3&quot;</span> | <span class="stringliteral">&quot;4&quot;</span> | <span class="stringliteral">&quot;5&quot;</span> | <span class="stringliteral">&quot;6&quot;</span> | <span class="stringliteral">&quot;7&quot;</span> | <span class="stringliteral">&quot;8&quot;</span> | <span class="stringliteral">&quot;9&quot;</span>;</div></div><!-- fragment --><dl class="section return"><dt>Retorna</dt><dd>true if a non-zero digit has been successfuly parsed from the input; false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a0bc1de21b7ed31471b72abb94ab7aba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc1de21b7ed31471b72abb94ab7aba9">&#9670;&nbsp;</a></span>end_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::end_input </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether we reached the end of the input expression string. </p>
+
+</div>
+</div>
+<a id="ac107d6116db968131021f4e57838b27d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac107d6116db968131021f4e57838b27d">&#9670;&nbsp;</a></span>expect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::expect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">terminal_symbol_t</a>&#160;</td>
+          <td class="paramname"><em>c_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Skips all white spaces and tries to <a class="el" href="../../d0/d40/classParser.html#a884775e075317b4b2cfb2016d3654f2a" title="Returns the result of trying to match (peek()) and consume the current character with c_...">accept()</a> the next valid character. </p>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="../../d0/d40/classParser.html#a884775e075317b4b2cfb2016d3654f2a" title="Returns the result of trying to match (peek()) and consume the current character with c_...">accept()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ab39d3a821509bfe5fdb2d9d481ae92e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39d3a821509bfe5fdb2d9d481ae92e6">&#9670;&nbsp;</a></span>expression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">Parser::ResultType</a> Parser::expression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates (i.e. returns true or false) and consumes an expression from the input string. </p>
+<p>This method parses a valid expression from the input and, at the same time, it tokenizes its components.</p>
+<p>Production rule is: </p><div class="fragment"><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#a6429f38abf0207bc14d64bacc399b3f9">expr</a>&gt; := &lt;<a class="code" href="../../d0/d40/classParser.html#a82f4cbee572a5b8305368820525603bd">term</a>&gt;,{ (<span class="stringliteral">&quot;+&quot;</span>|<span class="stringliteral">&quot;-&quot;</span>|<span class="stringliteral">&quot;*&quot;</span>|<span class="stringliteral">&quot;/&quot;</span>|<span class="stringliteral">&quot;%&quot;</span>|<span class="stringliteral">&quot;^&quot;</span>),&lt;<a class="code" href="../../d0/d40/classParser.html#a82f4cbee572a5b8305368820525603bd">term</a>&gt; };</div></div><!-- fragment --><p> REVER ESTA CONDIÇÃO &lt;------------------------------------------------------------------------------------------------------------------------------&mdash; An expression might be just a term or one or more terms with '+'/'-'/'' between them. </p>
+
+</div>
+</div>
+<a id="a4cd9c7937197721f850eabb3a2178ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd9c7937197721f850eabb3a2178ced">&#9670;&nbsp;</a></span>get_tokens()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/db6/classsc_1_1vector.html">sc::vector</a>&lt; <a class="el" href="../../df/dcd/structToken.html">Token</a> &gt; Parser::get_tokens </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupera a lista de tokens criada durante o processo de parsing. </p>
+<p>Return the list of tokens, which is the by-product created during the syntax analysis. </p>
+
+</div>
+</div>
+<a id="ab6b91c4e4b8bacb7d0eefca5ae9ffce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6b91c4e4b8bacb7d0eefca5ae9ffce6">&#9670;&nbsp;</a></span>integer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">Parser::ResultType</a> Parser::integer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates (i.e. returns true or false) and consumes an integer from the input string. </p>
+<p>This method parses a valid integer from the input and, at the same time, add the integer to the token list.</p>
+<p>Production rule is: </p><div class="fragment"><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#ab6b91c4e4b8bacb7d0eefca5ae9ffce6">integer</a>&gt; := 0 | [<span class="stringliteral">&quot;-&quot;</span>],&lt;<a class="code" href="../../d0/d40/classParser.html#a18974ec32c22bb2f19f3499986de6ada">natural_number</a>&gt;;</div></div><!-- fragment --><p> A integer might be a zero or a natural number, which, in turn, might begin with an unary minus.</p>
+<dl class="section return"><dt>Retorna</dt><dd>true if an integer has been successfuly parsed from the input; false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="aa2bbaa87534abef84269d79cf7165035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2bbaa87534abef84269d79cf7165035">&#9670;&nbsp;</a></span>lexer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">Parser::terminal_symbol_t</a> Parser::lexer </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c_</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the input character c_ into its corresponding terminal symbol code. </p>
+
+</div>
+</div>
+<a id="a18974ec32c22bb2f19f3499986de6ada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18974ec32c22bb2f19f3499986de6ada">&#9670;&nbsp;</a></span>natural_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">Parser::ResultType</a> Parser::natural_number </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates (i.e. returns true or false) and consumes a natural number from the input string. </p>
+<p>This method parses a valid natural number from the input.</p>
+<p>Production rule is: </p><div class="fragment"><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#a18974ec32c22bb2f19f3499986de6ada">natural_number</a>&gt; := &lt;<a class="code" href="../../d0/d40/classParser.html#ac1522aacdb7de926636be0ca1067b915">digit_excl_zero</a>&gt;,{&lt;<a class="code" href="../../d0/d40/classParser.html#ad9b268411777d28893f547653ece2206">digit</a>&gt;};</div></div><!-- fragment --><dl class="section return"><dt>Retorna</dt><dd>true if a natural number has been successfuly parsed from the input; false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ac0919453374e9abfb0f55f41f057d7a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0919453374e9abfb0f55f41f057d7a1">&#9670;&nbsp;</a></span>next_symbol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::next_symbol </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Consumes a valid character from the input source expression. </p>
+
+</div>
+</div>
+<a id="aa47e7e93b8d1ff76c51ce3028ff24ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa47e7e93b8d1ff76c51ce3028ff24ce6">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d40/classParser.html">Parser</a>&amp; Parser::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d40/classParser.html">Parser</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desliga o operador de atribuição. </p>
+
+</div>
+</div>
+<a id="a0ae862fb78eb349777532c6d120d0d25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae862fb78eb349777532c6d120d0d25">&#9670;&nbsp;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">Parser::ResultType</a> Parser::parse </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>e_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses e tokenizes de entrada do código da expressão. Retorna o resultado como um struct. </p>
+<p>This is the parser's entry point. This method tries to (recursivelly) validate an expression. During this process, we also store the tokens into a container.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e_</td><td>The string with the expression to parse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>The parsing result.</dd></dl>
+<dl class="section see"><dt>Veja também</dt><dd><a class="el" href="../../de/d02/structParser_1_1ResultType.html" title="Este struct representa o resultado da operação de parsing (transformação). ">ResultType</a> </dd></dl>
+
+</div>
+</div>
+<a id="a38df5f6fc75d85cc6907ae21e11c5b16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38df5f6fc75d85cc6907ae21e11c5b16">&#9670;&nbsp;</a></span>peek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::peek </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d40/classParser.html#a7d49b050a3c0df9e37ff81c5099be049">terminal_symbol_t</a>&#160;</td>
+          <td class="paramname"><em>c_</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the result of trying to match the current character with c_, <b>without</b> consuming the current character from the input expression. </p>
+
+</div>
+</div>
+<a id="a35da81bd369bab816b71418736184d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35da81bd369bab816b71418736184d5d">&#9670;&nbsp;</a></span>skip_ws()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::skip_ws </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ignores any white space or tabs in the expression until reach a valid character or end of input. </p>
+
+</div>
+</div>
+<a id="a82f4cbee572a5b8305368820525603bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f4cbee572a5b8305368820525603bd">&#9670;&nbsp;</a></span>term()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">Parser::ResultType</a> Parser::term </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates (i.e. returns true or false) and consumes a term from the input string. </p>
+<p>This method parses a valid term from the input.</p>
+<p>Production rule is: </p><div class="fragment"><div class="line">&lt;<a class="code" href="../../d0/d40/classParser.html#a82f4cbee572a5b8305368820525603bd">term</a>&gt; := <span class="stringliteral">&quot;(&quot;</span>,&lt;<a class="code" href="../../d0/d40/classParser.html#a6429f38abf0207bc14d64bacc399b3f9">expr</a>&gt;,<span class="stringliteral">&quot;)&quot;</span> | &lt;<a class="code" href="../../d0/d40/classParser.html#ab6b91c4e4b8bacb7d0eefca5ae9ffce6">integer</a>&gt;;               &lt; ------------------------------------------- Adição dos parenteses.</div></div><!-- fragment --><p> A term is made of a single integer.</p>
+<dl class="section return"><dt>Retorna</dt><dd>true if a term has been successfuly parsed from the input; false otherwise. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="a6429f38abf0207bc14d64bacc399b3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6429f38abf0207bc14d64bacc399b3f9">&#9670;&nbsp;</a></span>expr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Parser::expr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Expressão para ser "parsed". </p>
+
+</div>
+</div>
+<a id="a7036e94a1d0b3973d126a2023a91b7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7036e94a1d0b3973d126a2023a91b7ec">&#9670;&nbsp;</a></span>it_curr_symb</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string::iterator Parser::it_curr_symb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ponteiro para o char padrão dentro da expressão. </p>
+
+</div>
+</div>
+<a id="a87c81225df0bfa24bcd321bcbdd7af26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87c81225df0bfa24bcd321bcbdd7af26">&#9670;&nbsp;</a></span>token_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/db6/classsc_1_1vector.html">sc::vector</a>&lt; <a class="el" href="../../df/dcd/structToken.html">Token</a> &gt; Parser::token_list</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lista de resultado da lista de token extraidas da expressão. </p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes ficheiros:<ul>
+<li>include/<a class="el" href="../../d5/d36/parser_8h_source.html">parser.h</a></li>
+<li>include/<a class="el" href="../../df/de8/parser_8inl.html">parser.inl</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,194 @@
+\hypertarget{classpl_1_1stack}{}\section{Referência à classe Template pl\+:\+:stack$<$ T $>$}
+\label{classpl_1_1stack}\index{pl\+::stack$<$ T $>$@{pl\+::stack$<$ T $>$}}
+
+
+{\ttfamily \#include $<$stack.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpl_1_1stack_a80f544bbc443e2cedfaa1c5a46376035}{stack} (void)
+\item 
+\hyperlink{classpl_1_1stack_acc3e2e498b934dfed18fa60440373960}{$\sim$stack} ()
+\item 
+void \hyperlink{classpl_1_1stack_ab4c99a438c4dd0da57c162da9d08d184}{push} (\hyperlink{classpl_1_1stack_a9474b23cf6fa5332f22fc06852e2d6d5}{const\+\_\+reference} vl\+\_\+)
+\item 
+void \hyperlink{classpl_1_1stack_aee95f572e71eeebc97a4d5543d500886}{pop} (void)
+\item 
+\hyperlink{classpl_1_1stack_a2297d235c54cb53f6b8c4be2a324deee}{value\+\_\+type} \hyperlink{classpl_1_1stack_a3761155a1aeea83b706ae04d416c3608}{top} (void) const
+\item 
+void \hyperlink{classpl_1_1stack_a97f9f75d2c40c2c68770dde9b4c42254}{clear} (void)
+\item 
+bool \hyperlink{classpl_1_1stack_aca2e0457107fc5dedd3f70965f70cb91}{empty} (void) const
+\item 
+int \hyperlink{classpl_1_1stack_a51d32715600434c7e979c271d298b63c}{size} (void) const
+\item 
+bool \hyperlink{classpl_1_1stack_a079fc472e272b4ae05c9b9a360c919bc}{full} (void) const
+\item 
+\hyperlink{classpl_1_1stack}{stack} \& \hyperlink{classpl_1_1stack_a9b42f29bf5355bbf95868a16cbacb6a0}{operator=} (const \hyperlink{classpl_1_1stack}{stack} st)
+\end{DoxyCompactItemize}
+\subsection*{Tipos Privados}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classpl_1_1stack_a062294c02a6a02f174a30e98e54ff880}{size\+\_\+type} = unsigned long
+\item 
+using \hyperlink{classpl_1_1stack_a2297d235c54cb53f6b8c4be2a324deee}{value\+\_\+type} = T
+\item 
+using \hyperlink{classpl_1_1stack_a15ed30ec492b3112ec530d239670ee1b}{reference} = T \&
+\item 
+using \hyperlink{classpl_1_1stack_a9474b23cf6fa5332f22fc06852e2d6d5}{const\+\_\+reference} = const T \&
+\item 
+using \hyperlink{classpl_1_1stack_a3713c8d6cb6cc72c07a445b11c39ae43}{pointer} = T $\ast$
+\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpl_1_1stack_a3713c8d6cb6cc72c07a445b11c39ae43}{pointer} \hyperlink{classpl_1_1stack_a65f803f7a3ddb160cf77ed0d53d514cd}{m\+\_\+storage}
+\item 
+size\+\_\+t \hyperlink{classpl_1_1stack_ad9bcc4e4ca264cbf14b6f475a7051d82}{m\+\_\+end}
+\item 
+size\+\_\+t \hyperlink{classpl_1_1stack_abfd4b98e0b4fc570fdceb1ebafa4738e}{m\+\_\+capacity}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das definições de tipo}
+\mbox{\Hypertarget{classpl_1_1stack_a9474b23cf6fa5332f22fc06852e2d6d5}\label{classpl_1_1stack_a9474b23cf6fa5332f22fc06852e2d6d5}} 
+\index{pl\+::stack@{pl\+::stack}!const\+\_\+reference@{const\+\_\+reference}}
+\index{const\+\_\+reference@{const\+\_\+reference}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{const\+\_\+reference}{const\_reference}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+using \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::\hyperlink{classpl_1_1stack_a9474b23cf6fa5332f22fc06852e2d6d5}{const\+\_\+reference} =  const T\&\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a3713c8d6cb6cc72c07a445b11c39ae43}\label{classpl_1_1stack_a3713c8d6cb6cc72c07a445b11c39ae43}} 
+\index{pl\+::stack@{pl\+::stack}!pointer@{pointer}}
+\index{pointer@{pointer}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{pointer}{pointer}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+using \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::\hyperlink{classpl_1_1stack_a3713c8d6cb6cc72c07a445b11c39ae43}{pointer} =  T$\ast$\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a15ed30ec492b3112ec530d239670ee1b}\label{classpl_1_1stack_a15ed30ec492b3112ec530d239670ee1b}} 
+\index{pl\+::stack@{pl\+::stack}!reference@{reference}}
+\index{reference@{reference}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+using \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::\hyperlink{classpl_1_1stack_a15ed30ec492b3112ec530d239670ee1b}{reference} =  T\&\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a062294c02a6a02f174a30e98e54ff880}\label{classpl_1_1stack_a062294c02a6a02f174a30e98e54ff880}} 
+\index{pl\+::stack@{pl\+::stack}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{size\+\_\+type}{size\_type}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+using \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::\hyperlink{classpl_1_1stack_a062294c02a6a02f174a30e98e54ff880}{size\+\_\+type} =  unsigned long\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a2297d235c54cb53f6b8c4be2a324deee}\label{classpl_1_1stack_a2297d235c54cb53f6b8c4be2a324deee}} 
+\index{pl\+::stack@{pl\+::stack}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+using \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::\hyperlink{classpl_1_1stack_a2297d235c54cb53f6b8c4be2a324deee}{value\+\_\+type} =  T\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classpl_1_1stack_a80f544bbc443e2cedfaa1c5a46376035}\label{classpl_1_1stack_a80f544bbc443e2cedfaa1c5a46376035}} 
+\index{pl\+::stack@{pl\+::stack}!stack@{stack}}
+\index{stack@{stack}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{stack()}{stack()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::\hyperlink{classpl_1_1stack}{stack} (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_acc3e2e498b934dfed18fa60440373960}\label{classpl_1_1stack_acc3e2e498b934dfed18fa60440373960}} 
+\index{pl\+::stack@{pl\+::stack}!````~stack@{$\sim$stack}}
+\index{````~stack@{$\sim$stack}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{$\sim$stack()}{~stack()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::$\sim$\hyperlink{classpl_1_1stack}{stack} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classpl_1_1stack_a97f9f75d2c40c2c68770dde9b4c42254}\label{classpl_1_1stack_a97f9f75d2c40c2c68770dde9b4c42254}} 
+\index{pl\+::stack@{pl\+::stack}!clear@{clear}}
+\index{clear@{clear}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_aca2e0457107fc5dedd3f70965f70cb91}\label{classpl_1_1stack_aca2e0457107fc5dedd3f70965f70cb91}} 
+\index{pl\+::stack@{pl\+::stack}!empty@{empty}}
+\index{empty@{empty}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::empty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a079fc472e272b4ae05c9b9a360c919bc}\label{classpl_1_1stack_a079fc472e272b4ae05c9b9a360c919bc}} 
+\index{pl\+::stack@{pl\+::stack}!full@{full}}
+\index{full@{full}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{full()}{full()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::full (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a9b42f29bf5355bbf95868a16cbacb6a0}\label{classpl_1_1stack_a9b42f29bf5355bbf95868a16cbacb6a0}} 
+\index{pl\+::stack@{pl\+::stack}!operator=@{operator=}}
+\index{operator=@{operator=}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classpl_1_1stack}{stack}\& \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classpl_1_1stack}{stack}$<$ T $>$}]{st }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_aee95f572e71eeebc97a4d5543d500886}\label{classpl_1_1stack_aee95f572e71eeebc97a4d5543d500886}} 
+\index{pl\+::stack@{pl\+::stack}!pop@{pop}}
+\index{pop@{pop}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::pop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_ab4c99a438c4dd0da57c162da9d08d184}\label{classpl_1_1stack_ab4c99a438c4dd0da57c162da9d08d184}} 
+\index{pl\+::stack@{pl\+::stack}!push@{push}}
+\index{push@{push}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{\hyperlink{classpl_1_1stack_a9474b23cf6fa5332f22fc06852e2d6d5}{const\+\_\+reference}}]{vl\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a51d32715600434c7e979c271d298b63c}\label{classpl_1_1stack_a51d32715600434c7e979c271d298b63c}} 
+\index{pl\+::stack@{pl\+::stack}!size@{size}}
+\index{size@{size}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+int \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a3761155a1aeea83b706ae04d416c3608}\label{classpl_1_1stack_a3761155a1aeea83b706ae04d416c3608}} 
+\index{pl\+::stack@{pl\+::stack}!top@{top}}
+\index{top@{top}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classpl_1_1stack_a2297d235c54cb53f6b8c4be2a324deee}{value\+\_\+type} \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::top (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classpl_1_1stack_abfd4b98e0b4fc570fdceb1ebafa4738e}\label{classpl_1_1stack_abfd4b98e0b4fc570fdceb1ebafa4738e}} 
+\index{pl\+::stack@{pl\+::stack}!m\+\_\+capacity@{m\+\_\+capacity}}
+\index{m\+\_\+capacity@{m\+\_\+capacity}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{m\+\_\+capacity}{m\_capacity}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+size\+\_\+t \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::m\+\_\+capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_ad9bcc4e4ca264cbf14b6f475a7051d82}\label{classpl_1_1stack_ad9bcc4e4ca264cbf14b6f475a7051d82}} 
+\index{pl\+::stack@{pl\+::stack}!m\+\_\+end@{m\+\_\+end}}
+\index{m\+\_\+end@{m\+\_\+end}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{m\+\_\+end}{m\_end}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+size\+\_\+t \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::m\+\_\+end\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpl_1_1stack_a65f803f7a3ddb160cf77ed0d53d514cd}\label{classpl_1_1stack_a65f803f7a3ddb160cf77ed0d53d514cd}} 
+\index{pl\+::stack@{pl\+::stack}!m\+\_\+storage@{m\+\_\+storage}}
+\index{m\+\_\+storage@{m\+\_\+storage}!pl\+::stack@{pl\+::stack}}
+\subsubsection{\texorpdfstring{m\+\_\+storage}{m\_storage}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classpl_1_1stack_a3713c8d6cb6cc72c07a445b11c39ae43}{pointer} \hyperlink{classpl_1_1stack}{pl\+::stack}$<$ T $>$\+::m\+\_\+storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{stack_8h}{stack.\+h}\end{DoxyCompactItemize}

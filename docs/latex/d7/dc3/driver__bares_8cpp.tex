@@ -1,0 +1,74 @@
+\hypertarget{driver__bares_8cpp}{}\section{Referência ao ficheiro src/driver\+\_\+bares.cpp}
+\label{driver__bares_8cpp}\index{src/driver\+\_\+bares.\+cpp@{src/driver\+\_\+bares.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include \char`\"{}../include/vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/fila.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/imp\+\_\+driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/sbares.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/extend\+\_\+parser.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para driver\+\_\+bares.\+cpp\+:
+% FIG 0
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{driver__bares_8cpp_a89f2c63428e12ef30a9aecf2ff582927}{arq\+\_\+entrada} = std\+::ifstream
+\item 
+using \hyperlink{driver__bares_8cpp_a976486d68a81a4688e9e7ef2d7649241}{arq\+\_\+saida} = std\+::ofstream
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{driver__bares_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Função principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos tipos}
+\mbox{\Hypertarget{driver__bares_8cpp_a89f2c63428e12ef30a9aecf2ff582927}\label{driver__bares_8cpp_a89f2c63428e12ef30a9aecf2ff582927}} 
+\index{driver\+\_\+bares.\+cpp@{driver\+\_\+bares.\+cpp}!arq\+\_\+entrada@{arq\+\_\+entrada}}
+\index{arq\+\_\+entrada@{arq\+\_\+entrada}!driver\+\_\+bares.\+cpp@{driver\+\_\+bares.\+cpp}}
+\subsubsection{\texorpdfstring{arq\+\_\+entrada}{arq\_entrada}}
+{\footnotesize\ttfamily using \hyperlink{driver__bares_8cpp_a89f2c63428e12ef30a9aecf2ff582927}{arq\+\_\+entrada} =  std\+::ifstream}
+
+\mbox{\Hypertarget{driver__bares_8cpp_a976486d68a81a4688e9e7ef2d7649241}\label{driver__bares_8cpp_a976486d68a81a4688e9e7ef2d7649241}} 
+\index{driver\+\_\+bares.\+cpp@{driver\+\_\+bares.\+cpp}!arq\+\_\+saida@{arq\+\_\+saida}}
+\index{arq\+\_\+saida@{arq\+\_\+saida}!driver\+\_\+bares.\+cpp@{driver\+\_\+bares.\+cpp}}
+\subsubsection{\texorpdfstring{arq\+\_\+saida}{arq\_saida}}
+{\footnotesize\ttfamily using \hyperlink{driver__bares_8cpp_a976486d68a81a4688e9e7ef2d7649241}{arq\+\_\+saida} =  std\+::ofstream}
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{driver__bares_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{driver__bares_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{driver\+\_\+bares.\+cpp@{driver\+\_\+bares.\+cpp}!main@{main}}
+\index{main@{main}!driver\+\_\+bares.\+cpp@{driver\+\_\+bares.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Função principal. 
+
+Verifica se o usuário inseriu os argumentos.
+
+Cria vetor para armazenar cada linha do arquivo de entrada.
+
+Salva o nome do arquivo de entrada.
+
+Verifica a leitura do arquivo de entrada.
+
+Verifica se o usuário colocou algum arquivo de entrada.
+
+Executa a função que realiza o processamento sobre as expressões com arquivo de saída.
+
+Executa a função que realiza o processamento sobre as expressões sem arquivo de saída.
+
+Finaliza o programa. 

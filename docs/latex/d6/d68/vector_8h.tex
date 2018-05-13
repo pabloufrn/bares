@@ -1,0 +1,43 @@
+\hypertarget{vector_8h}{}\section{Referência ao ficheiro include/vector.h}
+\label{vector_8h}\index{include/vector.\+h@{include/vector.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}vector.\+inl\char`\"{}}\newline
+Diagrama de dependências de inclusão para vector.\+h\+:
+% FIG 0
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 1
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsc_1_1vector}{sc\+::vector$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A classe vector implementa a lista T\+AD com array dinâmico (conhecido como vector). \end{DoxyCompactList}\item 
+class \hyperlink{classsc_1_1MyIterator}{sc\+::\+My\+Iterator$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Implementa a infraestrutura para suportar um ponteiro bidirecional. \end{DoxyCompactList}\item 
+class \hyperlink{classsc_1_1vector}{sc\+::vector$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A classe vector implementa a lista T\+AD com array dinâmico (conhecido como vector). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacesc}{sc}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{vector_8h_a95272d1943f0f0a927d8b545bebd0fa4}{S\+C\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+H}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespacesc_ac8c8a40b2448b8d340e7d5019dc6fc70}{sc\+::swap} (\hyperlink{classsc_1_1vector}{vector}$<$ T $>$ \&first\+\_\+, \hyperlink{classsc_1_1vector}{vector}$<$ T $>$ \&second\+\_\+)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \hyperlink{namespacesc_a3817d7e14aea07badea7976d5c4784fa}{sc\+::operator$<$$<$} (std\+::ostream \&os\+\_\+, const \hyperlink{classsc_1_1vector}{vector}$<$ T $>$ \&v\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das macros}
+\mbox{\Hypertarget{vector_8h_a95272d1943f0f0a927d8b545bebd0fa4}\label{vector_8h_a95272d1943f0f0a927d8b545bebd0fa4}} 
+\index{vector.\+h@{vector.\+h}!S\+C\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+H@{S\+C\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+H}}
+\index{S\+C\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+H@{S\+C\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+H}!vector.\+h@{vector.\+h}}
+\subsubsection{\texorpdfstring{S\+C\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+H}{SC\_VECTOR\_H}}
+{\footnotesize\ttfamily \#define S\+C\+\_\+\+V\+E\+C\+T\+O\+R\+\_\+H}
+

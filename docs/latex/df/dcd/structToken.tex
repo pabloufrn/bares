@@ -1,0 +1,121 @@
+\hypertarget{structToken}{}\section{Referência à estrutura Token}
+\label{structToken}\index{Token@{Token}}
+
+
+Representação de um token.  
+
+
+
+
+{\ttfamily \#include $<$token.\+h$>$}
+
+\subsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{token\+\_\+t} \+: int \{ \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177}{token\+\_\+t\+::\+O\+P\+E\+R\+A\+ND} = 0, 
+\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3}{token\+\_\+t\+::\+O\+P\+E\+R\+A\+T\+OR}, 
+\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935}{token\+\_\+t\+::\+P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+EN}, 
+\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf}{token\+\_\+t\+::\+P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+C\+L\+O\+SE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structToken_a2b65ec748189e36df9bced6a12b2f46f}{Token} (std\+::string value\+\_\+=\char`\"{}\char`\"{}, \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{token\+\_\+t} type\+\_\+=\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177}{token\+\_\+t\+::\+O\+P\+E\+R\+A\+ND})
+\begin{DoxyCompactList}\small\item\em Contrutor default. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{structToken_a4b7142147b8598f8e24c404928d9263b}{value}
+\begin{DoxyCompactList}\small\item\em O valor de um token como string. \end{DoxyCompactList}\item 
+\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{token\+\_\+t} \hyperlink{structToken_adc09b3fa26576ee028d22b7ddc6aad69}{type}
+\begin{DoxyCompactList}\small\item\em O tipode token que pode ser \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177}{token\+\_\+t\+::\+O\+P\+E\+R\+A\+ND}, \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3}{token\+\_\+t\+::\+O\+P\+E\+R\+A\+T\+OR}, \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935}{token\+\_\+t\+::\+P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+EN} ou \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf}{token\+\_\+t\+::\+P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+C\+L\+O\+SE}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Amigos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{structToken_a065608b70f9e8c375cf12cc7fc363dcd}{operator$<$$<$} (std\+::ostream \&os\+\_\+, const \hyperlink{structToken}{Token} \&t\+\_\+)
+\begin{DoxyCompactList}\small\item\em Ajudar no debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Representação de um token. 
+
+\subsection{Documentação das enumerações}
+\mbox{\Hypertarget{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}\label{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}} 
+\index{Token@{Token}!token\+\_\+t@{token\+\_\+t}}
+\index{token\+\_\+t@{token\+\_\+t}!Token@{Token}}
+\subsubsection{\texorpdfstring{token\+\_\+t}{token\_t}}
+{\footnotesize\ttfamily enum \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{Token\+::token\+\_\+t} \+: int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+E\+R\+A\+ND@{O\+P\+E\+R\+A\+ND}!Token@{Token}}\index{Token@{Token}!O\+P\+E\+R\+A\+ND@{O\+P\+E\+R\+A\+ND}}}\mbox{\Hypertarget{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177}\label{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177}} 
+O\+P\+E\+R\+A\+ND&Tipo de representação numerica. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+E\+R\+A\+T\+OR@{O\+P\+E\+R\+A\+T\+OR}!Token@{Token}}\index{Token@{Token}!O\+P\+E\+R\+A\+T\+OR@{O\+P\+E\+R\+A\+T\+OR}}}\mbox{\Hypertarget{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3}\label{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3}} 
+O\+P\+E\+R\+A\+T\+OR&Tipo de representação de \char`\"{}+\char`\"{}, \char`\"{}-\/\char`\"{}, \char`\"{}$\ast$\char`\"{}, \char`\"{}/\char`\"{}, \char`\"{}\%\char`\"{}, \char`\"{}$^\wedge$\char`\"{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+EN@{P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+EN}!Token@{Token}}\index{Token@{Token}!P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+EN@{P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+EN}}}\mbox{\Hypertarget{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935}\label{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935}} 
+P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+EN&Representação do \char`\"{}(\char`\"{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+C\+L\+O\+SE@{P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+C\+L\+O\+SE}!Token@{Token}}\index{Token@{Token}!P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+C\+L\+O\+SE@{P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+C\+L\+O\+SE}}}\mbox{\Hypertarget{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf}\label{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf}} 
+P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+C\+L\+O\+SE&Representação do \char`\"{})\char`\"{}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{structToken_a2b65ec748189e36df9bced6a12b2f46f}\label{structToken_a2b65ec748189e36df9bced6a12b2f46f}} 
+\index{Token@{Token}!Token@{Token}}
+\index{Token@{Token}!Token@{Token}}
+\subsubsection{\texorpdfstring{Token()}{Token()}}
+{\footnotesize\ttfamily Token\+::\+Token (\begin{DoxyParamCaption}\item[{std\+::string}]{value\+\_\+ = {\ttfamily \char`\"{}\char`\"{}},  }\item[{\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{token\+\_\+t}}]{type\+\_\+ = {\ttfamily \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177}{token\+\_\+t\+::\+O\+P\+E\+R\+A\+ND}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Contrutor default. 
+
+
+
+\subsection{Documentação das classes amigas e funções relacionadas}
+\mbox{\Hypertarget{structToken_a065608b70f9e8c375cf12cc7fc363dcd}\label{structToken_a065608b70f9e8c375cf12cc7fc363dcd}} 
+\index{Token@{Token}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Token@{Token}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os\+\_\+,  }\item[{const \hyperlink{structToken}{Token} \&}]{t\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Ajudar no debug. 
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{structToken_adc09b3fa26576ee028d22b7ddc6aad69}\label{structToken_adc09b3fa26576ee028d22b7ddc6aad69}} 
+\index{Token@{Token}!type@{type}}
+\index{type@{type}!Token@{Token}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{token\+\_\+t} Token\+::type}
+
+
+
+O tipode token que pode ser \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177}{token\+\_\+t\+::\+O\+P\+E\+R\+A\+ND}, \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3}{token\+\_\+t\+::\+O\+P\+E\+R\+A\+T\+OR}, \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935}{token\+\_\+t\+::\+P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+O\+P\+EN} ou \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf}{token\+\_\+t\+::\+P\+A\+R\+E\+N\+T\+H\+E\+S\+I\+S\+\_\+\+C\+L\+O\+SE}. 
+
+\mbox{\Hypertarget{structToken_a4b7142147b8598f8e24c404928d9263b}\label{structToken_a4b7142147b8598f8e24c404928d9263b}} 
+\index{Token@{Token}!value@{value}}
+\index{value@{value}!Token@{Token}}
+\subsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily std\+::string Token\+::value}
+
+
+
+O valor de um token como string. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{token_8h}{token.\+h}\end{DoxyCompactItemize}

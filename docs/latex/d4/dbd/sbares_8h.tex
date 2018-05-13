@@ -1,0 +1,214 @@
+\hypertarget{sbares_8h}{}\section{Referência ao ficheiro include/sbares.h}
+\label{sbares_8h}\index{include/sbares.\+h@{include/sbares.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+Diagrama de dependências de inclusão para sbares.\+h\+:
+% FIG 0
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 1
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} = short int
+\begin{DoxyCompactList}\small\item\em Type we operate on. \end{DoxyCompactList}\item 
+using \hyperlink{sbares_8h_a26e39595b93aa6a4237fd09451bded97}{symbol\+\_\+type} = \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{Token\+::token\+\_\+t}
+\item 
+using \hyperlink{sbares_8h_a4128c036627c8a889dd8a392856ee737}{input\+\_\+int\+\_\+type} = long long int
+\begin{DoxyCompactList}\small\item\em The integer type that we read from the input (larger thatn the required int). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{sbares_8h_a1b016818f73df7f4087f5c5e8a0a01af}{is\+\_\+operator} (\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type} s)
+\item 
+bool \hyperlink{sbares_8h_a886cba752d68a37bb19432f164a87445}{is\+\_\+operand} (\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type} s)
+\begin{DoxyCompactList}\small\item\em Vericica se é um operando. \end{DoxyCompactList}\item 
+bool \hyperlink{sbares_8h_a311f293aa7cc25e6dab31295bb2bfd8a}{is\+\_\+opening\+\_\+scope} (\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type} s)
+\begin{DoxyCompactList}\small\item\em Verifica se é um parentese aberto. \end{DoxyCompactList}\item 
+bool \hyperlink{sbares_8h_a790340fc64200c6dc2698b4168bd4f66}{is\+\_\+closing\+\_\+scope} (\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type} s)
+\begin{DoxyCompactList}\small\item\em Verifica se é um parentese fechando. \end{DoxyCompactList}\item 
+void \hyperlink{sbares_8h_a9b5b073fe71157b6829d8d481dafe76c}{infix\+\_\+to\+\_\+postfix} (\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \&, \hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Converte uma expressão na notação infix para uma profix. \end{DoxyCompactList}\item 
+\hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} \hyperlink{sbares_8h_a49ac4c141330b0a446b4c50c5c8a1d0f}{string2int} (std\+::string s)
+\begin{DoxyCompactList}\small\item\em Converte uma string para inteiro. \end{DoxyCompactList}\item 
+bool \hyperlink{sbares_8h_a7507c54f7773c582b03abba8c710d214}{is\+\_\+right\+\_\+association} (std\+::string op)
+\begin{DoxyCompactList}\small\item\em Verifica se tem mais de um $^\wedge$ seguido. \end{DoxyCompactList}\item 
+\hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} \hyperlink{sbares_8h_a1770f81440d5824f885603ea78e7fecc}{evaluate\+\_\+postfix} (\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Modifica uma expressão infix para uma posfix. \end{DoxyCompactList}\item 
+short \hyperlink{sbares_8h_aa880ffe264f12ac60d1dd0a763a61f75}{get\+\_\+precedence} (std\+::string op)
+\begin{DoxyCompactList}\small\item\em Retorna um valor de precedência de cada operador. \end{DoxyCompactList}\item 
+bool \hyperlink{sbares_8h_a6a946960f254cfc0dd339edc18aa0e7a}{has\+\_\+higher\+\_\+or\+\_\+eq\+\_\+precedence} (std\+::string op1, std\+::string op2)
+\begin{DoxyCompactList}\small\item\em Determina qual é o primeiro e o segundo operador por comparação de maior ou igual. \end{DoxyCompactList}\item 
+\hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} \hyperlink{sbares_8h_acd1254a0bdcb6ae868af105d952564db}{execute\+\_\+operator} (\hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} v1, \hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} v2, std\+::string op)
+\begin{DoxyCompactList}\small\item\em Executa a operação binária entre dois operandos retornando o resultado da operação. \end{DoxyCompactList}\item 
+int \hyperlink{sbares_8h_af152d6f7579c88e35dafa063f02c03db}{resolucao} (\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \&expression\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos tipos}
+\mbox{\Hypertarget{sbares_8h_a4128c036627c8a889dd8a392856ee737}\label{sbares_8h_a4128c036627c8a889dd8a392856ee737}} 
+\index{sbares.\+h@{sbares.\+h}!input\+\_\+int\+\_\+type@{input\+\_\+int\+\_\+type}}
+\index{input\+\_\+int\+\_\+type@{input\+\_\+int\+\_\+type}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{input\+\_\+int\+\_\+type}{input\_int\_type}}
+{\footnotesize\ttfamily using \hyperlink{sbares_8h_a4128c036627c8a889dd8a392856ee737}{input\+\_\+int\+\_\+type} =  long long int}
+
+
+
+The integer type that we read from the input (larger thatn the required int). 
+
+\mbox{\Hypertarget{sbares_8h_a26e39595b93aa6a4237fd09451bded97}\label{sbares_8h_a26e39595b93aa6a4237fd09451bded97}} 
+\index{sbares.\+h@{sbares.\+h}!symbol\+\_\+type@{symbol\+\_\+type}}
+\index{symbol\+\_\+type@{symbol\+\_\+type}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{symbol\+\_\+type}{symbol\_type}}
+{\footnotesize\ttfamily using \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type} =  \hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{Token\+::token\+\_\+t}}
+
+\mbox{\Hypertarget{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}\label{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}} 
+\index{sbares.\+h@{sbares.\+h}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily using \hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} =  short int}
+
+
+
+Type we operate on. 
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{sbares_8h_a1770f81440d5824f885603ea78e7fecc}\label{sbares_8h_a1770f81440d5824f885603ea78e7fecc}} 
+\index{sbares.\+h@{sbares.\+h}!evaluate\+\_\+postfix@{evaluate\+\_\+postfix}}
+\index{evaluate\+\_\+postfix@{evaluate\+\_\+postfix}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{evaluate\+\_\+postfix()}{evaluate\_postfix()}}
+{\footnotesize\ttfamily \hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} evaluate\+\_\+postfix (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \&}]{postfix }\end{DoxyParamCaption})}
+
+
+
+Modifica uma expressão infix para uma posfix. 
+
+Realiza as operações. 
+\begin{DoxyParams}{Parâmetros}
+{\em vetor} & com a expressão. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+retorna o resultado da expressão. 
+\end{DoxyReturn}
+Realiza verificação se é operando ou operador.
+
+Insere na pilha o operando
+
+Armazena os valores do topo e remove eles da pilha.
+
+Retorna o topo da pilha que é o resultado da expressão. \mbox{\Hypertarget{sbares_8h_acd1254a0bdcb6ae868af105d952564db}\label{sbares_8h_acd1254a0bdcb6ae868af105d952564db}} 
+\index{sbares.\+h@{sbares.\+h}!execute\+\_\+operator@{execute\+\_\+operator}}
+\index{execute\+\_\+operator@{execute\+\_\+operator}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{execute\+\_\+operator()}{execute\_operator()}}
+{\footnotesize\ttfamily \hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} execute\+\_\+operator (\begin{DoxyParamCaption}\item[{\hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type}}]{v1,  }\item[{\hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type}}]{v2,  }\item[{std\+::string}]{op }\end{DoxyParamCaption})}
+
+
+
+Executa a operação binária entre dois operandos retornando o resultado da operação. 
+
+\mbox{\Hypertarget{sbares_8h_aa880ffe264f12ac60d1dd0a763a61f75}\label{sbares_8h_aa880ffe264f12ac60d1dd0a763a61f75}} 
+\index{sbares.\+h@{sbares.\+h}!get\+\_\+precedence@{get\+\_\+precedence}}
+\index{get\+\_\+precedence@{get\+\_\+precedence}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+precedence()}{get\_precedence()}}
+{\footnotesize\ttfamily short get\+\_\+precedence (\begin{DoxyParamCaption}\item[{std\+::string}]{op }\end{DoxyParamCaption})}
+
+
+
+Retorna um valor de precedência de cada operador. 
+
+\mbox{\Hypertarget{sbares_8h_a6a946960f254cfc0dd339edc18aa0e7a}\label{sbares_8h_a6a946960f254cfc0dd339edc18aa0e7a}} 
+\index{sbares.\+h@{sbares.\+h}!has\+\_\+higher\+\_\+or\+\_\+eq\+\_\+precedence@{has\+\_\+higher\+\_\+or\+\_\+eq\+\_\+precedence}}
+\index{has\+\_\+higher\+\_\+or\+\_\+eq\+\_\+precedence@{has\+\_\+higher\+\_\+or\+\_\+eq\+\_\+precedence}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{has\+\_\+higher\+\_\+or\+\_\+eq\+\_\+precedence()}{has\_higher\_or\_eq\_precedence()}}
+{\footnotesize\ttfamily bool has\+\_\+higher\+\_\+or\+\_\+eq\+\_\+precedence (\begin{DoxyParamCaption}\item[{std\+::string}]{op1,  }\item[{std\+::string}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Determina qual é o primeiro e o segundo operador por comparação de maior ou igual. 
+
+\mbox{\Hypertarget{sbares_8h_a9b5b073fe71157b6829d8d481dafe76c}\label{sbares_8h_a9b5b073fe71157b6829d8d481dafe76c}} 
+\index{sbares.\+h@{sbares.\+h}!infix\+\_\+to\+\_\+postfix@{infix\+\_\+to\+\_\+postfix}}
+\index{infix\+\_\+to\+\_\+postfix@{infix\+\_\+to\+\_\+postfix}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{infix\+\_\+to\+\_\+postfix()}{infix\_to\_postfix()}}
+{\footnotesize\ttfamily void infix\+\_\+to\+\_\+postfix (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \&}]{infix,  }\item[{\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \&}]{postfix }\end{DoxyParamCaption})}
+
+
+
+Converte uma expressão na notação infix para uma profix. 
+
+Converte a notação infix de uma expressão para a postfix. \mbox{\Hypertarget{sbares_8h_a790340fc64200c6dc2698b4168bd4f66}\label{sbares_8h_a790340fc64200c6dc2698b4168bd4f66}} 
+\index{sbares.\+h@{sbares.\+h}!is\+\_\+closing\+\_\+scope@{is\+\_\+closing\+\_\+scope}}
+\index{is\+\_\+closing\+\_\+scope@{is\+\_\+closing\+\_\+scope}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+closing\+\_\+scope()}{is\_closing\_scope()}}
+{\footnotesize\ttfamily bool is\+\_\+closing\+\_\+scope (\begin{DoxyParamCaption}\item[{\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type}}]{s }\end{DoxyParamCaption})}
+
+
+
+Verifica se é um parentese fechando. 
+
+\mbox{\Hypertarget{sbares_8h_a311f293aa7cc25e6dab31295bb2bfd8a}\label{sbares_8h_a311f293aa7cc25e6dab31295bb2bfd8a}} 
+\index{sbares.\+h@{sbares.\+h}!is\+\_\+opening\+\_\+scope@{is\+\_\+opening\+\_\+scope}}
+\index{is\+\_\+opening\+\_\+scope@{is\+\_\+opening\+\_\+scope}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+opening\+\_\+scope()}{is\_opening\_scope()}}
+{\footnotesize\ttfamily bool is\+\_\+opening\+\_\+scope (\begin{DoxyParamCaption}\item[{\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type}}]{s }\end{DoxyParamCaption})}
+
+
+
+Verifica se é um parentese aberto. 
+
+\mbox{\Hypertarget{sbares_8h_a886cba752d68a37bb19432f164a87445}\label{sbares_8h_a886cba752d68a37bb19432f164a87445}} 
+\index{sbares.\+h@{sbares.\+h}!is\+\_\+operand@{is\+\_\+operand}}
+\index{is\+\_\+operand@{is\+\_\+operand}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+operand()}{is\_operand()}}
+{\footnotesize\ttfamily bool is\+\_\+operand (\begin{DoxyParamCaption}\item[{\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type}}]{s }\end{DoxyParamCaption})}
+
+
+
+Vericica se é um operando. 
+
+\mbox{\Hypertarget{sbares_8h_a1b016818f73df7f4087f5c5e8a0a01af}\label{sbares_8h_a1b016818f73df7f4087f5c5e8a0a01af}} 
+\index{sbares.\+h@{sbares.\+h}!is\+\_\+operator@{is\+\_\+operator}}
+\index{is\+\_\+operator@{is\+\_\+operator}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+operator()}{is\_operator()}}
+{\footnotesize\ttfamily bool is\+\_\+operator (\begin{DoxyParamCaption}\item[{\hyperlink{structToken_a0c0bd3a78407f44bc1fd21a9da6bd85b}{symbol\+\_\+type}}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sbares_8h_a7507c54f7773c582b03abba8c710d214}\label{sbares_8h_a7507c54f7773c582b03abba8c710d214}} 
+\index{sbares.\+h@{sbares.\+h}!is\+\_\+right\+\_\+association@{is\+\_\+right\+\_\+association}}
+\index{is\+\_\+right\+\_\+association@{is\+\_\+right\+\_\+association}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{is\+\_\+right\+\_\+association()}{is\_right\_association()}}
+{\footnotesize\ttfamily bool is\+\_\+right\+\_\+association (\begin{DoxyParamCaption}\item[{std\+::string}]{op }\end{DoxyParamCaption})}
+
+
+
+Verifica se tem mais de um $^\wedge$ seguido. 
+
+\mbox{\Hypertarget{sbares_8h_af152d6f7579c88e35dafa063f02c03db}\label{sbares_8h_af152d6f7579c88e35dafa063f02c03db}} 
+\index{sbares.\+h@{sbares.\+h}!resolucao@{resolucao}}
+\index{resolucao@{resolucao}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{resolucao()}{resolucao()}}
+{\footnotesize\ttfamily int resolucao (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \&}]{expression\+\_\+ }\end{DoxyParamCaption})}
+
+Realiza as operações. 
+\begin{DoxyParams}{Parâmetros}
+{\em expressão.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna o resultado da expressão. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sbares_8h_a49ac4c141330b0a446b4c50c5c8a1d0f}\label{sbares_8h_a49ac4c141330b0a446b4c50c5c8a1d0f}} 
+\index{sbares.\+h@{sbares.\+h}!string2int@{string2int}}
+\index{string2int@{string2int}!sbares.\+h@{sbares.\+h}}
+\subsubsection{\texorpdfstring{string2int()}{string2int()}}
+{\footnotesize\ttfamily \hyperlink{sbares_8h_aac3373ea3a19bba8dd8086f98f3bdb61}{value\+\_\+type} string2int (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Converte uma string para inteiro. 
+

@@ -1,0 +1,528 @@
+\hypertarget{classParser}{}\section{Referência à classe Parser}
+\label{classParser}\index{Parser@{Parser}}
+
+
+{\ttfamily \#include $<$parser.\+h$>$}
+
+
+
+Diagrama de colaboração para Parser\+:
+% FIG 0
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structParser_1_1ResultType}{Result\+Type}
+\begin{DoxyCompactList}\small\item\em Este struct representa o resultado da operação de parsing (transformação). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+typedef short int \hyperlink{classParser_a6fda6745fb8e655fb2ee8e2d47dc2bed}{required\+\_\+int\+\_\+type}
+\begin{DoxyCompactList}\small\item\em O tipo interiro que nós aceitamos como válida para uma expressão. \end{DoxyCompactList}\item 
+typedef long long int \hyperlink{classParser_ae104286b7f2aa52593e92d601bf60c6f}{input\+\_\+int\+\_\+type}
+\begin{DoxyCompactList}\small\item\em O tipo interiro que lê para a entrada (maior do que o int). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structParser_1_1ResultType}{Result\+Type} \hyperlink{classParser_a0ae862fb78eb349777532c6d120d0d25}{parse} (std\+::string e\+\_\+)
+\begin{DoxyCompactList}\small\item\em Parses e tokenizes de entrada do código da expressão. Retorna o resultado como um struct. \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \hyperlink{classParser_a4cd9c7937197721f850eabb3a2178ced}{get\+\_\+tokens} (void) const
+\begin{DoxyCompactList}\small\item\em Recupera a lista de tokens criada durante o processo de parsing. \end{DoxyCompactList}\item 
+\hyperlink{classParser_a5208129b497bfdf7c8ecceeb70e4bba8}{Parser} ()=default
+\begin{DoxyCompactList}\small\item\em Contrutor default. \end{DoxyCompactList}\item 
+\hyperlink{classParser_a95734193a58a199b4c6d820a6a730c42}{$\sim$\+Parser} ()=default
+\begin{DoxyCompactList}\small\item\em Descontrutor default. \end{DoxyCompactList}\item 
+\hyperlink{classParser_a48044a8caa14a251cb4dad9fb363658e}{Parser} (const \hyperlink{classParser}{Parser} \&)=delete
+\begin{DoxyCompactList}\small\item\em Desliga o construtor de cópia, já que não precisaremos dele. \end{DoxyCompactList}\item 
+\hyperlink{classParser}{Parser} \& \hyperlink{classParser_aa47e7e93b8d1ff76c51ce3028ff24ce6}{operator=} (const \hyperlink{classParser}{Parser} \&)=delete
+\begin{DoxyCompactList}\small\item\em Desliga o operador de atribuição. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Tipos Privados}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{terminal\+\_\+symbol\+\_\+t} \{ \newline
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049afbcb66e615689d008795b088e7d83e8f}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+P\+L\+US}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049ad4035b1ab1b3060b3065175de3ef34da}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+M\+I\+N\+US}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049a605e1a8e06e5635549f3c111101a1b68}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+T\+I\+M\+ES}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049ad8d583f7b3bcc2d67080e5911951d392}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+D\+I\+V\+I\+D\+ED}, 
+\newline
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049adea3d590afe039901e4416c889989261}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+P\+E\+R\+C\+E\+NT}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049a3a27ba1dacf6af0aa89eb658efde97e1}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+P\+O\+W\+ER}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049ab991e11b5e1d72a4458db212ea96e4ed}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+O\+P\+EN}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049af4d770ceee14d1abddd4309152f4d42b}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+C\+L\+O\+SE}, 
+\newline
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049ae1bbcac6e0faafa1c5fbfb41d3b9994e}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+Z\+E\+RO}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049ae597d0d14ce03b6bd36b4a12ce2d0de4}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+N\+O\+N\+\_\+\+Z\+E\+R\+O\+\_\+\+D\+I\+G\+IT}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049a0f14662570aa6ae95f583c15208af7d6}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+WS}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049a8fc2a9aaf9a5e4d32b05fa9384d5a474}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+T\+AB}, 
+\newline
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049ae4929a38d30c358ab2ce85e0096b9d21}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+E\+OS}, 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049a88e021e37fb08ff77007f5b0e723136e}{terminal\+\_\+symbol\+\_\+t\+::\+T\+S\+\_\+\+I\+N\+V\+A\+L\+ID}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Membros privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{terminal\+\_\+symbol\+\_\+t} \hyperlink{classParser_aa2bbaa87534abef84269d79cf7165035}{lexer} (char c\+\_\+) const
+\begin{DoxyCompactList}\small\item\em Converts the input character c\+\_\+ into its corresponding terminal symbol code. \end{DoxyCompactList}\item 
+void \hyperlink{classParser_ac0919453374e9abfb0f55f41f057d7a1}{next\+\_\+symbol} (void)
+\begin{DoxyCompactList}\small\item\em Consumes a valid character from the input source expression. \end{DoxyCompactList}\item 
+bool \hyperlink{classParser_a38df5f6fc75d85cc6907ae21e11c5b16}{peek} (\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{terminal\+\_\+symbol\+\_\+t} c\+\_\+) const
+\begin{DoxyCompactList}\small\item\em Returns the result of trying to match the current character with c\+\_\+, {\bfseries without} consuming the current character from the input expression. \end{DoxyCompactList}\item 
+bool \hyperlink{classParser_a884775e075317b4b2cfb2016d3654f2a}{accept} (\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{terminal\+\_\+symbol\+\_\+t} c\+\_\+)
+\begin{DoxyCompactList}\small\item\em Returns the result of trying to match (\hyperlink{classParser_a38df5f6fc75d85cc6907ae21e11c5b16}{peek()}) and consume the current character with c\+\_\+. \end{DoxyCompactList}\item 
+bool \hyperlink{classParser_ac107d6116db968131021f4e57838b27d}{expect} (\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{terminal\+\_\+symbol\+\_\+t} c\+\_\+)
+\begin{DoxyCompactList}\small\item\em Skips all white spaces and tries to \hyperlink{classParser_a884775e075317b4b2cfb2016d3654f2a}{accept()} the next valid character. \end{DoxyCompactList}\item 
+void \hyperlink{classParser_a35da81bd369bab816b71418736184d5d}{skip\+\_\+ws} (void)
+\begin{DoxyCompactList}\small\item\em Ignores any white space or tabs in the expression until reach a valid character or end of input. \end{DoxyCompactList}\item 
+bool \hyperlink{classParser_a0bc1de21b7ed31471b72abb94ab7aba9}{end\+\_\+input} (void) const
+\begin{DoxyCompactList}\small\item\em Checks whether we reached the end of the input expression string. \end{DoxyCompactList}\item 
+\hyperlink{structParser_1_1ResultType}{Result\+Type} \hyperlink{classParser_ab39d3a821509bfe5fdb2d9d481ae92e6}{expression} ()
+\begin{DoxyCompactList}\small\item\em Validates (i.\+e. returns true or false) and consumes an expression from the input string. \end{DoxyCompactList}\item 
+\hyperlink{structParser_1_1ResultType}{Result\+Type} \hyperlink{classParser_a82f4cbee572a5b8305368820525603bd}{term} ()
+\begin{DoxyCompactList}\small\item\em Validates (i.\+e. returns true or false) and consumes a term from the input string. \end{DoxyCompactList}\item 
+\hyperlink{structParser_1_1ResultType}{Result\+Type} \hyperlink{classParser_ab6b91c4e4b8bacb7d0eefca5ae9ffce6}{integer} ()
+\begin{DoxyCompactList}\small\item\em Validates (i.\+e. returns true or false) and consumes an integer from the input string. \end{DoxyCompactList}\item 
+\hyperlink{structParser_1_1ResultType}{Result\+Type} \hyperlink{classParser_a18974ec32c22bb2f19f3499986de6ada}{natural\+\_\+number} ()
+\begin{DoxyCompactList}\small\item\em Validates (i.\+e. returns true or false) and consumes a natural number from the input string. \end{DoxyCompactList}\item 
+bool \hyperlink{classParser_ac1522aacdb7de926636be0ca1067b915}{digit\+\_\+excl\+\_\+zero} ()
+\begin{DoxyCompactList}\small\item\em Validates (i.\+e. returns true or false) and consumes a non-\/zero digit from the input string. \end{DoxyCompactList}\item 
+bool \hyperlink{classParser_ad9b268411777d28893f547653ece2206}{digit} ()
+\begin{DoxyCompactList}\small\item\em Validates (i.\+e. returns true or false) and consumes a zero digit from the input string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classParser_a6429f38abf0207bc14d64bacc399b3f9}{expr}
+\begin{DoxyCompactList}\small\item\em Expressão para ser \char`\"{}parsed\char`\"{}. \end{DoxyCompactList}\item 
+std\+::string\+::iterator \hyperlink{classParser_a7036e94a1d0b3973d126a2023a91b7ec}{it\+\_\+curr\+\_\+symb}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o char padrão dentro da expressão. \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ \hyperlink{classParser_a87c81225df0bfa24bcd321bcbdd7af26}{token\+\_\+list}
+\begin{DoxyCompactList}\small\item\em Lista de resultado da lista de token extraidas da expressão. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Implements a recursive descendent parser for a E\+B\+NF grammar.
+
+This class also tokenizes the input expression into its components, creating a list of tokens.
+
+The E\+B\+NF grammar is\+: 
+\begin{DoxyCode}
+<\hyperlink{classParser_a6429f38abf0207bc14d64bacc399b3f9}{expr}>            := <\hyperlink{classParser_a82f4cbee572a5b8305368820525603bd}{term}>,\{ (\textcolor{stringliteral}{"+"}|\textcolor{stringliteral}{"-"}|\textcolor{stringliteral}{"*"}|\textcolor{stringliteral}{"/"}|\textcolor{stringliteral}{"%"}|\textcolor{stringliteral}{"^"}),<\hyperlink{classParser_a82f4cbee572a5b8305368820525603bd}{term}> \};
+<\hyperlink{classParser_a82f4cbee572a5b8305368820525603bd}{term}>            := \textcolor{stringliteral}{"("}, <\hyperlink{classParser_a6429f38abf0207bc14d64bacc399b3f9}{expr}>, \textcolor{stringliteral}{")"} | <\hyperlink{classParser_ab6b91c4e4b8bacb7d0eefca5ae9ffce6}{integer}>;
+<\hyperlink{classParser_ab6b91c4e4b8bacb7d0eefca5ae9ffce6}{integer}>         := 0 | [\textcolor{stringliteral}{"-"}],<\hyperlink{classParser_a18974ec32c22bb2f19f3499986de6ada}{natural\_number}>;
+<\hyperlink{classParser_a18974ec32c22bb2f19f3499986de6ada}{natural\_number}>  := <\hyperlink{classParser_ac1522aacdb7de926636be0ca1067b915}{digit\_excl\_zero}>,\{<\hyperlink{classParser_ad9b268411777d28893f547653ece2206}{digit}>\};
+<\hyperlink{classParser_ac1522aacdb7de926636be0ca1067b915}{digit\_excl\_zero}> := \textcolor{stringliteral}{"1"} | \textcolor{stringliteral}{"2"} | \textcolor{stringliteral}{"3"} | \textcolor{stringliteral}{"4"} | \textcolor{stringliteral}{"5"} | \textcolor{stringliteral}{"6"} | \textcolor{stringliteral}{"7"} | \textcolor{stringliteral}{"8"} | \textcolor{stringliteral}{"9"};
+<\hyperlink{classParser_ad9b268411777d28893f547653ece2206}{digit}>           := \textcolor{stringliteral}{"0"}| <\hyperlink{classParser_ac1522aacdb7de926636be0ca1067b915}{digit\_excl\_zero}>;
+\end{DoxyCode}
+ 
+
+\subsection{Documentação das definições de tipo}
+\mbox{\Hypertarget{classParser_ae104286b7f2aa52593e92d601bf60c6f}\label{classParser_ae104286b7f2aa52593e92d601bf60c6f}} 
+\index{Parser@{Parser}!input\+\_\+int\+\_\+type@{input\+\_\+int\+\_\+type}}
+\index{input\+\_\+int\+\_\+type@{input\+\_\+int\+\_\+type}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{input\+\_\+int\+\_\+type}{input\_int\_type}}
+{\footnotesize\ttfamily typedef long long int \hyperlink{classParser_ae104286b7f2aa52593e92d601bf60c6f}{Parser\+::input\+\_\+int\+\_\+type}}
+
+
+
+O tipo interiro que lê para a entrada (maior do que o int). 
+
+\mbox{\Hypertarget{classParser_a6fda6745fb8e655fb2ee8e2d47dc2bed}\label{classParser_a6fda6745fb8e655fb2ee8e2d47dc2bed}} 
+\index{Parser@{Parser}!required\+\_\+int\+\_\+type@{required\+\_\+int\+\_\+type}}
+\index{required\+\_\+int\+\_\+type@{required\+\_\+int\+\_\+type}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{required\+\_\+int\+\_\+type}{required\_int\_type}}
+{\footnotesize\ttfamily typedef short int \hyperlink{classParser_a6fda6745fb8e655fb2ee8e2d47dc2bed}{Parser\+::required\+\_\+int\+\_\+type}}
+
+
+
+O tipo interiro que nós aceitamos como válida para uma expressão. 
+
+
+
+\subsection{Documentação das enumerações}
+\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049}} 
+\index{Parser@{Parser}!terminal\+\_\+symbol\+\_\+t@{terminal\+\_\+symbol\+\_\+t}}
+\index{terminal\+\_\+symbol\+\_\+t@{terminal\+\_\+symbol\+\_\+t}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{terminal\+\_\+symbol\+\_\+t}{terminal\_symbol\_t}}
+{\footnotesize\ttfamily enum \hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{Parser\+::terminal\+\_\+symbol\+\_\+t}\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+P\+L\+US@{T\+S\+\_\+\+P\+L\+US}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+P\+L\+US@{T\+S\+\_\+\+P\+L\+US}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049afbcb66e615689d008795b088e7d83e8f}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049afbcb66e615689d008795b088e7d83e8f}} 
+T\+S\+\_\+\+P\+L\+US&código para \char`\"{}+\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+M\+I\+N\+US@{T\+S\+\_\+\+M\+I\+N\+US}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+M\+I\+N\+US@{T\+S\+\_\+\+M\+I\+N\+US}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049ad4035b1ab1b3060b3065175de3ef34da}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049ad4035b1ab1b3060b3065175de3ef34da}} 
+T\+S\+\_\+\+M\+I\+N\+US&código para \char`\"{}-\/\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+T\+I\+M\+ES@{T\+S\+\_\+\+T\+I\+M\+ES}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+T\+I\+M\+ES@{T\+S\+\_\+\+T\+I\+M\+ES}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049a605e1a8e06e5635549f3c111101a1b68}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049a605e1a8e06e5635549f3c111101a1b68}} 
+T\+S\+\_\+\+T\+I\+M\+ES&código para \char`\"{}$\ast$\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+D\+I\+V\+I\+D\+ED@{T\+S\+\_\+\+D\+I\+V\+I\+D\+ED}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+D\+I\+V\+I\+D\+ED@{T\+S\+\_\+\+D\+I\+V\+I\+D\+ED}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049ad8d583f7b3bcc2d67080e5911951d392}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049ad8d583f7b3bcc2d67080e5911951d392}} 
+T\+S\+\_\+\+D\+I\+V\+I\+D\+ED&código para \char`\"{}/\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+P\+E\+R\+C\+E\+NT@{T\+S\+\_\+\+P\+E\+R\+C\+E\+NT}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+P\+E\+R\+C\+E\+NT@{T\+S\+\_\+\+P\+E\+R\+C\+E\+NT}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049adea3d590afe039901e4416c889989261}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049adea3d590afe039901e4416c889989261}} 
+T\+S\+\_\+\+P\+E\+R\+C\+E\+NT&código para \char`\"{}\%\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+P\+O\+W\+ER@{T\+S\+\_\+\+P\+O\+W\+ER}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+P\+O\+W\+ER@{T\+S\+\_\+\+P\+O\+W\+ER}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049a3a27ba1dacf6af0aa89eb658efde97e1}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049a3a27ba1dacf6af0aa89eb658efde97e1}} 
+T\+S\+\_\+\+P\+O\+W\+ER&código para \char`\"{}$^\wedge$\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+O\+P\+EN@{T\+S\+\_\+\+O\+P\+EN}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+O\+P\+EN@{T\+S\+\_\+\+O\+P\+EN}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049ab991e11b5e1d72a4458db212ea96e4ed}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049ab991e11b5e1d72a4458db212ea96e4ed}} 
+T\+S\+\_\+\+O\+P\+EN&código para \char`\"{}(\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+C\+L\+O\+SE@{T\+S\+\_\+\+C\+L\+O\+SE}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+C\+L\+O\+SE@{T\+S\+\_\+\+C\+L\+O\+SE}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049af4d770ceee14d1abddd4309152f4d42b}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049af4d770ceee14d1abddd4309152f4d42b}} 
+T\+S\+\_\+\+C\+L\+O\+SE&código para \char`\"{})\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+Z\+E\+RO@{T\+S\+\_\+\+Z\+E\+RO}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+Z\+E\+RO@{T\+S\+\_\+\+Z\+E\+RO}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049ae1bbcac6e0faafa1c5fbfb41d3b9994e}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049ae1bbcac6e0faafa1c5fbfb41d3b9994e}} 
+T\+S\+\_\+\+Z\+E\+RO&código para \char`\"{}0\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+N\+O\+N\+\_\+\+Z\+E\+R\+O\+\_\+\+D\+I\+G\+IT@{T\+S\+\_\+\+N\+O\+N\+\_\+\+Z\+E\+R\+O\+\_\+\+D\+I\+G\+IT}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+N\+O\+N\+\_\+\+Z\+E\+R\+O\+\_\+\+D\+I\+G\+IT@{T\+S\+\_\+\+N\+O\+N\+\_\+\+Z\+E\+R\+O\+\_\+\+D\+I\+G\+IT}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049ae597d0d14ce03b6bd36b4a12ce2d0de4}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049ae597d0d14ce03b6bd36b4a12ce2d0de4}} 
+T\+S\+\_\+\+N\+O\+N\+\_\+\+Z\+E\+R\+O\+\_\+\+D\+I\+G\+IT&código para os digitos \char`\"{}1\char`\"{}-\/$>$\char`\"{}9\char`\"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+WS@{T\+S\+\_\+\+WS}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+WS@{T\+S\+\_\+\+WS}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049a0f14662570aa6ae95f583c15208af7d6}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049a0f14662570aa6ae95f583c15208af7d6}} 
+T\+S\+\_\+\+WS&código para o espaço em branco \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+T\+AB@{T\+S\+\_\+\+T\+AB}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+T\+AB@{T\+S\+\_\+\+T\+AB}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049a8fc2a9aaf9a5e4d32b05fa9384d5a474}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049a8fc2a9aaf9a5e4d32b05fa9384d5a474}} 
+T\+S\+\_\+\+T\+AB&código para tab \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+E\+OS@{T\+S\+\_\+\+E\+OS}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+E\+OS@{T\+S\+\_\+\+E\+OS}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049ae4929a38d30c358ab2ce85e0096b9d21}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049ae4929a38d30c358ab2ce85e0096b9d21}} 
+T\+S\+\_\+\+E\+OS&código para o fim da string \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+\_\+\+I\+N\+V\+A\+L\+ID@{T\+S\+\_\+\+I\+N\+V\+A\+L\+ID}!Parser@{Parser}}\index{Parser@{Parser}!T\+S\+\_\+\+I\+N\+V\+A\+L\+ID@{T\+S\+\_\+\+I\+N\+V\+A\+L\+ID}}}\mbox{\Hypertarget{classParser_a7d49b050a3c0df9e37ff81c5099be049a88e021e37fb08ff77007f5b0e723136e}\label{classParser_a7d49b050a3c0df9e37ff81c5099be049a88e021e37fb08ff77007f5b0e723136e}} 
+T\+S\+\_\+\+I\+N\+V\+A\+L\+ID&token invalido \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classParser_a5208129b497bfdf7c8ecceeb70e4bba8}\label{classParser_a5208129b497bfdf7c8ecceeb70e4bba8}} 
+\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{Parser()}{Parser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Parser\+::\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Contrutor default. 
+
+\mbox{\Hypertarget{classParser_a95734193a58a199b4c6d820a6a730c42}\label{classParser_a95734193a58a199b4c6d820a6a730c42}} 
+\index{Parser@{Parser}!````~Parser@{$\sim$\+Parser}}
+\index{````~Parser@{$\sim$\+Parser}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{$\sim$\+Parser()}{~Parser()}}
+{\footnotesize\ttfamily Parser\+::$\sim$\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Descontrutor default. 
+
+\mbox{\Hypertarget{classParser_a48044a8caa14a251cb4dad9fb363658e}\label{classParser_a48044a8caa14a251cb4dad9fb363658e}} 
+\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{Parser()}{Parser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{const \hyperlink{classParser}{Parser} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Desliga o construtor de cópia, já que não precisaremos dele. 
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classParser_a884775e075317b4b2cfb2016d3654f2a}\label{classParser_a884775e075317b4b2cfb2016d3654f2a}} 
+\index{Parser@{Parser}!accept@{accept}}
+\index{accept@{accept}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily bool Parser\+::accept (\begin{DoxyParamCaption}\item[{\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{terminal\+\_\+symbol\+\_\+t}}]{c\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns the result of trying to match (\hyperlink{classParser_a38df5f6fc75d85cc6907ae21e11c5b16}{peek()}) and consume the current character with c\+\_\+. 
+
+If the match is not successful, the current character (from the input) {\bfseries is not consumed}. 
+\begin{DoxyParams}{Parâmetros}
+{\em c\+\_\+} & the current character from the input source expression we wish to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Veja também}
+\hyperlink{classParser_a38df5f6fc75d85cc6907ae21e11c5b16}{peek()}. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Retorna}
+true if we got a successful match; false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParser_ad9b268411777d28893f547653ece2206}\label{classParser_ad9b268411777d28893f547653ece2206}} 
+\index{Parser@{Parser}!digit@{digit}}
+\index{digit@{digit}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{digit()}{digit()}}
+{\footnotesize\ttfamily bool Parser\+::digit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates (i.\+e. returns true or false) and consumes a zero digit from the input string. 
+
+This method parses a single valid digit from the input.
+
+Production rule is\+: 
+\begin{DoxyCode}
+<\hyperlink{classParser_ad9b268411777d28893f547653ece2206}{digit}> := \textcolor{stringliteral}{"0"}| <\hyperlink{classParser_ac1522aacdb7de926636be0ca1067b915}{digit\_excl\_zero}>;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Retorna}
+true if a digit has been successfuly parsed from the input; false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParser_ac1522aacdb7de926636be0ca1067b915}\label{classParser_ac1522aacdb7de926636be0ca1067b915}} 
+\index{Parser@{Parser}!digit\+\_\+excl\+\_\+zero@{digit\+\_\+excl\+\_\+zero}}
+\index{digit\+\_\+excl\+\_\+zero@{digit\+\_\+excl\+\_\+zero}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{digit\+\_\+excl\+\_\+zero()}{digit\_excl\_zero()}}
+{\footnotesize\ttfamily bool Parser\+::digit\+\_\+excl\+\_\+zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates (i.\+e. returns true or false) and consumes a non-\/zero digit from the input string. 
+
+This method parses a single valid non-\/zero digit from the input.
+
+Production rule is\+: 
+\begin{DoxyCode}
+<\hyperlink{classParser_ac1522aacdb7de926636be0ca1067b915}{digit\_excl\_zero}> := \textcolor{stringliteral}{"1"} | \textcolor{stringliteral}{"2"} | \textcolor{stringliteral}{"3"} | \textcolor{stringliteral}{"4"} | \textcolor{stringliteral}{"5"} | \textcolor{stringliteral}{"6"} | \textcolor{stringliteral}{"7"} | \textcolor{stringliteral}{"8"} | \textcolor{stringliteral}{"9"};
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Retorna}
+true if a non-\/zero digit has been successfuly parsed from the input; false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParser_a0bc1de21b7ed31471b72abb94ab7aba9}\label{classParser_a0bc1de21b7ed31471b72abb94ab7aba9}} 
+\index{Parser@{Parser}!end\+\_\+input@{end\+\_\+input}}
+\index{end\+\_\+input@{end\+\_\+input}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{end\+\_\+input()}{end\_input()}}
+{\footnotesize\ttfamily bool Parser\+::end\+\_\+input (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks whether we reached the end of the input expression string. 
+
+\mbox{\Hypertarget{classParser_ac107d6116db968131021f4e57838b27d}\label{classParser_ac107d6116db968131021f4e57838b27d}} 
+\index{Parser@{Parser}!expect@{expect}}
+\index{expect@{expect}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{expect()}{expect()}}
+{\footnotesize\ttfamily bool Parser\+::expect (\begin{DoxyParamCaption}\item[{\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{terminal\+\_\+symbol\+\_\+t}}]{c\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Skips all white spaces and tries to \hyperlink{classParser_a884775e075317b4b2cfb2016d3654f2a}{accept()} the next valid character. 
+
+\begin{DoxySeeAlso}{Veja também}
+\hyperlink{classParser_a884775e075317b4b2cfb2016d3654f2a}{accept()}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classParser_ab39d3a821509bfe5fdb2d9d481ae92e6}\label{classParser_ab39d3a821509bfe5fdb2d9d481ae92e6}} 
+\index{Parser@{Parser}!expression@{expression}}
+\index{expression@{expression}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{expression()}{expression()}}
+{\footnotesize\ttfamily \hyperlink{structParser_1_1ResultType}{Parser\+::\+Result\+Type} Parser\+::expression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates (i.\+e. returns true or false) and consumes an expression from the input string. 
+
+This method parses a valid expression from the input and, at the same time, it tokenizes its components.
+
+Production rule is\+: 
+\begin{DoxyCode}
+<\hyperlink{classParser_a6429f38abf0207bc14d64bacc399b3f9}{expr}> := <\hyperlink{classParser_a82f4cbee572a5b8305368820525603bd}{term}>,\{ (\textcolor{stringliteral}{"+"}|\textcolor{stringliteral}{"-"}|\textcolor{stringliteral}{"*"}|\textcolor{stringliteral}{"/"}|\textcolor{stringliteral}{"%"}|\textcolor{stringliteral}{"^"}),<\hyperlink{classParser_a82f4cbee572a5b8305368820525603bd}{term}> \};
+\end{DoxyCode}
+ R\+E\+V\+ER E\+S\+TA C\+O\+N\+D\+IÇÃO $<$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- An expression might be just a term or one or more terms with \textquotesingle{}+\textquotesingle{}/\textquotesingle{}-\/\textquotesingle{}/\textquotesingle{}\textquotesingle{} between them. \mbox{\Hypertarget{classParser_a4cd9c7937197721f850eabb3a2178ced}\label{classParser_a4cd9c7937197721f850eabb3a2178ced}} 
+\index{Parser@{Parser}!get\+\_\+tokens@{get\+\_\+tokens}}
+\index{get\+\_\+tokens@{get\+\_\+tokens}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{get\+\_\+tokens()}{get\_tokens()}}
+{\footnotesize\ttfamily \hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ Parser\+::get\+\_\+tokens (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Recupera a lista de tokens criada durante o processo de parsing. 
+
+Return the list of tokens, which is the by-\/product created during the syntax analysis. \mbox{\Hypertarget{classParser_ab6b91c4e4b8bacb7d0eefca5ae9ffce6}\label{classParser_ab6b91c4e4b8bacb7d0eefca5ae9ffce6}} 
+\index{Parser@{Parser}!integer@{integer}}
+\index{integer@{integer}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{integer()}{integer()}}
+{\footnotesize\ttfamily \hyperlink{structParser_1_1ResultType}{Parser\+::\+Result\+Type} Parser\+::integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates (i.\+e. returns true or false) and consumes an integer from the input string. 
+
+This method parses a valid integer from the input and, at the same time, add the integer to the token list.
+
+Production rule is\+: 
+\begin{DoxyCode}
+<\hyperlink{classParser_ab6b91c4e4b8bacb7d0eefca5ae9ffce6}{integer}> := 0 | [\textcolor{stringliteral}{"-"}],<\hyperlink{classParser_a18974ec32c22bb2f19f3499986de6ada}{natural\_number}>;
+\end{DoxyCode}
+ A integer might be a zero or a natural number, which, in turn, might begin with an unary minus.
+
+\begin{DoxyReturn}{Retorna}
+true if an integer has been successfuly parsed from the input; false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParser_aa2bbaa87534abef84269d79cf7165035}\label{classParser_aa2bbaa87534abef84269d79cf7165035}} 
+\index{Parser@{Parser}!lexer@{lexer}}
+\index{lexer@{lexer}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{lexer()}{lexer()}}
+{\footnotesize\ttfamily \hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{Parser\+::terminal\+\_\+symbol\+\_\+t} Parser\+::lexer (\begin{DoxyParamCaption}\item[{char}]{c\+\_\+ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Converts the input character c\+\_\+ into its corresponding terminal symbol code. 
+
+\mbox{\Hypertarget{classParser_a18974ec32c22bb2f19f3499986de6ada}\label{classParser_a18974ec32c22bb2f19f3499986de6ada}} 
+\index{Parser@{Parser}!natural\+\_\+number@{natural\+\_\+number}}
+\index{natural\+\_\+number@{natural\+\_\+number}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{natural\+\_\+number()}{natural\_number()}}
+{\footnotesize\ttfamily \hyperlink{structParser_1_1ResultType}{Parser\+::\+Result\+Type} Parser\+::natural\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates (i.\+e. returns true or false) and consumes a natural number from the input string. 
+
+This method parses a valid natural number from the input.
+
+Production rule is\+: 
+\begin{DoxyCode}
+<\hyperlink{classParser_a18974ec32c22bb2f19f3499986de6ada}{natural\_number}> := <\hyperlink{classParser_ac1522aacdb7de926636be0ca1067b915}{digit\_excl\_zero}>,\{<\hyperlink{classParser_ad9b268411777d28893f547653ece2206}{digit}>\};
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Retorna}
+true if a natural number has been successfuly parsed from the input; false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParser_ac0919453374e9abfb0f55f41f057d7a1}\label{classParser_ac0919453374e9abfb0f55f41f057d7a1}} 
+\index{Parser@{Parser}!next\+\_\+symbol@{next\+\_\+symbol}}
+\index{next\+\_\+symbol@{next\+\_\+symbol}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{next\+\_\+symbol()}{next\_symbol()}}
+{\footnotesize\ttfamily void Parser\+::next\+\_\+symbol (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Consumes a valid character from the input source expression. 
+
+\mbox{\Hypertarget{classParser_aa47e7e93b8d1ff76c51ce3028ff24ce6}\label{classParser_aa47e7e93b8d1ff76c51ce3028ff24ce6}} 
+\index{Parser@{Parser}!operator=@{operator=}}
+\index{operator=@{operator=}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classParser}{Parser}\& Parser\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classParser}{Parser} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Desliga o operador de atribuição. 
+
+\mbox{\Hypertarget{classParser_a0ae862fb78eb349777532c6d120d0d25}\label{classParser_a0ae862fb78eb349777532c6d120d0d25}} 
+\index{Parser@{Parser}!parse@{parse}}
+\index{parse@{parse}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \hyperlink{structParser_1_1ResultType}{Parser\+::\+Result\+Type} Parser\+::parse (\begin{DoxyParamCaption}\item[{std\+::string}]{e\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Parses e tokenizes de entrada do código da expressão. Retorna o resultado como um struct. 
+
+This is the parser\textquotesingle{}s entry point. This method tries to (recursivelly) validate an expression. During this process, we also store the tokens into a container.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e\+\_\+} & The string with the expression to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+The parsing result.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Veja também}
+\hyperlink{structParser_1_1ResultType}{Result\+Type} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classParser_a38df5f6fc75d85cc6907ae21e11c5b16}\label{classParser_a38df5f6fc75d85cc6907ae21e11c5b16}} 
+\index{Parser@{Parser}!peek@{peek}}
+\index{peek@{peek}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily bool Parser\+::peek (\begin{DoxyParamCaption}\item[{\hyperlink{classParser_a7d49b050a3c0df9e37ff81c5099be049}{terminal\+\_\+symbol\+\_\+t}}]{c\+\_\+ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns the result of trying to match the current character with c\+\_\+, {\bfseries without} consuming the current character from the input expression. 
+
+\mbox{\Hypertarget{classParser_a35da81bd369bab816b71418736184d5d}\label{classParser_a35da81bd369bab816b71418736184d5d}} 
+\index{Parser@{Parser}!skip\+\_\+ws@{skip\+\_\+ws}}
+\index{skip\+\_\+ws@{skip\+\_\+ws}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{skip\+\_\+ws()}{skip\_ws()}}
+{\footnotesize\ttfamily void Parser\+::skip\+\_\+ws (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ignores any white space or tabs in the expression until reach a valid character or end of input. 
+
+\mbox{\Hypertarget{classParser_a82f4cbee572a5b8305368820525603bd}\label{classParser_a82f4cbee572a5b8305368820525603bd}} 
+\index{Parser@{Parser}!term@{term}}
+\index{term@{term}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{term()}{term()}}
+{\footnotesize\ttfamily \hyperlink{structParser_1_1ResultType}{Parser\+::\+Result\+Type} Parser\+::term (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates (i.\+e. returns true or false) and consumes a term from the input string. 
+
+This method parses a valid term from the input.
+
+Production rule is\+: 
+\begin{DoxyCode}
+<\hyperlink{classParser_a82f4cbee572a5b8305368820525603bd}{term}> := \textcolor{stringliteral}{"("},<\hyperlink{classParser_a6429f38abf0207bc14d64bacc399b3f9}{expr}>,\textcolor{stringliteral}{")"} | <\hyperlink{classParser_ab6b91c4e4b8bacb7d0eefca5ae9ffce6}{integer}>;               < --------------------------------------
+      ----- Adição dos parenteses.
+\end{DoxyCode}
+ A term is made of a single integer.
+
+\begin{DoxyReturn}{Retorna}
+true if a term has been successfuly parsed from the input; false otherwise. 
+\end{DoxyReturn}
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classParser_a6429f38abf0207bc14d64bacc399b3f9}\label{classParser_a6429f38abf0207bc14d64bacc399b3f9}} 
+\index{Parser@{Parser}!expr@{expr}}
+\index{expr@{expr}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{expr}{expr}}
+{\footnotesize\ttfamily std\+::string Parser\+::expr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Expressão para ser \char`\"{}parsed\char`\"{}. 
+
+\mbox{\Hypertarget{classParser_a7036e94a1d0b3973d126a2023a91b7ec}\label{classParser_a7036e94a1d0b3973d126a2023a91b7ec}} 
+\index{Parser@{Parser}!it\+\_\+curr\+\_\+symb@{it\+\_\+curr\+\_\+symb}}
+\index{it\+\_\+curr\+\_\+symb@{it\+\_\+curr\+\_\+symb}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{it\+\_\+curr\+\_\+symb}{it\_curr\_symb}}
+{\footnotesize\ttfamily std\+::string\+::iterator Parser\+::it\+\_\+curr\+\_\+symb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ponteiro para o char padrão dentro da expressão. 
+
+\mbox{\Hypertarget{classParser_a87c81225df0bfa24bcd321bcbdd7af26}\label{classParser_a87c81225df0bfa24bcd321bcbdd7af26}} 
+\index{Parser@{Parser}!token\+\_\+list@{token\+\_\+list}}
+\index{token\+\_\+list@{token\+\_\+list}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{token\+\_\+list}{token\_list}}
+{\footnotesize\ttfamily \hyperlink{classsc_1_1vector}{sc\+::vector}$<$ \hyperlink{structToken}{Token} $>$ Parser\+::token\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lista de resultado da lista de token extraidas da expressão. 
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{parser_8h}{parser.\+h}\item 
+include/\hyperlink{parser_8inl}{parser.\+inl}\end{DoxyCompactItemize}

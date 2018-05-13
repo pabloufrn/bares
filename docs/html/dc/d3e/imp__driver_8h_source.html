@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto BARES: Código-Fonte de include/imp_driver.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto BARES
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Localizar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">imp_driver.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d3e/imp__driver_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../dc/d3e/imp__driver_8h.html#af4e7a644181e970ad4d8e7f92d81934f">    5</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d3e/imp__driver_8h.html#af4e7a644181e970ad4d8e7f92d81934f">readConfig</a>( <a class="code" href="../../db/db6/classsc_1_1vector.html">sc::vector&lt; std::string &gt;</a> &amp; conj , <a class="code" href="../../d7/dc3/driver__bares_8cpp.html#a89f2c63428e12ef30a9aecf2ff582927">arq_entrada</a> &amp; file_ ){</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    std::string linha;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">while</span>( getline( file_ , linha ) ){</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        conj.<a class="code" href="../../db/db6/classsc_1_1vector.html#af84bdcc9188e61f5ea1d2eecc6b72bee">push_back</a>( linha );</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../dc/d3e/imp__driver_8h.html#ad796f766e7b6f72c2c47d72bff4579f8">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d3e/imp__driver_8h.html#ad796f766e7b6f72c2c47d72bff4579f8">readFile</a>( std::string nomeArq , <a class="code" href="../../db/db6/classsc_1_1vector.html">sc::vector&lt;std::string&gt;</a> &amp; conjunto ){</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&gt;&gt;&gt; Trying to open input file [&quot;</span> + nomeArq + <span class="stringliteral">&quot;]...&quot;</span>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d7/dc3/driver__bares_8cpp.html#a89f2c63428e12ef30a9aecf2ff582927">arq_entrada</a> iFile;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    iFile.open( nomeArq );</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span>( iFile.fail() ){</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot; error!\nTry again!\n&quot;</span>;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::exit(1);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot; done!\n&quot;</span>;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&gt;&gt;&gt; Processing data, please wait...&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../dc/d3e/imp__driver_8h.html#af4e7a644181e970ad4d8e7f92d81934f">readConfig</a>( conjunto , iFile );</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    iFile.close();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="ttc" id="driver__bares_8cpp_html_a89f2c63428e12ef30a9aecf2ff582927"><div class="ttname"><a href="../../d7/dc3/driver__bares_8cpp.html#a89f2c63428e12ef30a9aecf2ff582927">arq_entrada</a></div><div class="ttdeci">std::ifstream arq_entrada</div><div class="ttdef"><b>Definition:</b> driver_bares.cpp:11</div></div>
+<div class="ttc" id="classsc_1_1vector_html"><div class="ttname"><a href="../../db/db6/classsc_1_1vector.html">sc::vector</a></div><div class="ttdoc">A classe vector implementa a lista TAD com array dinâmico (conhecido como vector). </div><div class="ttdef"><b>Definition:</b> vector.h:9</div></div>
+<div class="ttc" id="imp__driver_8h_html_ad796f766e7b6f72c2c47d72bff4579f8"><div class="ttname"><a href="../../dc/d3e/imp__driver_8h.html#ad796f766e7b6f72c2c47d72bff4579f8">readFile</a></div><div class="ttdeci">void readFile(std::string nomeArq, sc::vector&lt; std::string &gt; &amp;conjunto)</div><div class="ttdef"><b>Definition:</b> imp_driver.h:19</div></div>
+<div class="ttc" id="imp__driver_8h_html_af4e7a644181e970ad4d8e7f92d81934f"><div class="ttname"><a href="../../dc/d3e/imp__driver_8h.html#af4e7a644181e970ad4d8e7f92d81934f">readConfig</a></div><div class="ttdeci">void readConfig(sc::vector&lt; std::string &gt; &amp;conj, arq_entrada &amp;file_)</div><div class="ttdef"><b>Definition:</b> imp_driver.h:5</div></div>
+<div class="ttc" id="classsc_1_1vector_html_af84bdcc9188e61f5ea1d2eecc6b72bee"><div class="ttname"><a href="../../db/db6/classsc_1_1vector.html#af84bdcc9188e61f5ea1d2eecc6b72bee">sc::vector::push_back</a></div><div class="ttdeci">void push_back(const_reference)</div><div class="ttdoc">Insere um elemento no final da lista. </div><div class="ttdef"><b>Definition:</b> vector.inl:271</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

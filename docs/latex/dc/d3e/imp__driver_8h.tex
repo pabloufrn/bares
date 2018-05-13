@@ -1,0 +1,49 @@
+\hypertarget{imp__driver_8h}{}\section{Referência ao ficheiro include/imp\+\_\+driver.h}
+\label{imp__driver_8h}\index{include/imp\+\_\+driver.\+h@{include/imp\+\_\+driver.\+h}}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 0
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{imp__driver_8h_af4e7a644181e970ad4d8e7f92d81934f}{read\+Config} (\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::string $>$ \&conj, \hyperlink{driver__bares_8cpp_a89f2c63428e12ef30a9aecf2ff582927}{arq\+\_\+entrada} \&file\+\_\+)
+\item 
+void \hyperlink{imp__driver_8h_ad796f766e7b6f72c2c47d72bff4579f8}{read\+File} (std\+::string nome\+Arq, \hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::string $>$ \&conjunto)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{imp__driver_8h_af4e7a644181e970ad4d8e7f92d81934f}\label{imp__driver_8h_af4e7a644181e970ad4d8e7f92d81934f}} 
+\index{imp\+\_\+driver.\+h@{imp\+\_\+driver.\+h}!read\+Config@{read\+Config}}
+\index{read\+Config@{read\+Config}!imp\+\_\+driver.\+h@{imp\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{read\+Config()}{readConfig()}}
+{\footnotesize\ttfamily void read\+Config (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::string $>$ \&}]{conj,  }\item[{\hyperlink{driver__bares_8cpp_a89f2c63428e12ef30a9aecf2ff582927}{arq\+\_\+entrada} \&}]{file\+\_\+ }\end{DoxyParamCaption})}
+
+Ler e insere na lista todas as expressões que estão organizadas por linhas no arquivo de entrada. 
+\begin{DoxyParams}{Parâmetros}
+{\em vetor} & com todas as expressões. \\
+\hline
+{\em arquivo} & de entrada de dados. \\
+\hline
+\end{DoxyParams}
+Recebe e envia os dados da linha para o vetor. \mbox{\Hypertarget{imp__driver_8h_ad796f766e7b6f72c2c47d72bff4579f8}\label{imp__driver_8h_ad796f766e7b6f72c2c47d72bff4579f8}} 
+\index{imp\+\_\+driver.\+h@{imp\+\_\+driver.\+h}!read\+File@{read\+File}}
+\index{read\+File@{read\+File}!imp\+\_\+driver.\+h@{imp\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{read\+File()}{readFile()}}
+{\footnotesize\ttfamily void read\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{nome\+Arq,  }\item[{\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::string $>$ \&}]{conjunto }\end{DoxyParamCaption})}
+
+Ler o arquivo de entrada. 
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & do arquivo de entrada. \\
+\hline
+{\em vetor} & para armazenar as expressões. \\
+\hline
+\end{DoxyParams}
+Cria tipo de arquivo de entrada.
+
+Abre o arquivo de entrada.
+
+Gera erro caso não foi possível abrir o arquivo de entrada.
+
+Realiza a leitura das linhas com as expressões.
+
+Fecha o arquivo de entrada. 

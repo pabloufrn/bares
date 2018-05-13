@@ -1,0 +1,166 @@
+\hypertarget{structParser_1_1ResultType}{}\section{Referência à estrutura Parser\+:\+:Result\+Type}
+\label{structParser_1_1ResultType}\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}
+
+
+Este struct representa o resultado da operação de parsing (transformação).  
+
+
+
+
+{\ttfamily \#include $<$parser.\+h$>$}
+
+\subsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457}{code\+\_\+t} \{ \newline
+\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0}{OK} = 0, 
+\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457af9de255781fa9d894aef9642ebceb791}{I\+N\+T\+E\+G\+E\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE}, 
+\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457af91c77cd7f544ac5940fd7e437e960e8}{M\+I\+S\+S\+I\+N\+G\+\_\+\+T\+E\+RM}, 
+\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457aa20035f93278146ba5e9ef378cb3bead}{E\+X\+T\+R\+A\+N\+E\+O\+U\+S\+\_\+\+S\+Y\+M\+B\+OL}, 
+\newline
+\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a32e1d7a7795bf11d5e226fc1170b95f8}{I\+L\+L\+\_\+\+F\+O\+R\+M\+E\+D\+\_\+\+I\+N\+T\+E\+G\+ER}, 
+\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a55ff38b0497bb788e4d85d8b671f57a1}{M\+I\+S\+S\+I\+N\+G\+\_\+\+C\+L\+O\+SE}, 
+\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a00b416ad0baaf9af4d89326038a88aed}{U\+N\+E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON}
+ \}\begin{DoxyCompactList}\small\item\em Lista de possíveis erros sintáticos. \end{DoxyCompactList}
+\item 
+typedef std\+::ptrdiff\+\_\+t \hyperlink{structParser_1_1ResultType_a8f110ce090aad3f4016d241aaef768db}{size\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Usado para a localização da coluna determinada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structParser_1_1ResultType_a7757f3a96430ce1ea8c8a15c8908cc50}{Result\+Type} (\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457}{code\+\_\+t} type\+\_\+=\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0}{OK}, \hyperlink{structParser_1_1ResultType_a8f110ce090aad3f4016d241aaef768db}{size\+\_\+type} col\+\_\+=0u)
+\begin{DoxyCompactList}\small\item\em Contrutor default. \end{DoxyCompactList}\item 
+bool \hyperlink{structParser_1_1ResultType_a42567f764f3d1ffebdac55aad576f102}{operator==} (\hyperlink{structParser_1_1ResultType}{Result\+Type} \&tipo)
+\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de igualdade. \end{DoxyCompactList}\item 
+bool \hyperlink{structParser_1_1ResultType_a1e2c9f1eaa6bce1b8be87572d21546ec}{operator!=} (\hyperlink{structParser_1_1ResultType}{Result\+Type} tipo)
+\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de diferença. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457}{code\+\_\+t} \hyperlink{structParser_1_1ResultType_a62bbb21f81f4754df9e59312b6a0203b}{type}
+\begin{DoxyCompactList}\small\item\em Código de erro. \end{DoxyCompactList}\item 
+\hyperlink{structParser_1_1ResultType_a8f110ce090aad3f4016d241aaef768db}{size\+\_\+type} \hyperlink{structParser_1_1ResultType_acdb9aeac71c8dd81484e748414792a79}{at\+\_\+col}
+\begin{DoxyCompactList}\small\item\em Armazena em qual coluna ocorreu o erro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Este struct representa o resultado da operação de parsing (transformação). 
+
+\subsection{Documentação das definições de tipo}
+\mbox{\Hypertarget{structParser_1_1ResultType_a8f110ce090aad3f4016d241aaef768db}\label{structParser_1_1ResultType_a8f110ce090aad3f4016d241aaef768db}} 
+\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}
+\subsubsection{\texorpdfstring{size\+\_\+type}{size\_type}}
+{\footnotesize\ttfamily typedef std\+::ptrdiff\+\_\+t \hyperlink{structParser_1_1ResultType_a8f110ce090aad3f4016d241aaef768db}{Parser\+::\+Result\+Type\+::size\+\_\+type}}
+
+
+
+Usado para a localização da coluna determinada. 
+
+
+
+\subsection{Documentação das enumerações}
+\mbox{\Hypertarget{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457}\label{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457}} 
+\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!code\+\_\+t@{code\+\_\+t}}
+\index{code\+\_\+t@{code\+\_\+t}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}
+\subsubsection{\texorpdfstring{code\+\_\+t}{code\_t}}
+{\footnotesize\ttfamily enum \hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457}{Parser\+::\+Result\+Type\+::code\+\_\+t}}
+
+
+
+Lista de possíveis erros sintáticos. 
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!OK@{OK}}}\mbox{\Hypertarget{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0}\label{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0}} 
+OK&Expressão está correta. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+T\+E\+G\+E\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE@{I\+N\+T\+E\+G\+E\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!I\+N\+T\+E\+G\+E\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE@{I\+N\+T\+E\+G\+E\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE}}}\mbox{\Hypertarget{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457af9de255781fa9d894aef9642ebceb791}\label{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457af9de255781fa9d894aef9642ebceb791}} 
+I\+N\+T\+E\+G\+E\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+I\+S\+S\+I\+N\+G\+\_\+\+T\+E\+RM@{M\+I\+S\+S\+I\+N\+G\+\_\+\+T\+E\+RM}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!M\+I\+S\+S\+I\+N\+G\+\_\+\+T\+E\+RM@{M\+I\+S\+S\+I\+N\+G\+\_\+\+T\+E\+RM}}}\mbox{\Hypertarget{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457af91c77cd7f544ac5940fd7e437e960e8}\label{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457af91c77cd7f544ac5940fd7e437e960e8}} 
+M\+I\+S\+S\+I\+N\+G\+\_\+\+T\+E\+RM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+R\+A\+N\+E\+O\+U\+S\+\_\+\+S\+Y\+M\+B\+OL@{E\+X\+T\+R\+A\+N\+E\+O\+U\+S\+\_\+\+S\+Y\+M\+B\+OL}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!E\+X\+T\+R\+A\+N\+E\+O\+U\+S\+\_\+\+S\+Y\+M\+B\+OL@{E\+X\+T\+R\+A\+N\+E\+O\+U\+S\+\_\+\+S\+Y\+M\+B\+OL}}}\mbox{\Hypertarget{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457aa20035f93278146ba5e9ef378cb3bead}\label{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457aa20035f93278146ba5e9ef378cb3bead}} 
+E\+X\+T\+R\+A\+N\+E\+O\+U\+S\+\_\+\+S\+Y\+M\+B\+OL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+L\+L\+\_\+\+F\+O\+R\+M\+E\+D\+\_\+\+I\+N\+T\+E\+G\+ER@{I\+L\+L\+\_\+\+F\+O\+R\+M\+E\+D\+\_\+\+I\+N\+T\+E\+G\+ER}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!I\+L\+L\+\_\+\+F\+O\+R\+M\+E\+D\+\_\+\+I\+N\+T\+E\+G\+ER@{I\+L\+L\+\_\+\+F\+O\+R\+M\+E\+D\+\_\+\+I\+N\+T\+E\+G\+ER}}}\mbox{\Hypertarget{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a32e1d7a7795bf11d5e226fc1170b95f8}\label{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a32e1d7a7795bf11d5e226fc1170b95f8}} 
+I\+L\+L\+\_\+\+F\+O\+R\+M\+E\+D\+\_\+\+I\+N\+T\+E\+G\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+I\+S\+S\+I\+N\+G\+\_\+\+C\+L\+O\+SE@{M\+I\+S\+S\+I\+N\+G\+\_\+\+C\+L\+O\+SE}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!M\+I\+S\+S\+I\+N\+G\+\_\+\+C\+L\+O\+SE@{M\+I\+S\+S\+I\+N\+G\+\_\+\+C\+L\+O\+SE}}}\mbox{\Hypertarget{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a55ff38b0497bb788e4d85d8b671f57a1}\label{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a55ff38b0497bb788e4d85d8b671f57a1}} 
+M\+I\+S\+S\+I\+N\+G\+\_\+\+C\+L\+O\+SE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON@{U\+N\+E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!U\+N\+E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON@{U\+N\+E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON}}}\mbox{\Hypertarget{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a00b416ad0baaf9af4d89326038a88aed}\label{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a00b416ad0baaf9af4d89326038a88aed}} 
+U\+N\+E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{structParser_1_1ResultType_a7757f3a96430ce1ea8c8a15c8908cc50}\label{structParser_1_1ResultType_a7757f3a96430ce1ea8c8a15c8908cc50}} 
+\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!Result\+Type@{Result\+Type}}
+\index{Result\+Type@{Result\+Type}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}
+\subsubsection{\texorpdfstring{Result\+Type()}{ResultType()}}
+{\footnotesize\ttfamily Parser\+::\+Result\+Type\+::\+Result\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457}{code\+\_\+t}}]{type\+\_\+ = {\ttfamily \hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0}{OK}},  }\item[{\hyperlink{structParser_1_1ResultType_a8f110ce090aad3f4016d241aaef768db}{size\+\_\+type}}]{col\+\_\+ = {\ttfamily 0u} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Contrutor default. 
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{structParser_1_1ResultType_a1e2c9f1eaa6bce1b8be87572d21546ec}\label{structParser_1_1ResultType_a1e2c9f1eaa6bce1b8be87572d21546ec}} 
+\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Parser\+::\+Result\+Type\+::operator!= (\begin{DoxyParamCaption}\item[{\hyperlink{structParser_1_1ResultType}{Result\+Type}}]{tipo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sobrecarga do operador de diferença. 
+
+\mbox{\Hypertarget{structParser_1_1ResultType_a42567f764f3d1ffebdac55aad576f102}\label{structParser_1_1ResultType_a42567f764f3d1ffebdac55aad576f102}} 
+\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!operator==@{operator==}}
+\index{operator==@{operator==}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Parser\+::\+Result\+Type\+::operator== (\begin{DoxyParamCaption}\item[{\hyperlink{structParser_1_1ResultType}{Result\+Type} \&}]{tipo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sobrecarga do operador de igualdade. 
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{structParser_1_1ResultType_acdb9aeac71c8dd81484e748414792a79}\label{structParser_1_1ResultType_acdb9aeac71c8dd81484e748414792a79}} 
+\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!at\+\_\+col@{at\+\_\+col}}
+\index{at\+\_\+col@{at\+\_\+col}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}
+\subsubsection{\texorpdfstring{at\+\_\+col}{at\_col}}
+{\footnotesize\ttfamily \hyperlink{structParser_1_1ResultType_a8f110ce090aad3f4016d241aaef768db}{size\+\_\+type} Parser\+::\+Result\+Type\+::at\+\_\+col}
+
+
+
+Armazena em qual coluna ocorreu o erro. 
+
+\mbox{\Hypertarget{structParser_1_1ResultType_a62bbb21f81f4754df9e59312b6a0203b}\label{structParser_1_1ResultType_a62bbb21f81f4754df9e59312b6a0203b}} 
+\index{Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}!type@{type}}
+\index{type@{type}!Parser\+::\+Result\+Type@{Parser\+::\+Result\+Type}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \hyperlink{structParser_1_1ResultType_ac63a3ce34d7a6a119b1902372116d457}{code\+\_\+t} Parser\+::\+Result\+Type\+::type}
+
+
+
+Código de erro. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{parser_8h}{parser.\+h}\end{DoxyCompactItemize}

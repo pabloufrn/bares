@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto BARES: Referência à estrutura Token</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto BARES
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Localizar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos Públicos</a> &#124;
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pub-attribs">Atributos Públicos</a> &#124;
+<a href="#friends">Amigos</a> &#124;
+<a href="../../d9/d6a/structToken-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à estrutura Token</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Representação de um token.  
+ <a href="../../df/dcd/structToken.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d07/token_8h_source.html">token.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Tipos Públicos</h2></td></tr>
+<tr class="memitem:a0c0bd3a78407f44bc1fd21a9da6bd85b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85b">token_t</a> : int { <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177">token_t::OPERAND</a> = 0, 
+<a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3">token_t::OPERATOR</a>, 
+<a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935">token_t::PARENTHESIS_OPEN</a>, 
+<a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf">token_t::PARENTHESIS_CLOSE</a>
+ }</td></tr>
+<tr class="separator:a0c0bd3a78407f44bc1fd21a9da6bd85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a2b65ec748189e36df9bced6a12b2f46f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/structToken.html#a2b65ec748189e36df9bced6a12b2f46f">Token</a> (std::string value_=&quot;&quot;, <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85b">token_t</a> type_=<a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177">token_t::OPERAND</a>)</td></tr>
+<tr class="memdesc:a2b65ec748189e36df9bced6a12b2f46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contrutor default.  <a href="#a2b65ec748189e36df9bced6a12b2f46f">Mais...</a><br /></td></tr>
+<tr class="separator:a2b65ec748189e36df9bced6a12b2f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos Públicos</h2></td></tr>
+<tr class="memitem:a4b7142147b8598f8e24c404928d9263b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/structToken.html#a4b7142147b8598f8e24c404928d9263b">value</a></td></tr>
+<tr class="memdesc:a4b7142147b8598f8e24c404928d9263b"><td class="mdescLeft">&#160;</td><td class="mdescRight">O valor de um token como string.  <a href="#a4b7142147b8598f8e24c404928d9263b">Mais...</a><br /></td></tr>
+<tr class="separator:a4b7142147b8598f8e24c404928d9263b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc09b3fa26576ee028d22b7ddc6aad69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85b">token_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/structToken.html#adc09b3fa26576ee028d22b7ddc6aad69">type</a></td></tr>
+<tr class="memdesc:adc09b3fa26576ee028d22b7ddc6aad69"><td class="mdescLeft">&#160;</td><td class="mdescRight">O tipode token que pode ser <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177" title="Tipo de representação numerica. ">token_t::OPERAND</a>, <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3" title="Tipo de representação de &quot;+&quot;, &quot;-&quot;, &quot;*&quot;, &quot;/&quot;, &quot;%&quot;, &quot;^&quot;. ">token_t::OPERATOR</a>, <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935" title="Representação do &quot;(&quot;. ">token_t::PARENTHESIS_OPEN</a> ou <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf" title="Representação do &quot;)&quot;. ">token_t::PARENTHESIS_CLOSE</a>.  <a href="#adc09b3fa26576ee028d22b7ddc6aad69">Mais...</a><br /></td></tr>
+<tr class="separator:adc09b3fa26576ee028d22b7ddc6aad69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Amigos</h2></td></tr>
+<tr class="memitem:a065608b70f9e8c375cf12cc7fc363dcd"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/structToken.html#a065608b70f9e8c375cf12cc7fc363dcd">operator&lt;&lt;</a> (std::ostream &amp;os_, const <a class="el" href="../../df/dcd/structToken.html">Token</a> &amp;t_)</td></tr>
+<tr class="memdesc:a065608b70f9e8c375cf12cc7fc363dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajudar no debug.  <a href="#a065608b70f9e8c375cf12cc7fc363dcd">Mais...</a><br /></td></tr>
+<tr class="separator:a065608b70f9e8c375cf12cc7fc363dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Representação de um token. </p>
+</div><h2 class="groupheader">Documentação das enumerações</h2>
+<a id="a0c0bd3a78407f44bc1fd21a9da6bd85b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0bd3a78407f44bc1fd21a9da6bd85b">&#9670;&nbsp;</a></span>token_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85b">Token::token_t</a> : int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177"></a>OPERAND&#160;</td><td class="fielddoc"><p>Tipo de representação numerica. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3"></a>OPERATOR&#160;</td><td class="fielddoc"><p>Tipo de representação de "+", "-", "*", "/", "%", "^". </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935"></a>PARENTHESIS_OPEN&#160;</td><td class="fielddoc"><p>Representação do "(". </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf"></a>PARENTHESIS_CLOSE&#160;</td><td class="fielddoc"><p>Representação do ")". </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a2b65ec748189e36df9bced6a12b2f46f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b65ec748189e36df9bced6a12b2f46f">&#9670;&nbsp;</a></span>Token()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Token::Token </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value_</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85b">token_t</a>&#160;</td>
+          <td class="paramname"><em>type_</em> = <code><a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177">token_t::OPERAND</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contrutor default. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das classes amigas e funções relacionadas</h2>
+<a id="a065608b70f9e8c375cf12cc7fc363dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a065608b70f9e8c375cf12cc7fc363dcd">&#9670;&nbsp;</a></span>operator<<</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dcd/structToken.html">Token</a> &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ajudar no debug. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="adc09b3fa26576ee028d22b7ddc6aad69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc09b3fa26576ee028d22b7ddc6aad69">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85b">token_t</a> Token::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>O tipode token que pode ser <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba11f3de9b2b548c31805cf34d512ee177" title="Tipo de representação numerica. ">token_t::OPERAND</a>, <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba986496ca5b23669b8661171566a167c3" title="Tipo de representação de &quot;+&quot;, &quot;-&quot;, &quot;*&quot;, &quot;/&quot;, &quot;%&quot;, &quot;^&quot;. ">token_t::OPERATOR</a>, <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85bacc3fdb5e3acc094388e75f45ada1a935" title="Representação do &quot;(&quot;. ">token_t::PARENTHESIS_OPEN</a> ou <a class="el" href="../../df/dcd/structToken.html#a0c0bd3a78407f44bc1fd21a9da6bd85ba459697561df348fd7420e66ef9a339bf" title="Representação do &quot;)&quot;. ">token_t::PARENTHESIS_CLOSE</a>. </p>
+
+</div>
+</div>
+<a id="a4b7142147b8598f8e24c404928d9263b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7142147b8598f8e24c404928d9263b">&#9670;&nbsp;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Token::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>O valor de um token como string. </p>
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte ficheiro:<ul>
+<li>include/<a class="el" href="../../d1/d07/token_8h_source.html">token.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

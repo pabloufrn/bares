@@ -1,0 +1,189 @@
+\hypertarget{classst_1_1queue}{}\section{Referência à classe Template st\+:\+:queue$<$ T $>$}
+\label{classst_1_1queue}\index{st\+::queue$<$ T $>$@{st\+::queue$<$ T $>$}}
+
+
+{\ttfamily \#include $<$fila.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classst_1_1queue_a7f06fb829d7ac4a8d6bd1a0dcb13749a}{queue} (void)
+\begin{DoxyCompactList}\small\item\em Construtor da fila. \end{DoxyCompactList}\item 
+void \hyperlink{classst_1_1queue_aa2c66e1680b02c2046f3c9ce5c9b9615}{enqueue} (const \hyperlink{classst_1_1queue_a826b47eddf0309ac74beca2f3d1e7b1c}{reference} \&v)
+\begin{DoxyCompactList}\small\item\em Insere um elemento na retaguarda da fila. \end{DoxyCompactList}\item 
+void \hyperlink{classst_1_1queue_a5d495f353753608cd37833d79c4f297e}{dequeue} (void)
+\begin{DoxyCompactList}\small\item\em Remove o elemento da frente da fila. \end{DoxyCompactList}\item 
+\hyperlink{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}{value\+\_\+type} \hyperlink{classst_1_1queue_a3d01a0be47bf5d5a8c011423cf36baf6}{front} (void)
+\begin{DoxyCompactList}\small\item\em Retorna, sem remover, o elemento da frente da fila. \end{DoxyCompactList}\item 
+\hyperlink{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}{value\+\_\+type} \hyperlink{classst_1_1queue_a84bb56aa5f5cecc6a42cac6977cc97c1}{back} (void)
+\begin{DoxyCompactList}\small\item\em Retorna, sem remover, o elemento da retaguarda da fila. \end{DoxyCompactList}\item 
+\hyperlink{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}{value\+\_\+type} \hyperlink{classst_1_1queue_a1b689674da153552513628f5347b5152}{size} ()
+\begin{DoxyCompactList}\small\item\em Retornar o tamanho da fila. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Tipos Privados}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classst_1_1queue_adc38745992003842045bb2484ded4861}{size\+\_\+type} = unsigned long
+\begin{DoxyCompactList}\small\item\em Álias. \end{DoxyCompactList}\item 
+using \hyperlink{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}{value\+\_\+type} = T
+\item 
+using \hyperlink{classst_1_1queue_a826b47eddf0309ac74beca2f3d1e7b1c}{reference} = T \&
+\item 
+using \hyperlink{classst_1_1queue_ad60e399108ab295c2800f2c415c84de4}{pointer} = T $\ast$
+\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classst_1_1queue_ad60e399108ab295c2800f2c415c84de4}{pointer} \hyperlink{classst_1_1queue_a1e4db9739dd6b27927a710c0e52d4f10}{m\+\_\+storage}
+\begin{DoxyCompactList}\small\item\em container que armazena os dados. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classst_1_1queue_a3ec689ca3200dccc8482fa205c5797f1}{m\+\_\+end}
+\begin{DoxyCompactList}\small\item\em quantidade lógica ( ocupada ) dos dados. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classst_1_1queue_ad38c7e269766103855c22285ab6f72c2}{m\+\_\+capacity}
+\begin{DoxyCompactList}\small\item\em quantidade física ( total ). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das definições de tipo}
+\mbox{\Hypertarget{classst_1_1queue_ad60e399108ab295c2800f2c415c84de4}\label{classst_1_1queue_ad60e399108ab295c2800f2c415c84de4}} 
+\index{st\+::queue@{st\+::queue}!pointer@{pointer}}
+\index{pointer@{pointer}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{pointer}{pointer}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::\hyperlink{classst_1_1queue_ad60e399108ab295c2800f2c415c84de4}{pointer} =  T$\ast$\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classst_1_1queue_a826b47eddf0309ac74beca2f3d1e7b1c}\label{classst_1_1queue_a826b47eddf0309ac74beca2f3d1e7b1c}} 
+\index{st\+::queue@{st\+::queue}!reference@{reference}}
+\index{reference@{reference}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::\hyperlink{classst_1_1queue_a826b47eddf0309ac74beca2f3d1e7b1c}{reference} =  T\&\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classst_1_1queue_adc38745992003842045bb2484ded4861}\label{classst_1_1queue_adc38745992003842045bb2484ded4861}} 
+\index{st\+::queue@{st\+::queue}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{size\+\_\+type}{size\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::\hyperlink{classst_1_1queue_adc38745992003842045bb2484ded4861}{size\+\_\+type} =  unsigned long\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Álias. 
+
+\mbox{\Hypertarget{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}\label{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}} 
+\index{st\+::queue@{st\+::queue}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::\hyperlink{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}{value\+\_\+type} =  T\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classst_1_1queue_a7f06fb829d7ac4a8d6bd1a0dcb13749a}\label{classst_1_1queue_a7f06fb829d7ac4a8d6bd1a0dcb13749a}} 
+\index{st\+::queue@{st\+::queue}!queue@{queue}}
+\index{queue@{queue}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{queue()}{queue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::\hyperlink{classst_1_1queue}{queue} (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da fila. 
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classst_1_1queue_a84bb56aa5f5cecc6a42cac6977cc97c1}\label{classst_1_1queue_a84bb56aa5f5cecc6a42cac6977cc97c1}} 
+\index{st\+::queue@{st\+::queue}!back@{back}}
+\index{back@{back}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}{value\+\_\+type} \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::back (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna, sem remover, o elemento da retaguarda da fila. 
+
+\mbox{\Hypertarget{classst_1_1queue_a5d495f353753608cd37833d79c4f297e}\label{classst_1_1queue_a5d495f353753608cd37833d79c4f297e}} 
+\index{st\+::queue@{st\+::queue}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::dequeue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove o elemento da frente da fila. 
+
+\mbox{\Hypertarget{classst_1_1queue_aa2c66e1680b02c2046f3c9ce5c9b9615}\label{classst_1_1queue_aa2c66e1680b02c2046f3c9ce5c9b9615}} 
+\index{st\+::queue@{st\+::queue}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::enqueue (\begin{DoxyParamCaption}\item[{const \hyperlink{classst_1_1queue_a826b47eddf0309ac74beca2f3d1e7b1c}{reference} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insere um elemento na retaguarda da fila. 
+
+\mbox{\Hypertarget{classst_1_1queue_a3d01a0be47bf5d5a8c011423cf36baf6}\label{classst_1_1queue_a3d01a0be47bf5d5a8c011423cf36baf6}} 
+\index{st\+::queue@{st\+::queue}!front@{front}}
+\index{front@{front}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}{value\+\_\+type} \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::front (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna, sem remover, o elemento da frente da fila. 
+
+\mbox{\Hypertarget{classst_1_1queue_a1b689674da153552513628f5347b5152}\label{classst_1_1queue_a1b689674da153552513628f5347b5152}} 
+\index{st\+::queue@{st\+::queue}!size@{size}}
+\index{size@{size}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classst_1_1queue_a2a0fa1d9b72bfdad9acf67a92146b143}{value\+\_\+type} \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retornar o tamanho da fila. 
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classst_1_1queue_ad38c7e269766103855c22285ab6f72c2}\label{classst_1_1queue_ad38c7e269766103855c22285ab6f72c2}} 
+\index{st\+::queue@{st\+::queue}!m\+\_\+capacity@{m\+\_\+capacity}}
+\index{m\+\_\+capacity@{m\+\_\+capacity}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{m\+\_\+capacity}{m\_capacity}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::m\+\_\+capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+quantidade física ( total ). 
+
+\mbox{\Hypertarget{classst_1_1queue_a3ec689ca3200dccc8482fa205c5797f1}\label{classst_1_1queue_a3ec689ca3200dccc8482fa205c5797f1}} 
+\index{st\+::queue@{st\+::queue}!m\+\_\+end@{m\+\_\+end}}
+\index{m\+\_\+end@{m\+\_\+end}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{m\+\_\+end}{m\_end}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::m\+\_\+end\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+quantidade lógica ( ocupada ) dos dados. 
+
+\mbox{\Hypertarget{classst_1_1queue_a1e4db9739dd6b27927a710c0e52d4f10}\label{classst_1_1queue_a1e4db9739dd6b27927a710c0e52d4f10}} 
+\index{st\+::queue@{st\+::queue}!m\+\_\+storage@{m\+\_\+storage}}
+\index{m\+\_\+storage@{m\+\_\+storage}!st\+::queue@{st\+::queue}}
+\subsubsection{\texorpdfstring{m\+\_\+storage}{m\_storage}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classst_1_1queue_ad60e399108ab295c2800f2c415c84de4}{pointer} \hyperlink{classst_1_1queue}{st\+::queue}$<$ T $>$\+::m\+\_\+storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+container que armazena os dados. 
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{fila_8h}{fila.\+h}\end{DoxyCompactItemize}

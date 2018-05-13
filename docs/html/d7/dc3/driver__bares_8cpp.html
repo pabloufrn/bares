@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto BARES: Referência ao ficheiro src/driver_bares.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto BARES
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Localizar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro driver_bares.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d68/vector_8h_source.html">../include/vector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/de0/stack_8h_source.html">../include/stack.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d0b/fila_8h_source.html">../include/fila.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/d3e/imp__driver_8h_source.html">../include/imp_driver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d36/parser_8h_source.html">../include/parser.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/dbd/sbares_8h_source.html">../include/sbares.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/dae/extend__parser_8h_source.html">../include/extend_parser.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para driver_bares.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d56/driver__bares_8cpp__incl.png" border="0" usemap="#src_2driver__bares_8cpp" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a89f2c63428e12ef30a9aecf2ff582927"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc3/driver__bares_8cpp.html#a89f2c63428e12ef30a9aecf2ff582927">arq_entrada</a> = std::ifstream</td></tr>
+<tr class="separator:a89f2c63428e12ef30a9aecf2ff582927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976486d68a81a4688e9e7ef2d7649241"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc3/driver__bares_8cpp.html#a976486d68a81a4688e9e7ef2d7649241">arq_saida</a> = std::ofstream</td></tr>
+<tr class="separator:a976486d68a81a4688e9e7ef2d7649241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc3/driver__bares_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal.  <a href="#a0ddf1224851353fc92bfbff6f499fa97">Mais...</a><br /></td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a89f2c63428e12ef30a9aecf2ff582927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f2c63428e12ef30a9aecf2ff582927">&#9670;&nbsp;</a></span>arq_entrada</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/dc3/driver__bares_8cpp.html#a89f2c63428e12ef30a9aecf2ff582927">arq_entrada</a> =  std::ifstream</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a976486d68a81a4688e9e7ef2d7649241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a976486d68a81a4688e9e7ef2d7649241">&#9670;&nbsp;</a></span>arq_saida</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/dc3/driver__bares_8cpp.html#a976486d68a81a4688e9e7ef2d7649241">arq_saida</a> =  std::ofstream</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função principal. </p>
+<p>Verifica se o usuário inseriu os argumentos.</p>
+<p>Cria vetor para armazenar cada linha do arquivo de entrada.</p>
+<p>Salva o nome do arquivo de entrada.</p>
+<p>Verifica a leitura do arquivo de entrada.</p>
+<p>Verifica se o usuário colocou algum arquivo de entrada.</p>
+<p>Executa a função que realiza o processamento sobre as expressões com arquivo de saída.</p>
+<p>Executa a função que realiza o processamento sobre as expressões sem arquivo de saída.</p>
+<p>Finaliza o programa. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

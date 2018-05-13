@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto BARES: Referência à estrutura Parser::ResultType</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto BARES
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Localizar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d0/d40/classParser.html">Parser</a></li><li class="navelem"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos Públicos</a> &#124;
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pub-attribs">Atributos Públicos</a> &#124;
+<a href="../../db/d37/structParser_1_1ResultType-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à estrutura Parser::ResultType</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Este struct representa o resultado da operação de parsing (transformação).  
+ <a href="../../de/d02/structParser_1_1ResultType.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/d36/parser_8h_source.html">parser.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Tipos Públicos</h2></td></tr>
+<tr class="memitem:ac63a3ce34d7a6a119b1902372116d457"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457">code_t</a> { <br />
+&#160;&#160;<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0">OK</a> = 0, 
+<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457af9de255781fa9d894aef9642ebceb791">INTEGER_OUT_OF_RANGE</a>, 
+<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457af91c77cd7f544ac5940fd7e437e960e8">MISSING_TERM</a>, 
+<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457aa20035f93278146ba5e9ef378cb3bead">EXTRANEOUS_SYMBOL</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457a32e1d7a7795bf11d5e226fc1170b95f8">ILL_FORMED_INTEGER</a>, 
+<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457a55ff38b0497bb788e4d85d8b671f57a1">MISSING_CLOSE</a>, 
+<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457a00b416ad0baaf9af4d89326038a88aed">UNEXPECTED_END_OF_EXPRESSION</a>
+<br />
+ }<tr class="memdesc:ac63a3ce34d7a6a119b1902372116d457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de possíveis erros sintáticos.  <a href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457">Mais...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ac63a3ce34d7a6a119b1902372116d457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f110ce090aad3f4016d241aaef768db"><td class="memItemLeft" align="right" valign="top">typedef std::ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#a8f110ce090aad3f4016d241aaef768db">size_type</a></td></tr>
+<tr class="memdesc:a8f110ce090aad3f4016d241aaef768db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usado para a localização da coluna determinada.  <a href="#a8f110ce090aad3f4016d241aaef768db">Mais...</a><br /></td></tr>
+<tr class="separator:a8f110ce090aad3f4016d241aaef768db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a7757f3a96430ce1ea8c8a15c8908cc50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#a7757f3a96430ce1ea8c8a15c8908cc50">ResultType</a> (<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457">code_t</a> type_=<a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0">OK</a>, <a class="el" href="../../de/d02/structParser_1_1ResultType.html#a8f110ce090aad3f4016d241aaef768db">size_type</a> col_=0u)</td></tr>
+<tr class="memdesc:a7757f3a96430ce1ea8c8a15c8908cc50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contrutor default.  <a href="#a7757f3a96430ce1ea8c8a15c8908cc50">Mais...</a><br /></td></tr>
+<tr class="separator:a7757f3a96430ce1ea8c8a15c8908cc50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42567f764f3d1ffebdac55aad576f102"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#a42567f764f3d1ffebdac55aad576f102">operator==</a> (<a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a> &amp;tipo)</td></tr>
+<tr class="memdesc:a42567f764f3d1ffebdac55aad576f102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de igualdade.  <a href="#a42567f764f3d1ffebdac55aad576f102">Mais...</a><br /></td></tr>
+<tr class="separator:a42567f764f3d1ffebdac55aad576f102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2c9f1eaa6bce1b8be87572d21546ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#a1e2c9f1eaa6bce1b8be87572d21546ec">operator!=</a> (<a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a> tipo)</td></tr>
+<tr class="memdesc:a1e2c9f1eaa6bce1b8be87572d21546ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador de diferença.  <a href="#a1e2c9f1eaa6bce1b8be87572d21546ec">Mais...</a><br /></td></tr>
+<tr class="separator:a1e2c9f1eaa6bce1b8be87572d21546ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos Públicos</h2></td></tr>
+<tr class="memitem:a62bbb21f81f4754df9e59312b6a0203b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457">code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#a62bbb21f81f4754df9e59312b6a0203b">type</a></td></tr>
+<tr class="memdesc:a62bbb21f81f4754df9e59312b6a0203b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Código de erro.  <a href="#a62bbb21f81f4754df9e59312b6a0203b">Mais...</a><br /></td></tr>
+<tr class="separator:a62bbb21f81f4754df9e59312b6a0203b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdb9aeac71c8dd81484e748414792a79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#a8f110ce090aad3f4016d241aaef768db">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#acdb9aeac71c8dd81484e748414792a79">at_col</a></td></tr>
+<tr class="memdesc:acdb9aeac71c8dd81484e748414792a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Armazena em qual coluna ocorreu o erro.  <a href="#acdb9aeac71c8dd81484e748414792a79">Mais...</a><br /></td></tr>
+<tr class="separator:acdb9aeac71c8dd81484e748414792a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Este struct representa o resultado da operação de parsing (transformação). </p>
+</div><h2 class="groupheader">Documentação das definições de tipo</h2>
+<a id="a8f110ce090aad3f4016d241aaef768db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f110ce090aad3f4016d241aaef768db">&#9670;&nbsp;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::ptrdiff_t <a class="el" href="../../de/d02/structParser_1_1ResultType.html#a8f110ce090aad3f4016d241aaef768db">Parser::ResultType::size_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Usado para a localização da coluna determinada. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das enumerações</h2>
+<a id="ac63a3ce34d7a6a119b1902372116d457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac63a3ce34d7a6a119b1902372116d457">&#9670;&nbsp;</a></span>code_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457">Parser::ResultType::code_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista de possíveis erros sintáticos. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0"></a>OK&#160;</td><td class="fielddoc"><p>Expressão está correta. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac63a3ce34d7a6a119b1902372116d457af9de255781fa9d894aef9642ebceb791"></a>INTEGER_OUT_OF_RANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac63a3ce34d7a6a119b1902372116d457af91c77cd7f544ac5940fd7e437e960e8"></a>MISSING_TERM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac63a3ce34d7a6a119b1902372116d457aa20035f93278146ba5e9ef378cb3bead"></a>EXTRANEOUS_SYMBOL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac63a3ce34d7a6a119b1902372116d457a32e1d7a7795bf11d5e226fc1170b95f8"></a>ILL_FORMED_INTEGER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac63a3ce34d7a6a119b1902372116d457a55ff38b0497bb788e4d85d8b671f57a1"></a>MISSING_CLOSE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac63a3ce34d7a6a119b1902372116d457a00b416ad0baaf9af4d89326038a88aed"></a>UNEXPECTED_END_OF_EXPRESSION&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a7757f3a96430ce1ea8c8a15c8908cc50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7757f3a96430ce1ea8c8a15c8908cc50">&#9670;&nbsp;</a></span>ResultType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::ResultType::ResultType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457">code_t</a>&#160;</td>
+          <td class="paramname"><em>type_</em> = <code><a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457a0125be86217a5d0cdad8f818c7e2fde0">OK</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#a8f110ce090aad3f4016d241aaef768db">size_type</a>&#160;</td>
+          <td class="paramname"><em>col_</em> = <code>0u</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contrutor default. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="a1e2c9f1eaa6bce1b8be87572d21546ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2c9f1eaa6bce1b8be87572d21546ec">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::ResultType::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a>&#160;</td>
+          <td class="paramname"><em>tipo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sobrecarga do operador de diferença. </p>
+
+</div>
+</div>
+<a id="a42567f764f3d1ffebdac55aad576f102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42567f764f3d1ffebdac55aad576f102">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::ResultType::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d02/structParser_1_1ResultType.html">ResultType</a> &amp;&#160;</td>
+          <td class="paramname"><em>tipo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sobrecarga do operador de igualdade. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="acdb9aeac71c8dd81484e748414792a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdb9aeac71c8dd81484e748414792a79">&#9670;&nbsp;</a></span>at_col</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#a8f110ce090aad3f4016d241aaef768db">size_type</a> Parser::ResultType::at_col</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Armazena em qual coluna ocorreu o erro. </p>
+
+</div>
+</div>
+<a id="a62bbb21f81f4754df9e59312b6a0203b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62bbb21f81f4754df9e59312b6a0203b">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d02/structParser_1_1ResultType.html#ac63a3ce34d7a6a119b1902372116d457">code_t</a> Parser::ResultType::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Código de erro. </p>
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte ficheiro:<ul>
+<li>include/<a class="el" href="../../d5/d36/parser_8h_source.html">parser.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

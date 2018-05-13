@@ -1,0 +1,70 @@
+\hypertarget{extend__parser_8h}{}\section{Referência ao ficheiro include/extend\+\_\+parser.h}
+\label{extend__parser_8h}\index{include/extend\+\_\+parser.\+h@{include/extend\+\_\+parser.\+h}}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 0
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{extend__parser_8h_a81f305ff24426c64c6f5743163ba57ca}{print\+\_\+error\+\_\+msg} (const \hyperlink{structParser_1_1ResultType}{Parser\+::\+Result\+Type} \&result)
+\item 
+void \hyperlink{extend__parser_8h_ab5477acd32ad1280744d4bad4bd67122}{parser\+\_\+driver} (\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::string $>$ \&conjunto)
+\item 
+void \hyperlink{extend__parser_8h_a203db182515c5bf7b11a04d87895bce7}{parser\+\_\+driver\+\_\+out} (\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::string $>$ \&conjunto, std\+::string of\+File\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{extend__parser_8h_ab5477acd32ad1280744d4bad4bd67122}\label{extend__parser_8h_ab5477acd32ad1280744d4bad4bd67122}} 
+\index{extend\+\_\+parser.\+h@{extend\+\_\+parser.\+h}!parser\+\_\+driver@{parser\+\_\+driver}}
+\index{parser\+\_\+driver@{parser\+\_\+driver}!extend\+\_\+parser.\+h@{extend\+\_\+parser.\+h}}
+\subsubsection{\texorpdfstring{parser\+\_\+driver()}{parser\_driver()}}
+{\footnotesize\ttfamily void parser\+\_\+driver (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::string $>$ \&}]{conjunto }\end{DoxyParamCaption})}
+
+Verificar se a expressão está bem formada. 
+\begin{DoxyParams}{Parâmetros}
+{\em vetor} & de expressões. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{extend__parser_8h_a203db182515c5bf7b11a04d87895bce7}\label{extend__parser_8h_a203db182515c5bf7b11a04d87895bce7}} 
+\index{extend\+\_\+parser.\+h@{extend\+\_\+parser.\+h}!parser\+\_\+driver\+\_\+out@{parser\+\_\+driver\+\_\+out}}
+\index{parser\+\_\+driver\+\_\+out@{parser\+\_\+driver\+\_\+out}!extend\+\_\+parser.\+h@{extend\+\_\+parser.\+h}}
+\subsubsection{\texorpdfstring{parser\+\_\+driver\+\_\+out()}{parser\_driver\_out()}}
+{\footnotesize\ttfamily void parser\+\_\+driver\+\_\+out (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::string $>$ \&}]{conjunto,  }\item[{std\+::string}]{of\+File\+\_\+name }\end{DoxyParamCaption})}
+
+Verificar se a expressão está bem formada e com saída para arquivo específico. 
+\begin{DoxyParams}{Parâmetros}
+{\em vetor} & de expressões. \\
+\hline
+\end{DoxyParams}
+Criação do tipo de arquivo de saída
+
+Gerar o arquivo de saída.
+
+Verificar se ocorreu algum erro ao gerar o arquivo de saida.
+
+Imprimir mensagem de erro caso tenha dado algo errado.
+
+Verificar se deu algo errado durante a resolução da expressão.
+
+Realizar a operação.
+
+Imprimir resultado no arquivo.
+
+Imprimir o resultado no terminal para o usuário.
+
+$<$ Verificar se ocorreu algum erro durante a expressão.
+
+Fechar o arquivo. \mbox{\Hypertarget{extend__parser_8h_a81f305ff24426c64c6f5743163ba57ca}\label{extend__parser_8h_a81f305ff24426c64c6f5743163ba57ca}} 
+\index{extend\+\_\+parser.\+h@{extend\+\_\+parser.\+h}!print\+\_\+error\+\_\+msg@{print\+\_\+error\+\_\+msg}}
+\index{print\+\_\+error\+\_\+msg@{print\+\_\+error\+\_\+msg}!extend\+\_\+parser.\+h@{extend\+\_\+parser.\+h}}
+\subsubsection{\texorpdfstring{print\+\_\+error\+\_\+msg()}{print\_error\_msg()}}
+{\footnotesize\ttfamily std\+::string print\+\_\+error\+\_\+msg (\begin{DoxyParamCaption}\item[{const \hyperlink{structParser_1_1ResultType}{Parser\+::\+Result\+Type} \&}]{result }\end{DoxyParamCaption})}
+
+Imprimir qual o erro que foi gerado durante a execução do programa. 
+\begin{DoxyParams}{Parâmetros}
+{\em struct} & do erro. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+erro gerado. 
+\end{DoxyReturn}
